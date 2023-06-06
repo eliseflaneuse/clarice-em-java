@@ -10,7 +10,7 @@ A ideia é de um jogo no console, onde o personagem faz uma ficha com nome e dis
 
 ## Implementação: 
 
-1. Definir classes e atributos
+### 1. Definir classes e atributos
 
 Vamos começar definindo as classes e atributos básicos do jogo. Teremos as seguintes classes:
 
