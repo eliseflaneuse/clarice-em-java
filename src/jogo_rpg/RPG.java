@@ -2,7 +2,6 @@ package jogo_rpg;
 
 import java.util.Scanner;
 import jogo.model.Jogador;
-import jogo.model.Personagem;
 
 public class RPG {
 
@@ -27,7 +26,7 @@ public class RPG {
         System.out.println("--- Character Sheet ---");
         System.out.println("Nome: " + player.getNome());
         System.out.println("Level: " + player.getLevel());
-        System.out.println("VIda: " + player.getVida());
+        System.out.println("Vida: " + player.getVida());
         System.out.println("Jogador Class: " + player.getPlayerClass());
 
         scanner.close();
