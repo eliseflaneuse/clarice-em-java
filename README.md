@@ -1,7 +1,7 @@
 # Clarice em Java
 
-Ideia geral: 
-Um jogo rpg em java. Usando:
+Ideia geral: *Um jogo rpg em java.*
+Usando:
 * classes, atributos e objetos; 
 * encapsulamento e herança, polimorfismo, sobrecarga e sobrescrito;
 * collections, exceptions, options;
