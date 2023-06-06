@@ -47,6 +47,65 @@ public class Enemy extends Character {
     // Construtor, getters e setters
 }
 ```
+### 2. Implementar a lógica do jogo
+
+Agora, vamos implementar a lógica do jogo. Isso inclui a criação do personagem do jogador, a distribuição dos pontos de atributos, a exibição de perguntas lógicas e engraçadas, e a interação com o jogador para receber suas respostas e atualizar o estado do jogo.
+
+```
+import java.util.Scanner;
+
+public class Game {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Criação do personagem do jogador
+        System.out.print("Digite o nome do personagem: ");
+        String playerName = scanner.nextLine();
+        Player player = createPlayer(playerName);
+
+        // Distribuição dos pontos de atributos
+        distributeAttributePoints(player, scanner);
+
+        // Iniciar o jogo
+        boolean gameOver = false;
+        while (!gameOver) {
+            // Lógica do jogo (exibir perguntas, interagir com o jogador, atualizar estado, etc.)
+        }
+
+        scanner.close();
+    }
+
+    private static Player createPlayer(String name) {
+        // Implementação para criar o personagem do jogador com nome e atributos iniciais
+    }
+
+    private static void distributeAttributePoints(Player player, Scanner scanner) {
+        // Implementação para distribuir os pontos de atributos para o jogador
+    }
+}
+
+```
+
+### Implementar perguntas lógicas e engraçadas
+
+Agora, precisamos criar perguntas lógicas e engraçadas para o jogo. Podemos criar uma classe separada para armazenar as perguntas e suas respostas corretas, e uma lógica para selecionar aleatoriamente as perguntas para exibir aos jogadores.
+
+```
+public class Question {
+    private String question;
+    private String correctAnswer;
+
+    // Construtor, getters e setters
+}
+
+public class QuestionManager {
+    private List<Question> logicQuestions;
+    private List<Question> funnyQuestions;
+
+    // Métodos para adicionar perguntas, selecionar perguntas aleatoriamente, etc.
+}
+
+```
 
 Ideias:
 * Python - cobrinha
