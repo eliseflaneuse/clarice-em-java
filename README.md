@@ -1,4 +1,11 @@
 # Clarice em Java
+Ideia geral: 
+Um jogo rpg em java. Usando:
+* classes, atributos e objetos; 
+* encapsulamento e herança, polimorfismo, sobrecarga e sobrescrito;
+* collections, exceptions, options;
+
+A ideia é de um jogo no console, onde o personagem faz uma ficha com nome e distribui 10 pontos em atributos. Logo depois ele vai ser mostrado uma pergunta de cada vez no console, revezando uma pergunta lógica e uma pergunta engraçada e absurda (como no filme "monty python"). Se ele acertar a pergunta engraçada ele ganha um ponto de vida (o personagem começa com 5 pontos) e se errar ele perde. Na pergunta lógica ele ganha um ponto para atribuir a algum atributo, logo ele precisaria ler a escolha do usuario de onde colocar o ponto ganhado.  Os personagens inimigos são inspirados nos personagens de Alice no país das maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
 
 Ideias:
 * Python - cobrinha
