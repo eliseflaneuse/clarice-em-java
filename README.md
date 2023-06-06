@@ -23,7 +23,7 @@ Ideias:
 - ORIENTAÇÃO PARA O FUTURO
 - PERSISTÊNCIA
 
-### HABILIDADES COMPORTAMENTAIS
+### Habilidades Comportamentais
 - COMUNICAÇÃO
 - TRABALHO EM EQUIPE
 - PROATIVIDADE
@@ -57,7 +57,7 @@ Em outro momento - ponto pra distribuir nos atributos (perguntas técnicas)
 
 O grande if - Nível fácil, moderado ou difícil. (se modo hard - atributos trocados)
 
-## CARACTERÍSTICAS
+## Personagens
 * Característica única que define o personagem que permanece, como cor ou vestimenta;
 * Coelho
 * Esfinge - Lagarta - oferece um trago
