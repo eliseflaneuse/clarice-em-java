@@ -89,6 +89,7 @@ public class Game {
 ### 3. Implementar perguntas lógicas e engraçadas
 
 Agora, precisamos criar perguntas lógicas e engraçadas para o jogo. Podemos criar uma classe separada para armazenar as perguntas e suas respostas corretas, e uma lógica para selecionar aleatoriamente as perguntas para exibir aos jogadores.
+Ideia para perguntas engraçadas (cena da ponte do filme Mount Python) [http://montypython.50webs.com/scripts/Holy_Grail/Scene22.htm]
 
 ```
 public class Question {
