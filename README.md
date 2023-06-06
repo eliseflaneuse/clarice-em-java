@@ -86,7 +86,7 @@ public class Game {
 
 ```
 
-### Implementar perguntas lógicas e engraçadas
+### 3. Implementar perguntas lógicas e engraçadas
 
 Agora, precisamos criar perguntas lógicas e engraçadas para o jogo. Podemos criar uma classe separada para armazenar as perguntas e suas respostas corretas, e uma lógica para selecionar aleatoriamente as perguntas para exibir aos jogadores.
 
