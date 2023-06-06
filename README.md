@@ -1,4 +1,5 @@
 # Clarice em Java
+
 Ideia geral: 
 Um jogo rpg em java. Usando:
 * classes, atributos e objetos; 
@@ -6,6 +7,46 @@ Um jogo rpg em java. Usando:
 * collections, exceptions, options;
 
 A ideia é de um jogo no console, onde o personagem faz uma ficha com nome e distribui 10 pontos em atributos. Logo depois ele vai ser mostrado uma pergunta de cada vez no console, revezando uma pergunta lógica e uma pergunta engraçada e absurda (como no filme "monty python"). Se ele acertar a pergunta engraçada ele ganha um ponto de vida (o personagem começa com 5 pontos) e se errar ele perde. Na pergunta lógica ele ganha um ponto para atribuir a algum atributo, logo ele precisaria ler a escolha do usuario de onde colocar o ponto ganhado.  Os personagens inimigos são inspirados nos personagens de Alice no país das maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
+
+## Implementação: 
+
+1. Definir classes e atributos
+
+Vamos começar definindo as classes e atributos básicos do jogo. Teremos as seguintes classes:
+
+Game: Classe principal que contém o loop principal do jogo.
+Character: Classe base para representar o personagem do jogador e personagens inimigos.
+Player: Subclasse de Character que representa o personagem do jogador.
+Enemy: Subclasse de Character que representa os personagens inimigos.
+
+```
+public class Game {
+    public static void main(String[] args) {
+        // Implementação do loop principal do jogo
+    }
+}
+
+public class Character {
+    private String name;
+    private int lifePoints;
+    // Outros atributos comuns a personagens
+
+    // Construtor, getters e setters
+}
+
+public class Player extends Character {
+    private int attributePoints;
+    // Outros atributos específicos do jogador
+
+    // Construtor, getters e setters
+}
+
+public class Enemy extends Character {
+    // Atributos específicos de inimigos
+
+    // Construtor, getters e setters
+}
+```
 
 Ideias:
 * Python - cobrinha
