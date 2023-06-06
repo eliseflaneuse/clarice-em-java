@@ -1,12 +1,11 @@
 # Clarice em Java
 
+Ideias:
 * Python - cobrinha
 * Java - vida (café) ganhar ou perder ponto - abaixo de 0 o programa sai.
 * JavaScript - ação (efeitos especiais)
 * CSS - roupa (estilização)
 * Ruby - dinheiro (Ruby on Rails - dinheiro no trem - interceptar o trem?)
-
-## BSM - Atributos
 * `String proatividade = 4;`
 * Categoria - front, back, full-stack
 * Cada categoria ganha mais pontos como herança;
@@ -16,6 +15,20 @@
 * 10 pontos
 * `int inteligencia = 3;`
 * `int destreza = 2;`
+
+## BSM - Atributos
+### Mentalidades 
+- RESPONSABILIDADE PESSOAL
+- MENTALIDADE DE CRESCIMENTO
+- ORIENTAÇÃO PARA O FUTURO
+- PERSISTÊNCIA
+
+### HABILIDADES COMPORTAMENTAIS
+- COMUNICAÇÃO
+- TRABALHO EM EQUIPE
+- PROATIVIDADE
+- ORIENTAÇÃO AO DETALHE
+
 
 ## História, desafios lógicos no console - jogo de perguntas
 Atributos: `int num = 10;` If (`num < 10`) - condição 1, se `num > 10` - condição 2
