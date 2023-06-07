@@ -6,7 +6,8 @@
   <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/52f19d43-f6fe-4594-b4d6-7b573ad75f7d" alt="Image" />
 </div>
 
-Ideia geral: *Um jogo rpg em java.*
+
+### Ideia geral: *Um jogo rpg em java.*
 Usando:
 * classes, atributos e objetos; 
 * encapsulamento e herança, polimorfismo, sobrecarga e sobrescrito;
