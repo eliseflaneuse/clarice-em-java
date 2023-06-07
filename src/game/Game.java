@@ -15,7 +15,7 @@ public class Game {
 		
 		// Create the player character
 		   
-        System.out.print("Digite o nome do personagem: ");
+        System.out.print("\n\tDigite o nome da sua personagem: ");
         String playerName = scanner.nextLine();
         
         Player player = new Player(playerName);
