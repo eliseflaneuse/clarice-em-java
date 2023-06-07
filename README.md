@@ -2,7 +2,7 @@
     Clarice em Java 
 </h1>
 
-<div style="text-align:center">
+<div align="center">
   <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/52f19d43-f6fe-4594-b4d6-7b573ad75f7d" alt="Image" />
 </div>
 
