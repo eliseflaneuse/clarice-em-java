@@ -1,4 +1,6 @@
-# Clarice em Java
+<div># Clarice em Java </div>
+
+![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/52f19d43-f6fe-4594-b4d6-7b573ad75f7d)
 
 Ideia geral: *Um jogo rpg em java.*
 Usando:
