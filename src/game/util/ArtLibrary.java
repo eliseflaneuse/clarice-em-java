@@ -20,6 +20,5 @@ public class ArtLibrary {
         System.out.println("        oooooo/ ^ ^ ^  ^  ^  ^   ||||||||||||||||||||||||||||||oooooooooo| |ooooooooooo");
         System.out.println("        ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
     }
-	
-	
+		
 }
