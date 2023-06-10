@@ -1,4 +1,4 @@
-package game.util;
+package jogo.util;
 
 public class ArtLibrary {
 	
