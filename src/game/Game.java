@@ -139,21 +139,29 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaDecifrarCodigoPortaMagica() {
-	    System.out.println("\n--- Cena da Porta Mágica ---");
-	    System.out.println("Você chegou à misteriosa Porta Mágica, guardada por duas cartas da Rainha de Copas!\n");
+	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê separa as últimas folhas das árvores em seu caminho e se depara com umas das maiores porta que já viu.");
+	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas. Você da um passo em direção à ela.\n\n\n\n"+ Colors.TEXT_RESET);
+	    
+	    ArtLibrary.printMagicDoor();
+	    
+	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT + "\t\tDe canto de olho você percebe uma movimentação mas não consegue sse esconder a tempo! ");
+	    System.out.println("\tDuas cartas enormes aparecem no seu caminho. Uma com os desenhos de 3 de copas a outra 2 de paus.");
+	    System.out.println("\tAmbas empunham lanças afiadíssimas. Elas te olham com desdém.\n\n" + Colors.TEXT_RESET);
 
-	    System.out.println("3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!");
-	    System.out.println("2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n");
+	    ArtLibrary.printCards();
 
-	    System.out.println("Você se aproxima das cartas, pronta para o confronto.");
-	    System.out.println(player.getName() + ": Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo.");
-	    System.out.println("Agora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!");
+	    System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\t\t3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!" + Colors.TEXT_RESET);
+	    System.out.println(Colors.TEXT_BLACK_BRIGHT + "\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" + Colors.TEXT_RESET);
 
-	    System.out.println("3 de copas: Hahaha! Achou que seria fácil, humana insolente?");
-	    System.out.println("2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n");
+	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT +"\t\tVocê se aproxima das cartas, pronte para o confronto.\n"+ Colors.TEXT_RESET);
+	    System.out.println(player.getName() + "\t: Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo." + Colors.TEXT_RESET);
+	    System.out.println("\tAgora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!\n" + Colors.TEXT_RESET);
 
-	    System.out.println("Você se prepara para o combate contra as cartas da Rainha de Copas.");
-	    System.out.println("Então seja! Eu mostrarei a vocês do que sou capaz!");
+	    System.out.println(Colors.TEXT_RED_BOLD_BRIGHT +"\t3 de copas: Hahaha! Achou que seria fácil, humana insolente?"+ Colors.TEXT_RESET);
+	    System.out.println(Colors.TEXT_BLACK_BRIGHT + "\t2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n"+ Colors.TEXT_RESET);
+
+	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT +"\tVocê se prepara para o combate contra as cartas da Rainha de Copas.");
+	    System.out.println("\tQue assim seja! Eu mostrarei a vocês do que sou capaz!"+ Colors.TEXT_RESET);
 
 
 	    // Criando as cartas da Rainha de Copas
