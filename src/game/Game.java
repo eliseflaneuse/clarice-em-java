@@ -20,10 +20,11 @@ public class Game implements GameRepository {
 	public void exibirMenu() {
 		boolean sair = false;
 		while (!sair) {
-			System.out.println("\n------ Menu ------");
-			System.out.println("Escolha uma opção:");
-			System.out.println("1. Iniciar Jogo");
-			System.out.println("0. Sair do jogo");
+			System.out.println("");
+			System.out.println("\t\t\t\t     ------ Menu ------");
+			System.out.println("\t\t\t\t     Escolha uma opção:");
+			System.out.println("\t\t\t\t     1. Iniciar Jogo");
+			System.out.println("\t\t\t\t     0. Sair do jogo");
 
 			int opcao = scanner.nextInt();
 			scanner.nextLine();
@@ -50,37 +51,37 @@ public class Game implements GameRepository {
 		ArtLibrary.printWelcomeMessage();
 		ArtLibrary.printMonteJavaArt();
 
-		System.out.printf("\tInforme o nome do jogador:");
+		System.out.printf("\n\tInforme o nome do jogador:");
 		String nomeJogador = scanner.nextLine();
 
 		player = new Player(nomeJogador, 5, 5, 2, 0, 0, 0, 0);
 
-		System.out.println("\n\n--- Ficha do Personagem ---");
-		System.out.println("Nome:\t\t\t\t" + player.getName());
-		System.out.println("--- Distribuição de pontos nos atributos ---");
-		System.out.println("Responsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
-		System.out.println("Mentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
-		System.out.println("Proatividade:\t\t\t" + player.getProatividade());
-		System.out.println("Orientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
-		System.out.println("\n\n\n");
+		System.out.println("\n\n\t--- Ficha do Personagem ---");
+		System.out.println("\tNome:\t\t\t\t" + player.getName());
+		System.out.println("\t--- Distribuição de pontos nos atributos ---");
+		System.out.println("\tResponsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
+		System.out.println("\tMentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
+		System.out.println("\tProatividade:\t\t\t" + player.getProatividade());
+		System.out.println("\tOrientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
+		System.out.println("\n\n");
 
 	}
 
 	@Override
 	public void jogar() {
-		System.out.println("\nIniciando o jogo...");
+		System.out.println("\n\tIniciando o jogo...");
 
 		boolean continuarJogando = true;
 
 		while (continuarJogando && player.getLifePoints() > 0) {
-			System.out.println("\n------ Menu de Cenas ------");
-			System.out.println("Escolha uma cena para jogar:");
-			System.out.println("1. Cena do Chapeleiro Louco");
-			System.out.println("2. Cena do Gato Chester/Esfinge");
-			System.out.println("3. Cena do Coelho que dá mais 5 minutos");
-			System.out.println("4. Cena do Criquet com a Rainha de Copas");
-			System.out.println("5. Cena para decifrar o código da porta mágica");
-			System.out.println("0. Voltar ao Menu Inicial");
+			System.out.println("\n\t------ Menu de Cenas ------");
+			System.out.println("\tEscolha uma cena para jogar:");
+			System.out.println("\t1. Cena do Chapeleiro Louco");
+			System.out.println("\t2. Cena do Gato Chester/Esfinge");
+			System.out.println("\t3. Cena do Coelho que dá mais 5 minutos");
+			System.out.println("\t4. Cena do Criquet com a Rainha de Copas");
+			System.out.println("\t5. Cena para decifrar o código da porta mágica");
+			System.out.println("\t0. Voltar ao Menu Inicial");
 
 			int opcao = scanner.nextInt();
 			scanner.nextLine();
@@ -144,24 +145,25 @@ public class Game implements GameRepository {
 	    
 	    ArtLibrary.printMagicDoor();
 	    
-	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT + "\t\tDe canto de olho você percebe uma movimentação mas não consegue sse esconder a tempo! ");
+	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT +  "\t\tDe canto de olho você percebe uma movimentação mas não consegue se esconder a tempo! ");
 	    System.out.println("\tDuas cartas enormes aparecem no seu caminho. Uma com os desenhos de 3 de copas a outra 2 de paus.");
 	    System.out.println("\tAmbas empunham lanças afiadíssimas. Elas te olham com desdém.\n\n" + Colors.TEXT_RESET);
+	    System.out.println("\n\n");
 
 	    ArtLibrary.printCards();
 
-	    System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\t\t3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!" + Colors.TEXT_RESET);
-	    System.out.println(Colors.TEXT_BLACK_BRIGHT + "\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" + Colors.TEXT_RESET);
+	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\t3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!" );
+	    System.out.println("\t\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" );
 
-	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT +"\t\tVocê se aproxima das cartas, pronte para o confronto.\n"+ Colors.TEXT_RESET);
-	    System.out.println(player.getName() + "\t: Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo." + Colors.TEXT_RESET);
-	    System.out.println("\tAgora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!\n" + Colors.TEXT_RESET);
+	    System.out.println("\t\tVocê se aproxima das cartas, pronte para o confronto.\n");
+	    System.out.println(player.getName() + "\t: Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo.");
+	    System.out.println("\tAgora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!\n" );
 
-	    System.out.println(Colors.TEXT_RED_BOLD_BRIGHT +"\t3 de copas: Hahaha! Achou que seria fácil, humana insolente?"+ Colors.TEXT_RESET);
-	    System.out.println(Colors.TEXT_BLACK_BRIGHT + "\t2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n"+ Colors.TEXT_RESET);
+	    System.out.println("\t3 de copas: Hahaha! Achou que seria fácil, humana insolente?");
+	    System.out.println("\t2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n");
 
-	    System.out.println(Colors.TEXT_YELLOW_BOLD_BRIGHT +"\tVocê se prepara para o combate contra as cartas da Rainha de Copas.");
-	    System.out.println("\tQue assim seja! Eu mostrarei a vocês do que sou capaz!"+ Colors.TEXT_RESET);
+	    System.out.println("\tVocê se prepara para o combate contra as cartas da Rainha de Copas.");
+	    System.out.println("\tQue assim seja! Eu mostrarei a vocês do que sou capaz!");
 
 
 	    // Criando as cartas da Rainha de Copas
