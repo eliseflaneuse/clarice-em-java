@@ -2,6 +2,8 @@ package game;
 
 import java.text.Normalizer;
 import java.util.Scanner;
+
+import game.controller.OpponentController;
 import game.model.*;
 import game.repository.*;
 import game.util.*;
@@ -57,15 +59,7 @@ public class Game implements GameRepository {
 
 		player = new Player(nomeJogador, 5, 5, 3, 0, 0, 0, 0, 0);
 
-		System.out.println("\n\n\t--- Ficha do Personagem ---");
-		System.out.println("\tNome:\t\t\t\t" + player.getName());
-		System.out.println("\t--- Distribuição de pontos nos atributos ---");
-		System.out.println("\tResponsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
-		System.out.println("\tMentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
-		System.out.println("\tProatividade:\t\t\t" + player.getProatividade());
-		System.out.println("\tOrientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
-		System.out.println("\tTrabalho em Equipe:\t\t" + player.getTrabalhoEmEquipe());
-		System.out.println("\n\n");
+		printCharacterSheet();
 
 	}
 
@@ -239,11 +233,13 @@ public class Game implements GameRepository {
 	        
 	    
 	        if (senhaDigitada.equals("vgorq")) {
-	        	 System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\t\tA porta de Opala começa a tremer e, aos poucos, se abre diante de você.");
+	        	    player.adicionarPontoTrabalhoEmEquipe();
+	        	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\t\tA porta de Opala começa a tremer e, aos poucos, se abre diante de você.");
 	                System.out.println("\t\tA luz brilhante do mundo além da porta invade o seu campo de visão.");
 	                System.out.println("\t\tVocê sente um alívio e uma gratidão imensa por ter conseguido desvendar o enigma.");
 	                System.out.println("\t\tCom um último olhar para o mundo mágico que deixou para trás, você dá um passo adiante e atravessa a porta de opala.");
-
+	                
+	                printCharacterSheet();
 	                System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\n\t\t\tFim do jogo! Você voltou para o seu mundo com mais 5 minutos!\n\n" + Colors.TEXT_RESET);
 	            } else {
 	                System.out.println("\n\t\tA porta de Opala treme, mas permanece fechada.");
@@ -264,6 +260,18 @@ public class Game implements GameRepository {
         return Normalizer.normalize(texto, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
+	
+	public void printCharacterSheet() {
+		System.out.println("\n\n\t--- Ficha do Personagem ---");
+		System.out.println("\tNome:\t\t\t\t" + player.getName());
+		System.out.println("\t--- Distribuição de pontos nos atributos ---");
+		System.out.println("\tResponsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
+		System.out.println("\tMentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
+		System.out.println("\tProatividade:\t\t\t" + player.getProatividade());
+		System.out.println("\tOrientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
+		System.out.println("\tTrabalho em Equipe:\t\t" + player.getTrabalhoEmEquipe());
+		System.out.println("\n\n");
+	}
 }
 
 /*

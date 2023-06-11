@@ -75,7 +75,10 @@ public class Player extends Character {
 		public void setTrabalhoEmEquipe(int trabalhoEmEquipe) {
 			this.trabalhoEmEquipe = trabalhoEmEquipe;
 		}
-
+		
+		public void adicionarPontoTrabalhoEmEquipe() {
+		    trabalhoEmEquipe += 1;
+		}
 
 		@Override
 		public boolean attack(Character alvo) {

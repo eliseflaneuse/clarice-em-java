@@ -33,14 +33,11 @@ public class Opponent extends Character {
 		defesaAtiva = true;
 	}
 
-	/*
-	@Override
+	
 	public void read() {
 		System.out.println("\nNome: " + getName());
-		System.out.println("Nível: " + getLevel());
-		System.out.println("Pontos de atributo: " + getAttributePoints());
 		System.out.println("Item: " + item);
 		System.out.println("Pontos de dano: " + damage);
 	}
-	*/
+	
 }
