@@ -2,35 +2,71 @@ package game.model;
 
 public abstract class Character {
 	
-	private String name;
-    private int level;
-    private int attributePoints;
-     
-	public Character(String name, int level, int attributePoints) {
-		this.name = name;
-		this.level = level; 
-		this.attributePoints = attributePoints;
+	private String nome;
+	private int vida;
+    protected boolean defesaAtiva;
+    protected int defesa;
+
+    public Character(String nome, int vida, int defesa) {
+        this.nome = nome;
+        this.vida = vida;
+        this.defesaAtiva = false;
+        this.defesa = defesa;
+    }
+
+   
+
+    public String getNome() {
+		return nome;
 	}
 
-	public String getName() {
-		return name;
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public int getLevel() {
-		return level;
+
+
+	public int getVida() {
+		return vida;
 	}
 
-	public void setLevel(int level) {
-		this.level = level;
+
+
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
 
-	public int getAttributePoints() {
-		return attributePoints;
+
+	public int getDefesa() {
+		return defesa;
 	}
 
-	public void addAttributePoints() {
-		attributePoints++;
+
+
+	public void setDefesa(int defesa) {
+		this.defesa = defesa;
 	}
-    
-	public abstract void read();
+
+
+
+	public abstract boolean atacar(Character alvo);
+
+    public abstract void defender();
+
+    public void receberDano(int dano) {
+        int danoRecebido = dano - defesa;
+        if (danoRecebido > 0) {
+            vida -= danoRecebido;
+            System.out.println(nome + " recebeu " + danoRecebido + " de dano.");
+        } else {
+            System.out.println(nome + " se defendeu totalmente.");
+        }
+
+        if (vida <= 0) {
+            System.out.println(nome + " foi derrotado.");
+        }
+    }
+	
 }
