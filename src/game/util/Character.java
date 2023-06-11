@@ -39,8 +39,7 @@ public abstract class Character {
 	}
 
 
-
-	public boolean atacar(Character alvo) {
+	public void atacar(Character alvo) {
         // Implementação do método de ataque
     }
 

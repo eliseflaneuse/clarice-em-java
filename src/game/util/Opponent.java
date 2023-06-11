@@ -19,7 +19,7 @@ public class Opponent extends Character {
     }
 
     @Override
-    public boolean atacar(Character alvo) {
+    public void atacar(Character alvo) {
         int dano = 1; // Dano do ataque do inimigo
 
         System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + dano + " de dano.");

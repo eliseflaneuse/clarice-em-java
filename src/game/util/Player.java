@@ -83,14 +83,14 @@ public class Player extends Character {
 
 
 		 @Override
-		    public boolean atacar(Character alvo) {
+		    public void atacar(Character alvo) {
 		        int dano = 1; // Dano do ataque
 
 		        System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + dano + " de dano.");
 		        alvo.receberDano(dano);
 		    }
 
-		    public boolean atacar(Opponent inimigo) {
+		    public void atacar(Opponent inimigo) {
 		        int dano = 2; // Dano do ataque específico para cartas
 
 		        System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano.");
