@@ -357,4 +357,23 @@ public class ArtLibrary {
 					+ "  \\________/");
 		}
 	
+	
+	public static void printCheshireCat(){
+	
+		System.out.println("         .\'\\   /`.");
+		System.out.println("       .'.-.`-'.-.`.");
+		System.out.println("   ..._:   .-. .-.   :_...");
+		System.out.println(" .'    '-.(o ) (o ).-'    `.");
+		System.out.println(":  _    _ _`~(_)~`_ _    _  :");
+		System.out.println(": /:   ' .-=_   _=-. `   ;\\ :");
+		System.out.println(":  :|-.._  '     `  _..-|:  :");
+		System.out.println(" :  `:| |`:-:-.-:-:'| |:'  :");
+		System.out.println("  `.   `.| | | | | |.'   .'");
+		System.out.println("    `.   `-:_| | |_:-' .'");
+		System.out.println("      `-._   ````    .-'");
+		System.out.println("          ``-------''");
+	
+		
+	}
+	
 }
