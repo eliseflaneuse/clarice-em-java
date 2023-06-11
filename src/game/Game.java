@@ -2,6 +2,7 @@ package game;
 
 import java.text.Normalizer;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 import game.controller.OpponentController;
 import game.model.*;
@@ -117,9 +118,149 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaChapeleiroLouco() {
-		System.out.println("\nVocê encontrou o Chapeleiro Louco!");
+		Story.Introduction();
 
+		ArtLibrary.printChapeleiroLouco();
+
+		Story.Introduction2();
+
+		Story.Pergunta1();
+
+		String resposta1;
+		
+		
+		resposta1 = scanner.nextLine();
+		scanner.skip("");
+		
+
+		if (resposta1.equalsIgnoreCase("tempo")) {
+			player.adicionarPontoOrientacaoAoDetalhe();
+			System.out.println("Sua orientação ao detalhe aumentou em um ponto!");
+			System.out.println("\nO taverneiro lhe responde, visivelmente alegre:");
+			System.out.println("ヽ(´▽`)/ 'HAHAHAHAHA eu sabia que você era especial, ");
+			System.out.println("muito bem, vamos continuar. Próxima pergunta:");
+		}
+		else{
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println("\n\tO taverneiro lhe responde, visivelmente desapontado:");
+			System.out.println("(´･_･`) 'Sério mesmo? Esperava mais de você, talvez");
+			System.out.println("o instinto daquela lebre esteja mesmo começando a falhar...");
+			System.out.println("Vamos para a próxima pergunta:");
+		}
+
+//		pergunta 2
+		Story.Pergunta2();
+		int resposta2 = 0;
+		int errado1 = 1;
+		do {
+			try {
+		resposta2 = scanner.nextInt();
+
+		switch (resposta2) {
+		case 1:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println("\nVamos lá, você nem está tentando, essa organização não faz sentido aqui!!");
+			errado1 = 0;
+			break;
+
+		case 2:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println(
+					"\nNananinanão, nessa organização os últimos serão os primeiros, você está me decepcionando...");
+			errado1 = 0;
+			break;
+
+		case 3:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out
+					.println("\nEu nem sequer sei o que é um Hashmap, imagino que muito menos você, pare de chutar!!");
+			errado1 = 0;
+			break;
+
+		case 4:
+			player.adicionarPontoProatividade();
+			System.out.println("\nVocê ajudou alguém que estava precisando e sua proatividade aumentou em um ponto!");
+			System.out.println(
+					"\n Hmmm... muito bem, aquele coelho realmente sabe de algo hein? Estou impressionado com você!");
+			errado1 = 0;
+			break;
+
+		default:
+			if (errado1 == 1 ) {
+				System.out
+						.println("Não ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar...");
+			}
+		}
+		;
+			} catch (InputMismatchException e) {
+				System.out.println("Epa epa epa, sem gracinhas forasteire, apenas me responda com números!");
+				scanner.nextLine();
+			}
+		} while (errado1 == 1);
+
+//		pergunta 3
+		Story.pergunta3();
+
+		int resposta3 = 0;
+		int errado2 = 1;
+		
+		do {
+			try {
+		resposta3 = scanner.nextInt();
+
+		switch (resposta3) {
+		case 1:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println("\nUm bom chute, mas ainda assim um chute, e você é ruim de mira HAHAHAH ಠ‿ಠ");
+			errado2 = 0;
+			break;
+
+		case 2:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println("\nSério mesmo? Você realmente achou que seria tão óbvio assim? ಠ_ಠ");
+			errado2 = 0;
+			break;
+
+		case 3:
+			player.adicionarPontoResponsabilidadePessoal();
+			System.out.println("\nVocê lembrou do que estudou e sua responsabilidade pessoal aumentou em um ponto!");
+			System.out.println(
+					"\nMandou bem forasteire, to gostando de ver. Hmmm, bateu uma vontade de comer um wrap. (⊙_◎)");
+			errado2 = 0;
+			break;
+
+		case 4:
+			player.decreaseLifePoints();
+			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println(
+					"\nOk, essa é engraçadinha mas não esperava que você fosse escolhê-la, e depois eu que sou o louco...");
+			errado2 = 0;
+			break;
+
+		default:
+			if (errado2 == 1) {
+				System.out
+						.println("Não ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar...");
+			}
+		}
+		;
+			}catch(InputMismatchException e) {
+				System.out.println("Epa epa epa, sem gracinhas forasteire, apenas me responda com números!");
+				scanner.nextLine();
+			};
+		}while(errado2 == 1);
+
+		Story.tchau();
+		ArtLibrary.printTaca();
+		
 		System.out.println("\nContinuando sua jornada...");
+	}
 	}
 
 	private void cenaGatoChester() {
