@@ -82,29 +82,33 @@ public class Player extends Character {
 
 
 
-		 @Override
-		    public void atacar(Character alvo) {
-		        int dano = 1; // Dano do ataque
+		@Override
+		public boolean atacar(Character alvo) {
+		    int dano = 1; // Dano do ataque
 
-		        System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + dano + " de dano.");
-		        alvo.receberDano(dano);
-		    }
+		    System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + dano + " de dano.");
+		    alvo.receberDano(dano);
 
-		    public void atacar(Opponent inimigo) {
-		        int dano = 2; // Dano do ataque específico para cartas
+		    return alvo.getVida() <= 0; // Return true if the target was defeated, false otherwise
+		}
 
-		        System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano.");
-		        inimigo.receberDano(dano);
-		    }
+		public boolean atacar(Opponent inimigo) {
+		    int dano = 2; // Dano do ataque específico para cartas
 
-		    @Override
-		    public void defender() {
-		        int defesa = 3; // Valor de defesa
+		    System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + dano + " de dano.");
+		    inimigo.receberDano(dano);
 
-		        System.out.println(getNome() + " se defendeu, reduzindo o dano recebido em " + defesa + ".");
-		        defesaAtiva = true;
-		        defesaAtual = defesa;
-		    }
+		    return inimigo.getVida() <= 0; // Return true if the opponent was defeated, false otherwise
+		}
+
+	    @Override
+	    public void defender() {
+	        int defesa = 3; // Valor de defesa
+
+	        System.out.println(getNome() + " se defendeu, reduzindo o dano recebido em " + defesa + ".");
+	        defesaAtiva = true;
+	        defesaAtual = defesa;
+	    }
 	}
 
 	

@@ -19,11 +19,13 @@ public class Opponent extends Character {
     }
 
     @Override
-    public void atacar(Character alvo) {
-        int dano = 1; // Dano do ataque do inimigo
+    public boolean atacar(Character alvo) {
+        int dano = 1; // Dano do ataque
 
         System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + dano + " de dano.");
         alvo.receberDano(dano);
+
+        return alvo.getVida() <= 0; // Return true if the target was defeated, false otherwise
     }
 
     @Override

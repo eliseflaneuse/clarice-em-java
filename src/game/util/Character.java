@@ -39,13 +39,9 @@ public abstract class Character {
 	}
 
 
-	public void atacar(Character alvo) {
-        // Implementação do método de ataque
-    }
+	public abstract boolean atacar(Character alvo);
 
-    public void defender() {
-        // Implementação do método de defesa
-    }
+    public abstract void defender();
 
     public void receberDano(int dano) {
         int danoRecebido = dano - defesaAtual;
