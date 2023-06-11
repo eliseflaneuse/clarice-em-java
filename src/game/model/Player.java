@@ -79,6 +79,22 @@ public class Player extends Character {
 		public void adicionarPontoTrabalhoEmEquipe() {
 		    trabalhoEmEquipe += 1;
 		}
+	
+		public void adicionarPontoOrientacaoAoDetalhe() {
+			orientacaoAoDetalhe += 1;
+		}
+		
+		public void adicionarPontoProatividade() {
+			proatividade += 1;
+		}
+		
+		public void adicionarPontoResponsabilidadePessoal() {
+			responsabilidadePessoal += 1;
+		}
+		
+		public void adicionarPontoMentalidadeDeCrescimento() {
+			mentalidadeDeCrescimento += 1;
+		}
 
 		@Override
 		public boolean attack(Character alvo) {
