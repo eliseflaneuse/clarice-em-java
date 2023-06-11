@@ -4,7 +4,6 @@ import java.util.Scanner;
 import jogo.util.*;
 import jogo.util.ArtLibrary;
 
-
 public class Jogo implements JogoInterface {
 	
 	Scanner scanner = new Scanner(System.in);
@@ -127,23 +126,48 @@ public class Jogo implements JogoInterface {
         
     }
 
-
     @Override
     public void jogar() {
         System.out.println("\nIniciando o jogo...");
 
-        cenaChapeleiroLouco();
-        if (player.getVida() > 0) {
-            cenaGatoChester();
-        }
-        if (player.getVida() > 0) {
-            cenaCoelhoCincoMinutos();
-        }
-        if (player.getVida() > 0) {
-            cenaCriquetRainhaCopas();
-        }
-        if (player.getVida() > 0) {
-            cenaDecifrarCodigoPortaMagica();
+        boolean continuarJogando = true;
+
+        while (continuarJogando && player.getVida() > 0) {
+            System.out.println("\n------ Menu de Cenas ------");
+            System.out.println("Escolha uma cena para jogar:");
+            System.out.println("1. Cena do Chapeleiro Louco");
+            System.out.println("2. Cena do Gato Chester/Esfinge");
+            System.out.println("3. Cena do Coelho que dá mais 5 minutos");
+            System.out.println("4. Cena do Criquet com a Rainha de Copas");
+            System.out.println("5. Cena para decifrar o código da porta mágica");
+            System.out.println("0. Voltar ao Menu Inicial");
+
+            int opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    cenaChapeleiroLouco();
+                    break;
+                case 2:
+                    cenaGatoChester();
+                    break;
+                case 3:
+                    cenaCoelhoCincoMinutos();
+                    break;
+                case 4:
+                    cenaCriquetRainhaCopas();
+                    break;
+                case 5:
+                    cenaDecifrarCodigoPortaMagica();
+                    break;
+                case 0:
+                	exibirMenu();
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+                    break;
+            }
         }
 
         if (player.getVida() > 0) {
@@ -154,7 +178,6 @@ public class Jogo implements JogoInterface {
 
         System.out.println("Fim do jogo. Obrigado por jogar!");
     }
-
 
     private void cenaChapeleiroLouco() {
         System.out.println("\nVocê encontrou o Chapeleiro Louco!");
@@ -250,10 +273,7 @@ public class Jogo implements JogoInterface {
 
     private void cenaDecifrarCodigoPortaMagica() {
         System.out.println("\nVocê encontrou uma porta mágica que requer um código para abrir!");
-    }
-
-   
-    
+    }   
     
 }
    
