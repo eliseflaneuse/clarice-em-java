@@ -53,10 +53,10 @@ public class Game implements GameRepository {
 		System.out.printf("\tInforme o nome do jogador:");
 		String nomeJogador = scanner.nextLine();
 
-		Player player = new Player(nomeJogador, 5, 5, 2, 0, 0, 0, 0);
+		player = new Player(nomeJogador, 5, 5, 2, 0, 0, 0, 0);
 
 		System.out.println("\n\n--- Ficha do Personagem ---");
-		System.out.println("Nome:\t\t\t\t" + player.getNome());
+		System.out.println("Nome:\t\t\t\t" + player.getName());
 		System.out.println("--- Distribuição de pontos nos atributos ---");
 		System.out.println("Responsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
 		System.out.println("Mentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
@@ -72,7 +72,7 @@ public class Game implements GameRepository {
 
 		boolean continuarJogando = true;
 
-		while (continuarJogando && player.getVida() > 0) {
+		while (continuarJogando && player.getLifePoints() > 0) {
 			System.out.println("\n------ Menu de Cenas ------");
 			System.out.println("Escolha uma cena para jogar:");
 			System.out.println("1. Cena do Chapeleiro Louco");
@@ -110,7 +110,7 @@ public class Game implements GameRepository {
 			}
 		}
 
-		if (player.getVida() > 0) {
+		if (player.getLifePoints() > 0) {
 			System.out.println("\nParabéns! Você completou todas as cenas e venceu o jogo!");
 		} else {
 			System.out.println("\nQue pena! Você perdeu todas as suas vidas e não conseguiu completar o jogo.");
@@ -121,82 +121,6 @@ public class Game implements GameRepository {
 
 	private void cenaChapeleiroLouco() {
 		System.out.println("\nVocê encontrou o Chapeleiro Louco!");
-
-		System.out.println("O Chapeleiro Louco começa a fazer perguntas estranhas e lógicas ao mesmo tempo...");
-
-		System.out.println("\n--- Perguntas Lógicas ---");
-		System.out.println("1. Bruxas são queimadas.");
-		System.out.println("   Madeira é queimada.");
-		System.out.println("   Portanto, bruxas são feitas de madeira.");
-		System.out.print("   Verdadeiro (V) ou Falso (F)? ");
-		String resposta1 = scanner.nextLine();
-
-		System.out.println("\n2. Madeira flutua na água.");
-		System.out.println("   Patos flutuam na água.");
-		System.out.println("   Portanto, se uma mulher pesar tanto quanto um pato ela é feita de madeira.");
-		System.out.print("   Verdadeiro (V) ou Falso (F)? ");
-		String resposta2 = scanner.nextLine();
-
-		System.out.println("\n--- Perguntas Absurdas ---");
-		System.out.println("1. Por que o pássaro voa para o sul no inverno?");
-		System.out.println("   a) Porque é mais quente no sul.");
-		System.out.println("   b) Porque ele esqueceu o guarda-chuva em casa.");
-		System.out.println("   c) Porque é um pássaro migratório.");
-		System.out.print("   Escolha a opção correta (a, b ou c): ");
-		String resposta3 = scanner.nextLine();
-
-		System.out.println("\n2. O que acontece quando você divide por zero em programação Java?");
-		System.out.println("   a) O programa trava e exibe uma mensagem de erro.");
-		System.out.println("   b) O resultado é infinito.");
-		System.out.println("   c) O universo entra em colapso.");
-		System.out.print("   Escolha a opção correta (a, b ou c): ");
-		String resposta4 = scanner.nextLine();
-
-		// Verificação das respostas
-		int vida = player.getVida();
-
-		if (resposta1.equalsIgnoreCase("V")) {
-			System.out.println("Resposta correta! Bruxas são feitas de madeira.");
-		} else {
-			System.out.println("Resposta incorreta! Bruxas são feitas de madeira.");
-			vida--;
-		}
-
-		if (resposta2.equalsIgnoreCase("V")) {
-			System.out.println("Resposta correta! Uma mulher é feita de madeira para boiar na água.");
-		} else {
-			System.out.println("Resposta incorreta!");
-			vida--;
-		}
-
-		if (resposta3.equalsIgnoreCase("b")) {
-			System.out.println(
-					"Resposta correta! O pássaro voa para o sul no inverno porque ele esqueceu o guarda-chuva em casa.");
-		} else {
-			System.out.println(
-					"Resposta incorreta! O pássaro voa para o sul no inverno porque ele esqueceu o guarda-chuva em casa.");
-			vida--;
-		}
-
-		if (resposta4.equalsIgnoreCase("a")) {
-			System.out.println(
-					"Resposta correta! Quando você divide por zero em programação Java, o programa trava e exibe uma mensagem de erro.");
-		} else {
-			System.out.println(
-					"Resposta incorreta! Quando você divide por zero em programação Java, o programa trava e exibe uma mensagem de erro.");
-			vida--;
-		}
-
-		player.setVida(vida);
-
-		System.out.println("\n--- Resultado ---");
-		System.out.println("Pontos de vida: " + vida);
-
-		// Verifica se o jogador ainda tem pontos de vida
-		if (vida <= 0) {
-			System.out.println("Você perdeu todas as suas vidas. Fim de jogo!");
-			return;
-		}
 
 		System.out.println("\nContinuando sua jornada...");
 	}
@@ -216,16 +140,30 @@ public class Game implements GameRepository {
 
 	private void cenaDecifrarCodigoPortaMagica() {
 	    System.out.println("\n--- Cena da Porta Mágica ---");
-	    System.out.println("Você chegou à misteriosa Porta Mágica, guardada por duas cartas da Rainha de Copas!");
+	    System.out.println("Você chegou à misteriosa Porta Mágica, guardada por duas cartas da Rainha de Copas!\n");
+
+	    System.out.println("3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!");
+	    System.out.println("2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n");
+
+	    System.out.println("Você se aproxima das cartas, pronta para o confronto.");
+	    System.out.println(player.getName() + ": Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo.");
+	    System.out.println("Agora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!");
+
+	    System.out.println("3 de copas: Hahaha! Achou que seria fácil, humana insolente?");
+	    System.out.println("2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n");
+
+	    System.out.println("Você se prepara para o combate contra as cartas da Rainha de Copas.");
+	    System.out.println("Então seja! Eu mostrarei a vocês do que sou capaz!");
+
 
 	    // Criando as cartas da Rainha de Copas
-	    Opponent carta1 = new Opponent("3 de paus", 5, "copo");
-	    Opponent carta2 = new Opponent("2 de copas", 5, "copo");
+	    Opponent carta1 = new Opponent("3 de copas", 4, 2, 1 , "copo");
+	    Opponent carta2 = new Opponent("2 de paus", 4, 2, 1 , "copo");
 
 	    boolean vitoria = false;
 	    int currentPlayerAttack = 1;
 
-	    while (!vitoria && player.getVida() > 0) {
+	    while (!vitoria && player.getLifePoints() > 0) {
 	        System.out.println("\nOpções:");
 	        System.out.println("1. Atacar a primeira carta");
 	        System.out.println("2. Atacar a segunda carta");
@@ -235,28 +173,28 @@ public class Game implements GameRepository {
 	        scanner.nextLine();
 
 	        if (opcao == 3) {
-	            player.defender();
+	            player.shield();
 	            System.out.println("Você se defendeu dos ataques das cartas!");
-	            carta1.atacar(player);
-	            carta2.atacar(player);
+	            carta1.attack(player);
+	            carta2.attack(player);
 	            currentPlayerAttack = 1; // Reset player's attack to start next round
 	        } else if (opcao == 1 || opcao == 2) {
 	            Opponent currentCard = (opcao == 1) ? carta1 : carta2;
-	            player.atacar(currentCard);
+	            player.attack(currentCard);
 	            currentPlayerAttack = 2; // Player's next attack will be on the other card
 
-	            if (currentCard.getVida() <= 0) {
-	                System.out.println("Você derrotou a carta " + currentCard.getNome() + " da Rainha de Copas!");
+	            if (currentCard.getLifePoints() <= 0) {
+	                System.out.println("Você derrotou a carta " + currentCard.getName() + " da Rainha de Copas!");
 
 	                Opponent remainingCard = (opcao == 1) ? carta2 : carta1;
-	                if (player.atacar(remainingCard)) {
-	                    System.out.println("Você derrotou a carta " + remainingCard.getNome() + " da Rainha de Copas!");
+	                if (player.attack(remainingCard)) {
+	                    System.out.println("Você derrotou a carta " + remainingCard.getName() + " da Rainha de Copas!");
 	                    vitoria = true;
 	                } else {
-	                    System.out.println("Você precisa derrotar a carta " + remainingCard.getNome() + " para abrir a porta.");
+	                    System.out.println("Você precisa derrotar a carta " + remainingCard.getName() + " para abrir a porta.");
 	                }
 	            } else {
-	                System.out.println("A carta " + currentCard.getNome() + " contra-atacou! Cuide da sua vida!");
+	                System.out.println("A carta " + currentCard.getName() + " contra-atacou! Cuide da sua vida!");
 	            }
 	        } else {
 	            System.out.println("Opção inválida! Tente novamente.");

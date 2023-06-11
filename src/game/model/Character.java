@@ -18,25 +18,25 @@ public abstract class Character {
 
    
 
-    public String getNome() {
+    public String getName() {
 		return name;
 	}
 
 
 
-	public void setNome(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
 
 
-	public int getVida() {
+	public int getLifePoints() {
 		return lifePoints;
 	}
 
 
 
-	public void setVida(int lifePoints) {
+	public void setLifePoints(int lifePoints) {
 		this.lifePoints = lifePoints;
 	}
 

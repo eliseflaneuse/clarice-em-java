@@ -20,16 +20,16 @@ public class Opponent extends Character {
 	@Override
 	public boolean attack(Character alvo) {
 
-		System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + damage + " de dano.");
+		System.out.println(getName() + " atacou " + alvo.getName() + " causando " + damage + " de dano.");
 		alvo.receberDano(damage);
 
-		return alvo.getVida() <= 0; // Return true if the target was defeated, false otherwise
+		return alvo.getLifePoints() <= 0; // Return true if the target was defeated, false otherwise
 	}
 
 	@Override
 	public void shield() {
 
-		System.out.println(getNome() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
+		System.out.println(getName() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
 		defesaAtiva = true;
 	}
 

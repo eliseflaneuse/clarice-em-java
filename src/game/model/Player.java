@@ -67,24 +67,24 @@ public class Player extends Character {
 		@Override
 		public boolean attack(Character alvo) {
 			
-		    System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + damage + " de damage.");
+		    System.out.println(getName() + " atacou " + alvo.getName() + " causando " + damage + " de dano.");
 		    alvo.receberDano(damage);
 
-		    return alvo.getVida() <= 0; // Return true if the target was defeated, false otherwise
+		    return alvo.getLifePoints() <= 0; // Return true if the target was defeated, false otherwise
 		}
 
 		public boolean attack(Opponent inimigo) {
 
-		    System.out.println(getNome() + " atacou " + inimigo.getNome() + " causando " + damage + " de damage.");
+		    System.out.println(getName() + " atacou " + inimigo.getName() + " causando " + damage + " de dano.");
 		    inimigo.receberDano(damage);
 
-		    return inimigo.getVida() <= 0; // Return true if the opponent was defeated, false otherwise
+		    return inimigo.getLifePoints() <= 0; // Return true if the opponent was defeated, false otherwise
 		}
 
 	    @Override
 	    public void shield() {
 
-	        System.out.println(getNome() + " se defendeu, reduzindo o damage recebido em " + defense + ".");
+	        System.out.println(getName() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
 	        defesaAtiva = true;
 	    }
 	/*	
