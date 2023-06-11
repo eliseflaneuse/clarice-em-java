@@ -3,12 +3,10 @@ package game.model;
 public class Opponent extends Character {
 
 	private String item;
-	private int damage;
 
-	public Opponent(String name, int level, int attributePoints, String item, int damage) {
-		super(name, level, attributePoints);
+	public Opponent(String name, int lifePoints, int defense, int damage, String item) {
+		super(name, lifePoints, defense, damage);
 		this.item = item;
-		this.damage = damage;
 	}
 
 	public String getItem() {
@@ -19,14 +17,23 @@ public class Opponent extends Character {
 		this.item = item;
 	}
 
-	public int getDamage() {
-		return damage;
+	@Override
+	public boolean attack(Character alvo) {
+
+		System.out.println(getNome() + " atacou " + alvo.getNome() + " causando " + damage + " de dano.");
+		alvo.receberDano(damage);
+
+		return alvo.getVida() <= 0; // Return true if the target was defeated, false otherwise
 	}
 
-	public void setDamage(int damage) {
-		this.damage = damage;
+	@Override
+	public void shield() {
+
+		System.out.println(getNome() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
+		defesaAtiva = true;
 	}
 
+	/*
 	@Override
 	public void read() {
 		System.out.println("\nNome: " + getName());
@@ -35,4 +42,5 @@ public class Opponent extends Character {
 		System.out.println("Item: " + item);
 		System.out.println("Pontos de dano: " + damage);
 	}
+	*/
 }

@@ -1,6 +1,6 @@
-package game.util;
+package game.repository;
 
-public interface JogoInterface {
+public interface GameRepository {
     void iniciarJogo();
     void exibirMenu();
     void jogar();

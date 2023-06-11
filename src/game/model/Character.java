@@ -2,70 +2,84 @@ package game.model;
 
 public abstract class Character {
 	
-	private String nome;
-	private int vida;
+	private String name;
+	private int lifePoints;
     protected boolean defesaAtiva;
-    protected int defesa;
+    protected int defense;
+    protected int damage;
 
-    public Character(String nome, int vida, int defesa) {
-        this.nome = nome;
-        this.vida = vida;
+    public Character(String name, int lifePoints, int defense, int damage) {
+        this.name = name;
+        this.lifePoints = lifePoints;
         this.defesaAtiva = false;
-        this.defesa = defesa;
+        this.defense = defense;
+        this.damage = damage;
     }
 
    
 
     public String getNome() {
-		return nome;
+		return name;
 	}
 
 
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String name) {
+		this.name = name;
 	}
 
 
 
 	public int getVida() {
-		return vida;
+		return lifePoints;
 	}
 
 
 
-	public void setVida(int vida) {
-		this.vida = vida;
+	public void setVida(int lifePoints) {
+		this.lifePoints = lifePoints;
 	}
 
 
-	public int getDefesa() {
-		return defesa;
-	}
-
-
-
-	public void setDefesa(int defesa) {
-		this.defesa = defesa;
+	public int getDefense() {
+		return defense;
 	}
 
 
 
-	public abstract boolean atacar(Character alvo);
+	public void setDefense(int defense) {
+		this.defense = defense;
+	}
 
-    public abstract void defender();
 
-    public void receberDano(int dano) {
-        int danoRecebido = dano - defesa;
+
+	public int getDamage() {
+		return damage;
+	}
+
+
+
+	public void setDamage(int damage) {
+		this.damage = damage;
+	}
+
+
+
+	public abstract boolean attack(Character alvo);
+
+    public abstract void shield();
+
+    public void receberDano(int damage) {
+        int danoRecebido = damage - defense;
         if (danoRecebido > 0) {
-            vida -= danoRecebido;
-            System.out.println(nome + " recebeu " + danoRecebido + " de dano.");
+            lifePoints -= danoRecebido;
+            System.out.println(name + " recebeu " + danoRecebido + " de dano.");
         } else {
-            System.out.println(nome + " se defendeu totalmente.");
+            System.out.println(name + " se defendeu totalmente.");
         }
 
-        if (vida <= 0) {
-            System.out.println(nome + " foi derrotado.");
+        if (lifePoints <= 0) {
+            System.out.println(name + " foi derrotado.");
         }
     }
 	

@@ -1,10 +1,11 @@
 package game;
 
 import java.util.Scanner;
-
+import game.model.*;
+import game.repository.*;
 import game.util.*;
 
-public class Game implements JogoInterface {
+public class Game implements GameRepository {
 
 	Scanner scanner = new Scanner(System.in);
 
@@ -52,14 +53,7 @@ public class Game implements JogoInterface {
 		System.out.printf("\tInforme o nome do jogador:");
 		String nomeJogador = scanner.nextLine();
 
-		int pontosRestantes = 10;
-		int responsabilidadePessoal = 0;
-		int mentalidadeDeCrescimento = 0;
-		int proatividade = 0;
-		int orientacaoAoDetalhe = 0;
-
-		player = new Player(nomeJogador, 100, 0, responsabilidadePessoal, mentalidadeDeCrescimento, proatividade,
-				orientacaoAoDetalhe);
+		Player player = new Player(nomeJogador, 5, 5, 2, 0, 0, 0, 0);
 
 		System.out.println("\n\n--- Ficha do Personagem ---");
 		System.out.println("Nome:\t\t\t\t" + player.getNome());
@@ -69,56 +63,6 @@ public class Game implements JogoInterface {
 		System.out.println("Proatividade:\t\t\t" + player.getProatividade());
 		System.out.println("Orientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
 		System.out.println("\n\n\n");
-
-		/*
-		 * Se a gente quiser que o jogador distribua os pontos:
-		 * 
-		 * 
-		 * System.out.println("\nDistribua 10 pontos nos atributos:");
-		 * 
-		 * while (pontosRestantes > 0) { System.out.print("Responsabilidade Pessoal (" +
-		 * pontosRestantes + " pontos restantes): "); int pontosResponsabilidade =
-		 * scanner.nextInt(); scanner.nextLine();
-		 * 
-		 * if (pontosResponsabilidade > pontosRestantes) { System.out.
-		 * println("Você não pode distribuir mais pontos do que os restantes. Tente novamente."
-		 * ); continue; }
-		 * 
-		 * responsabilidadePessoal += pontosResponsabilidade; pontosRestantes -=
-		 * pontosResponsabilidade;
-		 * 
-		 * System.out.print("Mentalidade de Crescimento (" + pontosRestantes +
-		 * " pontos restantes): "); int pontosMentalidade = scanner.nextInt();
-		 * scanner.nextLine();
-		 * 
-		 * if (pontosMentalidade > pontosRestantes) { System.out.
-		 * println("Você não pode distribuir mais pontos do que os restantes. Tente novamente."
-		 * ); continue; }
-		 * 
-		 * mentalidadeDeCrescimento += pontosMentalidade; pontosRestantes -=
-		 * pontosMentalidade;
-		 * 
-		 * System.out.print("Proatividade (" + pontosRestantes +
-		 * " pontos restantes): "); int pontosProatividade = scanner.nextInt();
-		 * scanner.nextLine();
-		 * 
-		 * if (pontosProatividade > pontosRestantes) { System.out.
-		 * println("Você não pode distribuir mais pontos do que os restantes. Tente novamente."
-		 * ); continue; }
-		 * 
-		 * proatividade += pontosProatividade; pontosRestantes -= pontosProatividade;
-		 * 
-		 * System.out.print("Orientação ao Detalhe (" + pontosRestantes +
-		 * " pontos restantes): "); int pontosOrientacao = scanner.nextInt();
-		 * scanner.nextLine();
-		 * 
-		 * if (pontosOrientacao > pontosRestantes) { System.out.
-		 * println("Você não pode distribuir mais pontos do que os restantes. Se quiser fazer outra distribuição reinicie o jogo."
-		 * ); continue; }
-		 * 
-		 * orientacaoAoDetalhe += pontosOrientacao; pontosRestantes -= pontosOrientacao;
-		 * }
-		 */
 
 	}
 
