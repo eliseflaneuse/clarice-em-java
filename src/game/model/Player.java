@@ -1,20 +1,23 @@
 package game.model;
 
 public class Player extends Character {
-
+		
+	   
 	   private int responsabilidadePessoal;
 	   private int mentalidadeDeCrescimento;
 	   private int proatividade;
 	   private int orientacaoAoDetalhe; //Le
+	   private int trabalhoEmEquipe;
 	   
 		   
 	  public Player(String name, int lifePoints, int defense, int damage, int responsabilidadePessoal,
-				int mentalidadeDeCrescimento, int proatividade, int orientacaoAoDetalhe) {
+				int mentalidadeDeCrescimento, int proatividade, int orientacaoAoDetalhe, int trabalhoEmEquipe) {
 			super(name, lifePoints, defense, damage);
 			this.responsabilidadePessoal = responsabilidadePessoal;
 			this.mentalidadeDeCrescimento = mentalidadeDeCrescimento;
 			this.proatividade = proatividade;
 			this.orientacaoAoDetalhe = orientacaoAoDetalhe;
+			this.trabalhoEmEquipe = trabalhoEmEquipe;
 		}
 
 
@@ -63,6 +66,16 @@ public class Player extends Character {
 		public void setOrientacaoAoDetalhe(int orientacaoAoDetalhe) {
 			this.orientacaoAoDetalhe = orientacaoAoDetalhe;
 		}
+
+		public int getTrabalhoEmEquipe() {
+			return trabalhoEmEquipe;
+		}
+
+
+		public void setTrabalhoEmEquipe(int trabalhoEmEquipe) {
+			this.trabalhoEmEquipe = trabalhoEmEquipe;
+		}
+
 
 		@Override
 		public boolean attack(Character alvo) {
