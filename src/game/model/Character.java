@@ -40,6 +40,9 @@ public abstract class Character {
 		this.lifePoints = lifePoints;
 	}
 
+	public void decreaseLifePoints() {
+		lifePoints -= 1;
+	}
 
 	public int getDefense() {
 		return defense;
