@@ -1,71 +1,88 @@
 package jogo.util;
 
-public class Player extends Personagem {
-	
-	
-	package jogo.util;
 
-	public class Player extends Personagem {
+public class Player extends Personagem {
 		
-	    private int attributePoints;
-	    private int responsabilidadePessoal;
-	    private int mentalidadeDeCrescimento;
-	    private int proatividade;
-	    private int orientacaoAoDetalhe; //Le
+	   private int attributePoints;
+	   private int responsabilidadePessoal;
+	   private int mentalidadeDeCrescimento;
+	   private int proatividade;
+	   private int orientacaoAoDetalhe; //Le
 
 
 	    public Player(String nome, int vida, int attributePoints, int responsabilidadePessoal, int mentalidadeDeCrescimento,
-				int proatividade, int orientacaoAoDetalhe) {
-			super(nome, vida);
+			int proatividade, int orientacaoAoDetalhe) {
+		super(nome, vida);
+		this.attributePoints = attributePoints;
+		this.responsabilidadePessoal = responsabilidadePessoal;
+		this.mentalidadeDeCrescimento = mentalidadeDeCrescimento;
+		this.proatividade = proatividade;
+		this.orientacaoAoDetalhe = orientacaoAoDetalhe;
+	}
+	    
+	    
+
+		public int getAttributePoints() {
+			return attributePoints;
+		}
+
+
+
+		public void setAttributePoints(int attributePoints) {
 			this.attributePoints = attributePoints;
+		}
+
+
+
+		public int getResponsabilidadePessoal() {
+			return responsabilidadePessoal;
+		}
+
+
+
+		public void setResponsabilidadePessoal(int responsabilidadePessoal) {
 			this.responsabilidadePessoal = responsabilidadePessoal;
+		}
+
+
+
+		public int getMentalidadeDeCrescimento() {
+			return mentalidadeDeCrescimento;
+		}
+
+
+
+		public void setMentalidadeDeCrescimento(int mentalidadeDeCrescimento) {
 			this.mentalidadeDeCrescimento = mentalidadeDeCrescimento;
+		}
+
+
+
+		public int getProatividade() {
+			return proatividade;
+		}
+
+
+
+		public void setProatividade(int proatividade) {
 			this.proatividade = proatividade;
+		}
+
+
+
+		public int getOrientacaoAoDetalhe() {
+			return orientacaoAoDetalhe;
+		}
+
+
+
+		public void setOrientacaoAoDetalhe(int orientacaoAoDetalhe) {
 			this.orientacaoAoDetalhe = orientacaoAoDetalhe;
 		}
 
 
-	    public int getAttributePoints() {
-	        return attributePoints;
-	    }
 
-	    public void setAttributePoints(int attributePoints) {
-	        this.attributePoints = attributePoints;
-	    }
-
-	    public int getResponsabilidadePessoal() {
-	        return responsabilidadePessoal;
-	    }
-
-	    public void setResponsabilidadePessoal(int responsabilidadePessoal) {
-	        this.responsabilidadePessoal = responsabilidadePessoal;
-	    }
-
-	    public int getMentalidadeDeCrescimento() {
-	        return mentalidadeDeCrescimento;
-	    }
-
-	    public void setMentalidadeDeCrescimento(int mentalidadeDeCrescimento) {
-	        this.mentalidadeDeCrescimento = mentalidadeDeCrescimento;
-	    }
-
-	    public int getProatividade() {
-	        return proatividade;
-	    }
-
-	    public void setProatividade(int proatividade) {
-	        this.proatividade = proatividade;
-	    }
-
-	    public int getOrientacaoAoDetalhe() {
-	        return orientacaoAoDetalhe;
-	    }
-
-	    public void setOrientacaoAoDetalhe(int orientacaoAoDetalhe) {
-	        this.orientacaoAoDetalhe = orientacaoAoDetalhe;
-	    }
-
-	    @Override
+		@Override
 	    public void atacar(Personagem alvo) {
 	       
 	    }
@@ -151,4 +168,4 @@ public class Player extends Personagem {
         lifePoints++;
     }
     */
-}
+

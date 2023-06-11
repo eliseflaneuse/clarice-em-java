@@ -2,7 +2,22 @@ package jogo.util;
 
 public class ArtLibrary {
 	
-	// printNomeDaCena 
+	
+	public static void printWelcomeMessage() {
+	       
+        System.out.println("==============================================================================================");
+
+        System.out.println(" ____  _            _                                ___                  _                 _ ");
+        System.out.println("/   _\\| |          (_)                              |_  |                | |               | |");
+        System.out.println("| /  \\| | __ _ _ __ _  ___ ___    ___   _ __ ___      | | __ ___   ____ _| | __ _ _ __   __| |");
+        System.out.println("| |   | |/ _` | '__| |/ __/ _ \\  / _ ` | '_ ` _ \\     | |/ _` \\ \\ / / _` | |/ _` | '_ \\ / _` |");
+        System.out.println("| \\__/| | (_| | |  | | (_|  __/ |  _ /  | | | | | /\\__/ | (_| |\\ V / (_| | | (_| | | | | (_| |");
+        System.out.println(" \\____|_|\\__,_|_|  |_|\\___\\___|  \\___|  | |_| |_| \\____/ \\__,_| \\_/ \\__,_|_|\\__,_|_| |_|\\__,_|");
+        System.out.println("                                                                                                         ");
+        
+        System.out.println("==============================================================================================\n");
+    }
+	
 	public static void printMonteJavaArt() {
         System.out.println("                                                  /\\");
         System.out.println("                                             /\\  //\\\\");

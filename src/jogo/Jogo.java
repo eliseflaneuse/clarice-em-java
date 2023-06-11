@@ -1,88 +1,20 @@
 package jogo;
 
 import java.util.Scanner;
-
+import jogo.util.*;
 import jogo.util.ArtLibrary;
-import jogo.util.Jogo;
-import jogo.util.Player;
 
-public class Jogo implements JogoInterface{
-	private Scanner scanner;
+
+public class Jogo implements JogoInterface {
+	
+	Scanner scanner = new Scanner(System.in);
+	
+	 public static void main(String[] args) {
+	        Jogo jogo = new Jogo();
+	        jogo.exibirMenu();
+	    }
     private Player player;
-
-    public Jogo() {
-        scanner = new Scanner(System.in);
-    }
-
-    @Override
-    public void iniciarJogo() {
-        System.out.println("Bem-vindo ao Clarice em Javaland!");
-        System.out.println("Informe o nome do jogador:");
-        String nomeJogador = scanner.nextLine();
-        player = new Player(nomeJogador, 3, 0, 0, 0, 0, 0); // Exemplo: atributos iniciais zerados
-
-        distributeAttributePoints(player, scanner);
-    }
-
-    private static void distributeAttributePoints(Player player, Scanner scanner) {
-        int remainingPoints = 10;
-
-        System.out.println("\n--- Distribua os Pontos de Atributo ---");
-
-        while (remainingPoints > 0) {
-            System.out.println("Pontos restantes: " + remainingPoints);
-            System.out.println("1. Responsabilidade Pessoal");
-            System.out.println("2. Mentalidade de Crescimento");
-            System.out.println("3. Proatividade");
-            System.out.println("4. Orientação ao Detalhe");
-            System.out.print("Escolha um atributo para distribuir os pontos (1-4): ");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine(); 
-
-            if (choice < 1 || choice > 4) {
-                System.out.println("Escolha inválida. Por favor, escolha novamente.");
-                continue;
-            }
-
-            System.out.print("Informe a quantidade de pontos a ser alocada: ");
-            int points = scanner.nextInt();
-            scanner.nextLine(); 
-
-            if (points < 0 || points > remainingPoints) {
-                System.out.println("Quantidade inválida de pontos. Por favor, escolha novamente.");
-                continue;
-            }
-
-            switch (choice) {
-                case 1:
-                    player.setResponsabilidadePessoal(points);
-                    break;
-                case 2:
-                    player.setMentalidadeDeCrescimento(points);
-                    break;
-                case 3:
-                    player.setProatividade(points);
-                    break;
-                case 4:
-                    player.setOrientacaoAoDetalhe(points);
-                    break;
-            }
-
-            remainingPoints -= points;
-        }
-
-        System.out.println("\n\n--- Ficha do Personagem ---");
-        System.out.println("Nome:\t\t\t\t" + player.getNome());
-        System.out.println("--- Distribuição de pontos nos atributos ---");
-        System.out.println("Responsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
-        System.out.println("Mentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
-        System.out.println("Proatividade:\t\t\t" + player.getProatividade());
-        System.out.println("Orientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
-        System.out.println("\n\n\n");
-    }
-
-
+    
     @Override
     public void exibirMenu() {
         boolean sair = false;
@@ -110,6 +42,91 @@ public class Jogo implements JogoInterface{
             }
         }
     }
+
+    @Override
+    public void iniciarJogo() {
+    	
+    	ArtLibrary.printWelcomeMessage();
+    	ArtLibrary.printMonteJavaArt();
+        
+        System.out.printf("\tInforme o nome do jogador:");
+        String nomeJogador = scanner.nextLine();
+
+        int pontosRestantes = 10;
+        int responsabilidadePessoal = 0;
+        int mentalidadeDeCrescimento = 0;
+        int proatividade = 0;
+        int orientacaoAoDetalhe = 0;
+
+        player = new Player(nomeJogador, 100, 0, responsabilidadePessoal, mentalidadeDeCrescimento, proatividade, orientacaoAoDetalhe);
+        
+        System.out.println("\n\n--- Ficha do Personagem ---");
+        System.out.println("Nome:\t\t\t\t" + player.getNome());
+        System.out.println("--- Distribuição de pontos nos atributos ---");
+        System.out.println("Responsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
+        System.out.println("Mentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
+        System.out.println("Proatividade:\t\t\t" + player.getProatividade());
+        System.out.println("Orientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
+        System.out.println("\n\n\n");
+        
+        /* 
+         * Se a gente quiser que o jogador distribua os pontos: 
+         * 
+         * 
+        System.out.println("\nDistribua 10 pontos nos atributos:");
+
+        while (pontosRestantes > 0) {
+            System.out.print("Responsabilidade Pessoal (" + pontosRestantes + " pontos restantes): ");
+            int pontosResponsabilidade = scanner.nextInt();
+            scanner.nextLine();
+
+            if (pontosResponsabilidade > pontosRestantes) {
+                System.out.println("Você não pode distribuir mais pontos do que os restantes. Tente novamente.");
+                continue;
+            }
+
+            responsabilidadePessoal += pontosResponsabilidade;
+            pontosRestantes -= pontosResponsabilidade;
+
+            System.out.print("Mentalidade de Crescimento (" + pontosRestantes + " pontos restantes): ");
+            int pontosMentalidade = scanner.nextInt();
+            scanner.nextLine();
+
+            if (pontosMentalidade > pontosRestantes) {
+                System.out.println("Você não pode distribuir mais pontos do que os restantes. Tente novamente.");
+                continue;
+            }
+
+            mentalidadeDeCrescimento += pontosMentalidade;
+            pontosRestantes -= pontosMentalidade;
+
+            System.out.print("Proatividade (" + pontosRestantes + " pontos restantes): ");
+            int pontosProatividade = scanner.nextInt();
+            scanner.nextLine();
+
+            if (pontosProatividade > pontosRestantes) {
+                System.out.println("Você não pode distribuir mais pontos do que os restantes. Tente novamente.");
+                continue;
+            }
+
+            proatividade += pontosProatividade;
+            pontosRestantes -= pontosProatividade;
+
+            System.out.print("Orientação ao Detalhe (" + pontosRestantes + " pontos restantes): ");
+            int pontosOrientacao = scanner.nextInt();
+            scanner.nextLine();
+
+            if (pontosOrientacao > pontosRestantes) {
+                System.out.println("Você não pode distribuir mais pontos do que os restantes. Se quiser fazer outra distribuição reinicie o jogo.");
+                continue;
+            }
+
+            orientacaoAoDetalhe += pontosOrientacao;
+            pontosRestantes -= pontosOrientacao;
+        } */
+        
+    }
+
 
     @Override
     public void jogar() {
@@ -235,143 +252,8 @@ public class Jogo implements JogoInterface{
         System.out.println("\nVocê encontrou uma porta mágica que requer um código para abrir!");
     }
 
-    public static void main(String[] args) {
-        Jogo jogo = new Jogo();
-        jogo.exibirMenu();
-    }
-	
-	
-	
-	//public static void main(String[] args) {
-		
-		
-		/*
-		 * 
-		 * 
-		Scanner scanner = new Scanner(System.in);
-		
-		printWelcomeMessage();
-		ArtLibrary.printMonteJavaArt();
-		
-		// Create the player character
-		   
-        System.out.print("\n\tDigite o nome da sua personagem: ");
-        String playerName = scanner.nextLine();
-        
-        Player player = new Player(playerName);
-        
-        System.out.println("--- Ficha do Personagem ---");
-        System.out.println("Nome: " + player.getName());
-		System.out.println("Level: " + player.getLevel());
-		
-		// Distribute attribute points
-        distributeAttributePoints(player, scanner);
-        
-        //Start the game
-        
-        //Display the story = sysout with drawing + story 
-        //Início da Jornada do Herói - Gandalf asks Frodo - Do you want to acompany me on an adventure? y/n
-        // Grande if
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-        scanner.close();
-	}
-	
-	
-	private static void distributeAttributePoints(Player player, Scanner scanner) {
-        int remainingPoints = 10;
-
-        System.out.println("--- Distribua os Pontos de Atributo ---");
-
-        while (remainingPoints > 0) {
-            System.out.println("Pontos restantes: " + remainingPoints);
-            System.out.println("1. Responsabilidade Pessoal");
-            System.out.println("2. Mentalidade de Crescimento");
-            System.out.println("3. Proatividade");
-            System.out.println("4. Orientação ao Detalhe");
-            System.out.print("Escolha um atributo para distribuir os pontos (1-4): ");
-
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
-
-            if (choice < 1 || choice > 4) {
-                System.out.println("Invalid choice. Please choose again.");
-                continue;
-            }
-
-            System.out.print("Enter the number of points to allocate: ");
-            int points = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
-
-            if (points < 0 || points > remainingPoints) {
-                System.out.println("Invalid number of points. Please choose again.");
-                continue;
-            }
-
-            switch (choice) {
-                case 1:
-                    player.setResponsabilidadePessoal(points);
-                    break;
-                case 2:
-                    player.setMentalidadeDeCrescimento(points);
-                    break;
-                case 3:
-                    player.setProatividade(points);
-                    break;
-                case 4:
-                    player.setOrientacaoAoDetalhe(points);
-                    break;
-            }
-
-            remainingPoints -= points;
-        }
-        
-        System.out.println("\n\n--- Character Sheet ---");
-        System.out.println("Nome:\t\t\t\t" + player.getName());
-        System.out.println("--- Distribua os pontos nos atributos ---");
-        System.out.println("Responsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
-        System.out.println("Mentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
-        System.out.println("Proatividade:\t\t\t" + player.getProatividade());
-        System.out.println("Orientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
-        System.out.println("\n\n\n");
-    }
-	
-	public static void printWelcomeMessage() {
-        String welcomeMessage = "Bem-vindo ao jogo Monte Java!";
-        int messageLength = welcomeMessage.length();
-
-        // Print top border
-        System.out.println("==============================================================================================");
-
-        // Print message with padding
-        //System.out.printf("%" + ((70 - messageLength) / 2 + messageLength) + "s%n", welcomeMessage);
-        System.out.println(" ____  _            _                                ___                  _                 _ ");
-        System.out.println("/   _\\| |          (_)                              |_  |                | |               | |");
-        System.out.println("| /  \\| | __ _ _ __ _  ___ ___    ___   _ __ ___      | | __ ___   ____ _| | __ _ _ __   __| |");
-        System.out.println("| |   | |/ _` | '__| |/ __/ _ \\  / _ ` | '_ ` _ \\     | |/ _` \\ \\ / / _` | |/ _` | '_ \\ / _` |");
-        System.out.println("| \\__/| | (_| | |  | | (_|  __/ |  _ /  | | | | | /\\__/ | (_| |\\ V / (_| | | (_| | | | | (_| |");
-        System.out.println(" \\____|_|\\__,_|_|  |_|\\___\\___|  \\___|  | |_| |_| \\____/ \\__,_| \\_/ \\__,_|_|\\__,_|_| |_|\\__,_|");
-        System.out.println("                                                                                                         ");
-        
-        // Print bottom border
-        System.out.println("==============================================================================================\n");
+   
     
-    */
-    }
+    
 }
+   
