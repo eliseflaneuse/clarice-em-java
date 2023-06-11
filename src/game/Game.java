@@ -264,7 +264,67 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaGatoChester() {
-		System.out.println("\nVocê encontrou o Gato Chester/Esfinge!");
+			
+		System.out.println(" Você está perdide no país das maravilhas e encontra-se em um cruzamento de caminhos.");
+		System.out.println(" Está confuse e não sabe qual direção tomar. ");
+		System.out.println(" De repente, o gato sorridente aparece flutuando no ar, ");
+		System.out.println(" com seu corpo desaparecendo aos poucos, deixando apenas seu sorriso largo visível.\n");
+
+		System.out.println(" Ei, você aí? 'Decifra-me ou te devoro!'\n");
+
+		ArtLibrary.printCheshireCat();
+		
+		System.out.println(" Vou fazer algumas perguntas para você.\n");
+		System.out.println(" O que todo mundo sempre está correndo para pegar, mas nunca consegue segurar?\n");
+		System.out.println(" Responda com a primeira letra.");
+		char respostaEnigma = scanner.next().charAt(0);
+
+		if (respostaEnigma == 'T') {
+
+			System.out.println(
+					" Correto!  Acredito que você esteja buscando maneiras de ganhar alguns minutos extras.\n");
+			
+		} else {
+			System.out.println(" Incorreto! Dessa maneira, você corre o risco de perder o tempo que lhe resta.\n ");
+		
+		}
+
+		System.out.println(" Você continua sua jornada em busca de mais 5 mininutos.\n");
+		System.out.println(" Se deparou com um lindo jardim cheio de flores coloridas!");
+		System.out.println(" Um caminho é cercado por flores amarelas e o outro por flores azuis.\n");
+
+		System.out.println(
+				"Gostei de você. Fique atento ao que vou dizer.\n");
+		
+        System.out.println("Teu desafio é decifrar o enigma e desvendar os segredos ocultos neste mundo mágico.");
+        
+		System.out.println(" Sou a cor do ouro, do tesouro valioso,\r\n" + " Símbolo de riqueza e sucesso sem fim.\r\n"
+				+ " Nas abelhas listradas, sou o distintivo honroso,\r\n"
+				+ " E nas estrelas mais brilhantes, sou seu matiz enfim\n.  ");
+
+		char caminhoEscolhido = 'C';
+		int errado = 1;
+
+		do {
+			System.out.println("Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
+			caminhoEscolhido = scanner.next().charAt(0);
+
+			if (caminhoEscolhido == ('A')) {
+				System.out.println(" Escolheu o caminho das flores amarelas.\n");
+				System.out.println(" Você ganhou um espelho mágico que te ajudará nessa jornada");
+				errado = 1;
+
+			} else if (caminhoEscolhido == ('B')) {
+				System.out.println(" Escolheu o caminho das flores azuis.\n");
+				System.out.println(" Você perdeu?  ");
+				errado = 1;
+
+			} else {
+				errado = 0;
+				System.out.println("Opção inválida\n");
+
+			}
+		} while (errado == 0);
 
 	}
 
