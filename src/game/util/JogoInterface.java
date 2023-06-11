@@ -1,4 +1,4 @@
-package jogo.util;
+package game.util;
 
 public interface JogoInterface {
     void iniciarJogo();

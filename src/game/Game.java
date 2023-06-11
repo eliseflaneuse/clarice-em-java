@@ -1,15 +1,15 @@
-package jogo;
+package game;
 
 import java.util.Scanner;
-import jogo.util.*;
-import jogo.util.ArtLibrary;
 
-public class Jogo implements JogoInterface {
+import game.util.*;
+
+public class Game implements JogoInterface {
 	
 	Scanner scanner = new Scanner(System.in);
 	
 	 public static void main(String[] args) {
-	        Jogo jogo = new Jogo();
+	        Game jogo = new Game();
 	        jogo.exibirMenu();
 	    }
     private Player player;
@@ -213,43 +213,43 @@ public class Jogo implements JogoInterface {
         String resposta4 = scanner.nextLine();
 
         // Verificação das respostas
-        int Vida = player.getVida();
+        int vida = player.getVida();
 
         if (resposta1.equalsIgnoreCase("V")) {
             System.out.println("Resposta correta! Bruxas são feitas de madeira.");
         } else {
             System.out.println("Resposta incorreta! Bruxas são feitas de madeira.");
-            Vida--;
+            vida--;
         }
 
         if (resposta2.equalsIgnoreCase("V")) {
             System.out.println("Resposta correta! Uma mulher é feita de madeira para boiar na água.");
         } else {
             System.out.println("Resposta incorreta!");
-            Vida--;
+            vida--;
         }
 
         if (resposta3.equalsIgnoreCase("b")) {
             System.out.println("Resposta correta! O pássaro voa para o sul no inverno porque ele esqueceu o guarda-chuva em casa.");
         } else {
             System.out.println("Resposta incorreta! O pássaro voa para o sul no inverno porque ele esqueceu o guarda-chuva em casa.");
-            Vida--;
+            vida--;
         }
 
         if (resposta4.equalsIgnoreCase("a")) {
             System.out.println("Resposta correta! Quando você divide por zero em programação Java, o programa trava e exibe uma mensagem de erro.");
         } else {
             System.out.println("Resposta incorreta! Quando você divide por zero em programação Java, o programa trava e exibe uma mensagem de erro.");
-            Vida--;
+            vida--;
         }
 
-        player.setVida(Vida);
+        player.setVida(vida);
 
         System.out.println("\n--- Resultado ---");
-        System.out.println("Pontos de Vida: " + Vida);
+        System.out.println("Pontos de vida: " + vida);
 
         // Verifica se o jogador ainda tem pontos de vida
-        if (Vida <= 0) {
+        if (vida <= 0) {
             System.out.println("Você perdeu todas as suas vidas. Fim de jogo!");
             return;
         }
@@ -272,7 +272,68 @@ public class Jogo implements JogoInterface {
     }
 
     private void cenaDecifrarCodigoPortaMagica() {
-        System.out.println("\nVocê encontrou uma porta mágica que requer um código para abrir!");
+    	System.out.println("\n--- Cena da Porta Mágica ---");
+        System.out.println("Você chegou à misteriosa Porta Mágica, guardada por duas cartas da Rainha de Copas!");
+
+        // Criando as cartas da Rainha de Copas
+        Opponent carta1 = new Opponent("3 de paus", 1, "copo");
+        Opponent carta2 = new Opponent("2 de copas", 1, "copo");
+
+        boolean vitoria = false;
+
+        while (!vitoria && player.getVida() > 0) {
+            System.out.println("\nOpções:");
+            System.out.println("1. Atacar a primeira carta");
+            System.out.println("2. Atacar a segunda carta");
+            System.out.println("3. Defender");
+
+            int opcao = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcao) {
+                case 1:
+                    if (player.atacar(carta1)) {
+                        System.out.println("Você derrotou a primeira carta da Rainha de Copas!");
+                        if (player.atacar(carta2)) {
+                            System.out.println("Você derrotou a segunda carta da Rainha de Copas!");
+                            vitoria = true;
+                        } else {
+                            System.out.println("Você precisa derrotar a segunda carta para abrir a porta.");
+                        }
+                    } else {
+                        System.out.println("A primeira carta contra-atacou! Cuide da sua vida!");
+                    }
+                    break;
+                case 2:
+                    if (player.atacar(carta2)) {
+                        System.out.println("Você derrotou a segunda carta da Rainha de Copas!");
+                        if (player.atacar(carta1)) {
+                            System.out.println("Você derrotou a primeira carta da Rainha de Copas!");
+                            vitoria = true;
+                        } else {
+                            System.out.println("Você precisa derrotar a primeira carta para abrir a porta.");
+                        }
+                    } else {
+                        System.out.println("A segunda carta contra-atacou! Cuide da sua vida!");
+                    }
+                    break;
+                case 3:
+                    player.defender();
+                    System.out.println("Você se defendeu dos ataques das cartas!");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+                    break;
+            }
+        }
+
+        if (vitoria) {
+            System.out.println("\nParabéns! Você derrotou as cartas da Rainha de Copas e abriu a porta mágica!");
+        } else {
+            System.out.println("\nQue pena! Você perdeu todas as suas vidas e não conseguiu abrir a porta mágica.");
+        }
+        
+        
     }   
     
 }
