@@ -296,7 +296,7 @@ public class Game implements GameRepository {
 		System.out.println("Ah, vejo que está em busca de orientação. Em um lugar como este, a direção a seguir pode ser um enigma." 
 		       +" Fique atento ao que vou dizer.\n");
 		
-        System.out.println("Teu desafio é decifrar o enigma e desvendar os segredos ocultos neste mundo mágico.");
+        System.out.println("Teu desafio é decifrar o enigma e desvendar os segredos ocultos neste mundo mágico.\n");
         
 		System.out.println(" Sou a cor do ouro, do tesouro valioso,\r\n" + " Símbolo de riqueza e sucesso sem fim.\r\n"
 				+ " Nas abelhas listradas, sou o distintivo honroso,\r\n"
@@ -311,13 +311,13 @@ public class Game implements GameRepository {
 
 			if (caminhoEscolhido == ('A')) {
 				System.out.println(" Escolheu o caminho das flores amarelas.\n");
-				System.out.println("Parabéns, destemide viajante! Ao escolher o caminho das flores amarelas, você desbloqueou um poderoso presente: um espelho mágico," 
+				System.out.println("Parabéns, destemide viajante! Ao escolher o caminho das flores amarelas, você desbloqueou um poderoso presente: um espelho mágico,\n" 
 				+ "imbuido de antigas energias que irão iluminar seu caminho nesta jornada desafiadora.");
 				errado = 1;
 
 			} else if (caminhoEscolhido == ('B')) {
 				System.out.println(" Escolheu o caminho das flores azuis.\n");
-				System.out.println("  Você ganhou um espelho mágico, no entanto, não será uma caminhada fácil."
+				System.out.println("  Você ganhou um espelho mágico, no entanto, não será uma caminhada fácil.\n"
 				+" Grandes desafios se erguerão à sua frente, testando sua coragem, inteligência e determinação."); 
 				errado = 1;
 
