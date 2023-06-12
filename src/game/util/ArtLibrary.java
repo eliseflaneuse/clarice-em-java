@@ -139,6 +139,7 @@ public class ArtLibrary {
 		System.out.println("\t\t  ,;;;!!!!!;,(!!'`");
 		System.out.println("\t\t ;;!!!!!')!!!!!");
 		System.out.println("\t\t `,````,;!!!!!'");
+		System.out.println("\n\n\n");
 	}
 
 	public static void printModeloParchment(){

@@ -76,13 +76,13 @@ public abstract class Character {
         int danoRecebido = damage - defense;
         if (danoRecebido > 0) {
             lifePoints -= danoRecebido;
-            System.out.println(name + " recebeu " + danoRecebido + " de dano.");
+            System.out.println("\t" + name + " recebeu " + danoRecebido + " de dano.");
         } else {
-            System.out.println(name + " se defendeu totalmente.");
+            System.out.println("\t" + name + " se defendeu totalmente.");
         }
 
         if (lifePoints <= 0) {
-            System.out.println(name + " foi derrotado.");
+            System.out.println("\t" + name + " foi derrotado.");
         }
     }
 	

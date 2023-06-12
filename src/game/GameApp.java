@@ -2,6 +2,7 @@ package game;
 
 import java.text.Normalizer;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 import game.controller.OpponentController;
@@ -9,13 +10,13 @@ import game.model.*;
 import game.repository.*;
 import game.util.*;
 
-public class Game implements GameRepository {
+public class GameApp implements GameRepository {
 
 	Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Game jogo = new Game();
-		jogo.exibirMenu();
+		GameApp gameApp = new GameApp();
+		gameApp.exibirMenu();
 	}
 
 	private Player player;
@@ -24,11 +25,11 @@ public class Game implements GameRepository {
 	public void exibirMenu() {
 		boolean sair = false;
 		while (!sair) {
-			System.out.println("");
+			System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT + " ");
 			System.out.println("\t\t\t\t     ------ Menu ------");
 			System.out.println("\t\t\t\t     Escolha uma opção:");
 			System.out.println("\t\t\t\t     1. Iniciar Jogo");
-			System.out.println("\t\t\t\t     0. Sair do jogo");
+			System.out.println("\t\t\t\t     0. Sair do jogo" + Colors.TEXT_RESET);
 
 			int opcao = scanner.nextInt();
 			scanner.nextLine();
@@ -118,6 +119,7 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaChapeleiroLouco() {
+		/*
 		Story.Introduction();
 
 		ArtLibrary.printChapeleiroLouco();
@@ -260,7 +262,7 @@ public class Game implements GameRepository {
 		ArtLibrary.printTaca();
 		
 		System.out.println("\nContinuando sua jornada...");
-	}
+	} */
 	}
 
 	private void cenaGatoChester() {
@@ -328,7 +330,8 @@ public class Game implements GameRepository {
 
 	}
 	
-	private void cenaCoelhoCintoMinutos() {
+	private void cenaCoelhoCincoMinutos() {
+		
 			System.out.println("\nVocê encontrou o Coelho que lhe deu mais 5 minutos!");
 			System.out.println(Colors.TEXT_BLUE + "\n Você então fica bem pensative sobre tudo o que está acontecendo e se lembra também que é " 
 					+ "preciso encontrar o coelho! Depois de muito procurar, quando menos espera encontrou ele e então foram dadas as nóticias..." + Colors.TEXT_RESET);
@@ -402,21 +405,21 @@ public class Game implements GameRepository {
 	        } else {
 	            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
 	        }
-
-	        scanner.close();
 			
 		 }
 	
-	}
 
 	private void cenaCriquetRainhaCopas() {
 		System.out.println("\nVocê está jogando criquet com a Rainha de Copas!");
 	}
 
 	private void cenaDecifrarCodigoPortaMagica() {
-	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê separa as últimas folhas das árvores em seu caminho e se depara com umas das maiores porta que já viu.");
-	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas, como se a porta fosse feita inteira de Opala."
-	    		+ " Você da um passo em direção à ela.\n\n\n\n"+ Colors.TEXT_RESET);
+	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê separa as últimas folhas das árvores em seu caminho"
+	    		+ " e se depara com umas das maiores porta que já viu.");
+	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas, "
+	    		+ "como se a porta fosse feita inteira de Opala.");
+	    System.out.println("\tVocê da um passo em direção à ela.\n\n\n\n" + Colors.TEXT_RESET);
+	    		
 	    
 	    ArtLibrary.printMagicDoor();
 	    
@@ -428,31 +431,34 @@ public class Game implements GameRepository {
 	    ArtLibrary.printCards();
 
 	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\t3 de copas: Pare! Ninguém passa sem a permissão da Rainha de Copas!" );
-	    System.out.println("\t\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" );
+	    System.out.println("\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" );
 
-	    System.out.println("\t\tVocê se aproxima das cartas, pronte para o confronto.\n");
+	    System.out.println("\tVocê se aproxima das cartas, pronte para o confronto.\n");
 	    System.out.println("\t" + player.getName() + ": Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo.");
 	    System.out.println("\tAgora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!\n" );
 
 	    System.out.println("\t3 de copas: Hahaha! Achou que seria fácil, humana insolente?");
-	    System.out.println("\t2 de paus: Prepare-se para a batalha final! Nós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n");
+	    System.out.println("\t2 de paus: Prepare-se para a batalha final!"); 
+	    System.out.println("\tNós somos as guardiãs da Rainha de Copas e não permitiremos sua passagem sem luta!\n");
 
 	    System.out.println("\tVocê se prepara para o combate contra as cartas da Rainha de Copas.");
 	    System.out.println("\tQue assim seja! Eu mostrarei a vocês do que sou capaz!" + Colors.TEXT_RESET);
 
 
 	    // Criando as cartas da Rainha de Copas
+	
 	    Opponent carta1 = new Opponent("3 de copas", 2, 2, 1 , "lança");
 	    Opponent carta2 = new Opponent("2 de paus", 2, 2, 1 , "lança");
 
+	    
 	    boolean vitoria = false;
 	    int currentPlayerAttack = 1;
 
 	    while (!vitoria && player.getLifePoints() > 0) {
-	        System.out.println("\n\tOpções:");
+	        System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT + "\n\tOpções:");
 	        System.out.println("\t1. Atacar a primeira carta");
 	        System.out.println("\t2. Atacar a segunda carta");
-	        System.out.println("\t3. Defender");
+	        System.out.println("\t3. Defender" + Colors.TEXT_RESET);
 
 	        int opcao = scanner.nextInt();
 	        scanner.nextLine();
@@ -479,7 +485,7 @@ public class Game implements GameRepository {
 	                    System.out.println("\tVocê precisa derrotar a carta " + remainingCard.getName() + " para abrir a porta.");
 	                }
 	            } else {
-	                System.out.println("\tA carta " + currentCard.getName() + " contra-atacou! Cuide da sua vida!");
+	                System.out.println("\tA carta " + currentCard.getName() + " contra-atacou! Cuidado!");
 	            }
 	        } else {
 	            System.out.println("\tOpção inválida! Tente novamente.");
@@ -490,10 +496,10 @@ public class Game implements GameRepository {
 	    	System.out.println("\n\n\n");
 	        System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\tDepois de uma árdua batalha contra as cartas furiosas da Rainha de Copas, "
 	        		+ "você finalmente está diante da imponente porta e uma mensagem misteriosa é revelada em sua superfície:\n");
-	        System.out.println("\t\tPara essa porta passar,");
-	        System.out.println("\t\tAqui você terá que decifrar,");
-	        System.out.println("\t\tDuas casas pular,");
-	        System.out.println("\t\tPara 'amigo' transformar em 'COQKI'.\"");
+	        System.out.println("\tPara essa porta passar,");
+	        System.out.println("\tEssa cifra terá que decifrar,");
+	        System.out.println("\tDuas casas pular,");
+	        System.out.println("\tPara 'César' transformar em 'eguct'.\n\n");
 	        
 	        System.out.println("\tEmbasbacade com a mensagem, você se desespera. "
 	        		+ "Depois de todas essas provações, será que você não vai conseguir voltar pra casa?");

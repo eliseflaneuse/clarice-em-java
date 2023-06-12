@@ -1,5 +1,7 @@
 package game.model;
 
+import game.util.Colors;
+
 public class Opponent extends Character {
 
 	private String item;
@@ -20,7 +22,7 @@ public class Opponent extends Character {
 	@Override
 	public boolean attack(Character alvo) {
 
-		System.out.println(getName() + " atacou " + alvo.getName() + " causando " + damage + " de dano.");
+		System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT + "\t\t" +getName() + " atacou " + alvo.getName() + " causando " + damage + " de dano.");
 		alvo.receberDano(damage);
 
 		return alvo.getLifePoints() <= 0; // Return true if the target was defeated, false otherwise
@@ -29,7 +31,7 @@ public class Opponent extends Character {
 	@Override
 	public void shield() {
 
-		System.out.println(getName() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
+		System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT + "\t\t" +getName() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
 		defesaAtiva = true;
 	}
 
