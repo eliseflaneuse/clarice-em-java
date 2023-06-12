@@ -10,13 +10,13 @@ import game.model.*;
 import game.repository.*;
 import game.util.*;
 
-public class GameApp implements GameRepository {
+public class Game implements GameRepository {
 
 	Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		GameApp gameApp = new GameApp();
-		gameApp.exibirMenu();
+		Game jogo = new Game();
+		jogo.exibirMenu();
 	}
 
 	private Player player;
@@ -92,7 +92,7 @@ public class GameApp implements GameRepository {
 				cenaGatoChester();
 				break;
 			case 3:
-				cenaCoelhoCincoMinutos();
+				cenaCoelhoCintoMinutos();
 				break;
 			case 4:
 				cenaCriquetRainhaCopas();
@@ -332,25 +332,6 @@ public class GameApp implements GameRepository {
 
 	}
 	
-<<<<<<< HEAD:src/game/GameApp.java
-	private void cenaCoelhoCincoMinutos() {
-		
-			System.out.println("\nVocê encontrou o Coelho que lhe deu mais 5 minutos!");
-			System.out.println(Colors.TEXT_BLUE + "\n Você então fica bem pensative sobre tudo o que está acontecendo e se lembra também que é " 
-					+ "preciso encontrar o coelho! Depois de muito procurar, quando menos espera encontrou ele e então foram dadas as nóticias..." + Colors.TEXT_RESET);
-			
-			ArtLibrary.printCoelho();
-			
-			System.out.println(Colors.TEXT_BLUE + "\n - Oh, estava te procurando! Eu tenho algo para te contar, mas não sei se "
-				+ "esse é o momento mais adequado, como te contar e como vai lidar com essa notícia..."
-				+ "É algo de extrema importância, peço que não se apavore... O rélogio não está comigo!" + Colors.TEXT_RESET);
-			
-			System.out.println(Colors.TEXT_RED + "\n Logo você é dominade pela fúria, já que precisava tanto daquele relógio para conseguir voltar!"
-					+ "Pensa consigo mesma: Por que isso está acontecendo comigo? Logo hoje! Eu já não estou entendendo nada e acontece isso!"
-					+ "Não quero mais perder tempo aqui, quero os 5 minutos logo... O coelho nota toda sua fúria e percebe que precisa fazer algo..." + Colors.TEXT_RESET);
-			
-			System.out.println(Colors.TEXT_BLUE + "\n - Opa opa, peço que não fique tão brave! Temos uma solução! Mas tome uma maçã, mastigar acalma um pouco..." + Colors.TEXT_RESET);
-=======
 	private void cenaCoelhoCintoMinutos() {
 		System.out.println("\n Você encontrou o Coelho que lhe deu mais 5 minutos!");
 		System.out.println(Colors.TEXT_BLUE + "\n Você então fica bem pensative sobre tudo o que está acontecendo e se lembra também que é " 
@@ -370,7 +351,7 @@ public class GameApp implements GameRepository {
 		
 		System.out.println(Colors.TEXT_BLUE + "\n - Opa opa, peço que não fique tão brave! Temos uma solução! "
 				+ "\n Mas tome uma maçã, mastigar acalma um pouco..." + Colors.TEXT_RESET);
->>>>>>> e7a9d33dc1488eb60fa3c043663854e1ade569a6:src/game/Game.java
+
 
 		ArtLibrary.printMaca();
 		
@@ -419,7 +400,6 @@ public class GameApp implements GameRepository {
                 } 
             }
 
-<<<<<<< HEAD:src/game/GameApp.java
 	            if (acertou) {
 	                System.out.println("\n Olha só quem é que conseguiu! Meus parábens, já consegue viver bem aqui nesse mundo!");
 	            } else {
@@ -432,25 +412,8 @@ public class GameApp implements GameRepository {
 	            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
 	        }
 			
-		 }
-=======
-            if (acertou) {
-                System.out.println("\n Olha só quem é que conseguiu! Meus parabéns, "
-                		+ "\n já está entendendo como os computadores trabalham internamente!"
-                		+ "\n Que orgulho! Continue assim!");
-            } else {
-                System.out.println("\n Xiii... O que me parece é que não foi dessa vez...");
-            }
-        } else if (opcao.equalsIgnoreCase("não")) {
-            System.out.println("\n Hummm, nessa situação o coelho vai ter que se virar de uma outra maneira e você achar "
-            		+ "outro jeito de ter seus 5 minutos... Por enquanto, aproveite a maçã...");
-        } else {
-            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
-        }
         System.out.println("\n Então vamos continuando em sua jornada...");
 }
->>>>>>> e7a9d33dc1488eb60fa3c043663854e1ade569a6:src/game/Game.java
-	
 
 	private void cenaCriquetRainhaCopas() {
 		System.out.println("\nVocê está jogando criquet com a Rainha de Copas!");
@@ -583,6 +546,7 @@ public class GameApp implements GameRepository {
 	    
 	    
 	}
+	
 	public static String removerAcentos(String texto) {
         return Normalizer.normalize(texto, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
@@ -622,29 +586,10 @@ public class GameApp implements GameRepository {
 
 
 /*
- * package game;
- * 
- * import java.util.Scanner; import game.controller.OpponentController; import
- * game.controller.PlayerController; import game.model.Opponent; import
- * game.model.Player; import game.util.ArtLibrary;
- * 
- * public class Game {
- * 
- * public static void main(String[] args) {
- * 
- * printWelcomeMessage(); ArtLibrary.printMonteJavaArt();
- * 
- * Scanner scanner = new Scanner(System.in); PlayerController players = new
+ 
+ * PlayerController players = new
  * PlayerController(); OpponentController opponents = new OpponentController();
- * 
- * // Player System.out.print("\n\tDigite o nome da sua personagem: "); String
- * playerName = scanner.nextLine();
- * 
- * Player player = new Player(playerName, 1, 0);
- * 
- * // Distribute attribute points Player.distributeAttributePoints(player,
- * scanner);
- * 
+
  * // Test players' methods players.createPlayer(player); players.readPlayer();
  * 
  * // Opponents Opponent theMadHatter = new Opponent("Chapeleiro Maluco", 1, 1,
@@ -661,29 +606,5 @@ public class GameApp implements GameRepository {
  * opponents.createOpponent(theKingOfHearts); opponents.readOpponent();
  * 
  * }
- * 
- * public static void printWelcomeMessage() { // Print top border
- * System.out.println(
- * "=============================================================================================="
- * );
- * 
- * // Print message with padding System.out.println(
- * " ____  _            _                                ___                  _                 _ "
- * ); System.out.println(
- * "/   _\\| |          (_)                              |_  |                | |               | |"
- * ); System.out.println(
- * "| /  \\| | __ _ _ __ _  ___ ___    ___   _ __ ___      | | __ ___   ____ _| | __ _ _ __   __| |"
- * ); System.out.println(
- * "| |   | |/ _` | '__| |/ __/ _ \\  / _ ` | '_ ` _ \\     | |/ _` \\ \\ / / _` | |/ _` | '_ \\ / _` |"
- * ); System.out.println(
- * "| \\__/| | (_| | |  | | (_|  __/ |  _ /  | | | | | /\\__/ | (_| |\\ V / (_| | | (_| | | | | (_| |"
- * ); System.out.println(
- * " \\____|_|\\__,_|_|  |_|\\___\\___|  \\___|  | |_| |_| \\____/ \\__,_| \\_/ \\__,_|_|\\__,_|_| |_|\\__,_|"
- * ); System.out.println(
- * "                                                                                                         "
- * );
- * 
- * // Print bottom border System.out.println(
- * "==============================================================================================\n"
- * ); } }
+
  */
