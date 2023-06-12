@@ -264,7 +264,8 @@ public class Game implements GameRepository {
 	} 
 
 	
-
+// item passar pro jogador 
+// Criar o oponente
 
 	private void cenaGatoChester() {
 			
@@ -279,9 +280,10 @@ public class Game implements GameRepository {
 		
 		System.out.println(" Vou fazer algumas perguntas para você.\n");
 		System.out.println(" O que todo mundo sempre está correndo para pegar, mas nunca consegue segurar?\n");
-		System.out.println(" Responda com a primeira letra.");
+		System.out.println(" Responda com a primeira letra: ");
 		String respostaEnigma = scanner.nextLine();
-
+		
+		// try catch - igual do Lê
 
 		if (respostaEnigma.equalsIgnoreCase( "T" )) {
 
@@ -313,13 +315,13 @@ public class Game implements GameRepository {
 		do {
 			System.out.println("Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
 			caminhoEscolhido = scanner.next().charAt(0);
-
+				// equals
 			if (caminhoEscolhido == ('A')) {
 				System.out.println(" Escolheu o caminho das flores amarelas.\n");
 				System.out.println("Parabéns, destemide viajante! Ao escolher o caminho das flores amarelas, você desbloqueou um poderoso presente: um espelho mágico,\n" 
 				+ "imbuido de antigas energias que irão iluminar seu caminho nesta jornada desafiadora.");
 				errado = 1;
-
+				// equals
 			} else if (caminhoEscolhido == ('B')) {
 				System.out.println(" Escolheu o caminho das flores azuis.\n");
 				System.out.println("  Você ganhou um espelho mágico, no entanto, não será uma caminhada fácil.\n"
