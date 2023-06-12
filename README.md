@@ -9,11 +9,24 @@
 
 ### Ideia geral: *Um jogo rpg em java.*
 Usando:
-* classes, atributos e objetos; 
-* encapsulamento e herança, polimorfismo, sobrecarga e sobrescrito;
-* collections, exceptions, options;
+- Entrada e saída de dados;
+- Laços Condicionais;
+- Laços de Repetição;
+- Métodos e Modificadores de acesso;
+- Classes, Atributos e Objetos;
+- Polimorfismo, Herança e Sobrecarga;
+- Classes Abstratas e Interfaces;
+- Collections;
+- Exceptions.
 
-A ideia é de um jogo no console, onde o personagem faz uma ficha com nome e distribui 10 pontos em atributos. Logo depois ele vai ser mostrado uma pergunta de cada vez no console, revezando uma pergunta lógica e uma pergunta engraçada e absurda (como no filme "monty python"). Se ele acertar a pergunta engraçada ele ganha um ponto de vida (o personagem começa com 5 pontos) e se errar ele perde. Na pergunta lógica ele ganha um ponto para atribuir a algum atributo, logo ele precisaria ler a escolha do usuario de onde colocar o ponto ganhado.  Os personagens inimigos são inspirados nos personagens de Alice no país das maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
+
+A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos personagens de Alice no País das Maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
+
+O jogo começa com os atributos BSM's zerados: 
+
+<div align="center">
+![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/1b4ac2ed-b13c-4642-a6f5-6509ac1e7d88)
+</div>
 
 ## Implementação: 
 
@@ -21,10 +34,10 @@ A ideia é de um jogo no console, onde o personagem faz uma ficha com nome e dis
 
 Vamos começar definindo as classes e atributos básicos do jogo. Teremos as seguintes classes:
 
-Game: Classe principal que contém o loop principal do jogo.
+Game: Classe principal que contém main que roda o jogo.
 Character: Classe base para representar o personagem do jogador e personagens inimigos.
 Player: Subclasse de Character que representa o personagem do jogador.
-Enemy: Subclasse de Character que representa os personagens inimigos.
+Opponent: Subclasse de Character que representa os personagens inimigos.
 
 ```
 public class Game {
@@ -33,22 +46,30 @@ public class Game {
     }
 }
 
-public class Character {
+public abstract class Character {
     private String name;
-    private int lifePoints;
+	private int lifePoints;
+    protected boolean defesaAtiva;
+    protected int defense;
+    protected int damage;
     // Outros atributos comuns a personagens
 
     // Construtor, getters e setters
 }
 
 public class Player extends Character {
-    private int attributePoints;
+       private int responsabilidadePessoal;
+	   private int mentalidadeDeCrescimento;
+	   private int proatividade;
+	   private int orientacaoAoDetalhe;
+	   private int trabalhoEmEquipe;
     // Outros atributos específicos do jogador
 
     // Construtor, getters e setters
 }
 
-public class Enemy extends Character {
+public class Opponent extends Character {
+        private String item;
     // Atributos específicos de inimigos
 
     // Construtor, getters e setters
