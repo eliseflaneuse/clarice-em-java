@@ -419,7 +419,189 @@ public class Game implements GameRepository {
 }
 
 	private void cenaCriquetRainhaCopas() {
-		System.out.println("\nVocê está jogando criquet com a Rainha de Copas!");
+		
+		int opcao, opcao2, desafio, pontos = 0;
+		int respostas[] = { 3, 2, 1 };
+
+		String perguntas[] = { "\n\nPergunta 1: O País Java é repleto de criaturas mágicas e objetos encantados."
+				+ "				\nAlgumas delas são guardiãs de itens valiosos que não podem cair em mãos erradas."
+				+ "				\nProteger locais secretos e impedir que objetos sejam tocados por seres sem permissão"
+				+ "				\né de responsabilidade de duas dessas criaturas."
+				+ "				\n\nEscolha a alternativa que melhor representa esse aspecto:"
+				+ "				\n1 - Método Construtor"
+				+ "				\n2 - Private, Protected e Public"
+				+ "				\n3 - Getters e Setters",
+
+				"\n\nPergunta 2: O objeto roubado da Rainha estava em seu quarto, em uma caixa de jóias, e agora a caixa está vazia."
+				+ "\n\nQual o nome da classe especial em Java para tratar essa exceção? (objetos nulos/vazios)"
+				+ "\n1 - Try-catch"
+				+ "\n2 - Optional"
+				+ "\n3 - Exception",
+
+				"\n\nPergunta 3: A Rainha resolveu implementar a pena máxima para aqueles que roubam objetos reais."
+				+ "\nPara isso ela criou o método cortarACabeça(Player player); em uma Interface.java utilizando você como parâmetro"
+				+ "\n\nQual das palavras abaixo a Rainha precisa escrever para usar essa interface em uma ClasseController"
+				+ "\ne assim conseguir importar o método criado?"
+				+ "\n1 - implements"
+				+ "\n2 - extends"
+				+ "\n3 - interface" };
+
+		System.out.println("\nOlhe todas essas flores deslumbrantes e esse jardim impecável.");
+		
+		do {
+
+			System.out.println("\nParece um dia perfeito para explorar o País Java...");
+			System.out.println(
+					"\nEspere! Tem alguém gritando ao longe, mas a essa distância você não consegue compreender o que está acontecendo.");
+			System.out.println(
+					"O que deseja fazer?\n" + "\n1 - Aproximar-se" + "\n2 - Afastar-se" + "\n3 - Permanecer onde está");
+
+			try {
+				opcao = scanner.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("Exceção: " + e);
+				scanner.nextLine();
+				opcao = 0;
+			}
+
+			switch (opcao) {
+			case 1 -> {
+				System.out.println("\nCORTEM-LHE AS CABEÇAAAAAS!!!");
+				System.out.println("Uma das cartas lhe diz que a Rainha está furiosa porque um objeto valioso com o");
+				System.out.println(
+						"emblema da coroa sumiu. Aparentemente foi roubado e ninguém sabe quem é o responsável.");
+				System.out.println(
+						"Você precisa descobrir esse mistério e enfrentar o temperamento perigoso da Rainha de Copas para avançar ao "
+								+ "próximo nível.");
+				System.out.println("O que deseja fazer?\n" + "\n1 - Perguntar qual objeto foi roubado"
+						+ "\n2 - Ignorar a carta" + "\n3 - Sair");
+
+				try {
+					opcao2 = scanner.nextInt();
+				} catch (InputMismatchException e) {
+					System.out.println("Exceção: " + e);
+					scanner.nextLine();
+					opcao2 = 0;
+				}
+
+				switch (opcao2) {
+				case 1 -> {
+
+					do {
+
+						System.out.println("\nVOCÊ ROUBOU MINHAS CARTAAAAAS!!! - gritou a Rainha de Copas");
+						System.out.println("\nEu não roubei nada! - você responde");
+						System.out.println("\nApesar da sua inocência, a Rainha te desafia para um duelo.");
+						System.out.println("\"Se é realmente inocente, prove-me em um duelo Java!!!\"");
+						System.out.println("\nAceita o desafio? \n1 - Sim | 2 - Não");
+
+						desafio = scanner.nextInt();
+
+					} while (desafio != 1 && desafio != 2);
+
+					if (desafio == 1) {
+						System.out.println("\nVocê não tinha ideia do que era um duelo Java, mas aceitou.");
+						System.out.println(
+								"As personagens se posicionaram em lados opostos do cenário e magicamente uma tela apareceu.");
+						System.out.println("Na tela lê-se os seguintes dizeres:");
+
+						for (var i = 0; i < 3; i++) {
+
+							System.out.println(perguntas[i]);
+
+							var resposta = scanner.nextInt();
+
+							if (resposta == respostas[i]) {
+								System.out.println("Correto");
+								pontos++;
+							} else {
+								System.out.println("Incorreto");
+								pontos--;
+							}
+						}
+
+						if (pontos == 3) {
+							System.out.println("\nParabéns, você conseguiu derrotar a Rainha de Copas!");
+							System.out.println(
+									"Como reconhecimento ao seu empenho, ganhou um item e mais 2 pontos de vida!");
+							System.out.println("\nItem: Um PINGENTE com a inicial do seu nome");
+
+							// Inserir método de adicionar item e ganhar vida
+							jogar();
+
+						}
+						if (pontos < 3 && pontos >= 1) {
+							System.out.println("\nVocê estava indo bem, mas algo deu errado e te fez retornar ao início. Tente novamente!");
+
+							jogar();
+
+						}
+
+						if (pontos < 1) {
+							System.out.println("\nA Rainha de Copas saiu vitoriosa!");
+
+							jogar();
+						}
+
+					}
+
+					if (desafio == 2) {
+						System.out.println("Infelizmente você não é páreo para os perigos da Rainha.");
+						System.out.println("Sua jornada encerra aqui.");
+					}
+
+					if (desafio != 1 && desafio != 2) {
+						System.out.println("\nPor favor, escolha uma opção válida na próxima tentativa.");
+					}
+				}
+				case 2 -> {
+					System.out.println("Você ignorou o Valete de Espadas e retornou ao início.");
+				}
+				case 3 -> {
+					System.exit(0);
+				}
+				}
+
+			}
+
+			case 2 -> {
+				System.out.println("Talvez você ainda não esteja tão preparado para a nossa aventura.");
+				System.out.println("Pode voltar outra hora, quando se sentir pronto.");
+				System.out.println("1 - Sair do jogo | 2 - Retornar");
+
+				opcao = scanner.nextInt();
+
+				if (opcao == 1) {
+					System.exit(0);
+				} else {
+					System.out.println("\nVocê escolheu retornar. Como eu dizia...");
+				}
+			}
+
+			case 3 -> {
+				System.out.println(
+						"\nÉ um jardim esplêndido, de tirar o fôlego! Exceto pela multidão que se aproxima.\n");
+				System.out.println(
+						"Está um alvoroço aqui! Você acaba de ser atingido acidentalmente por alguém e perdeu 2 pontos de vida.");
+
+				// Inserir método de perder vida e ficha personagem
+
+				System.out.println("O que deseja fazer?");
+				System.out.println("1 - Sair do jogo | 2 - Retornar");
+
+				opcao = scanner.nextInt();
+
+				if (opcao == 1) {
+					System.exit(0);
+				} else {
+					System.out.println("\nVocê escolheu retornar. Como eu dizia...");
+				}
+			}
+
+			}
+
+		} while (true);
+			
 	}
 
 	private void cenaDecifrarCodigoPortaMagica() {
