@@ -119,7 +119,6 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaChapeleiroLouco() {
-		
 		Story.Introduction();
 
 		ArtLibrary.printChapeleiroLouco();
@@ -263,7 +262,9 @@ public class Game implements GameRepository {
 		
 		System.out.println("\nContinuando sua jornada...");
 	} 
+
 	
+
 
 	private void cenaGatoChester() {
 			
@@ -279,10 +280,11 @@ public class Game implements GameRepository {
 		System.out.println(" Vou fazer algumas perguntas para você.\n");
 		System.out.println(" O que todo mundo sempre está correndo para pegar, mas nunca consegue segurar?\n");
 		System.out.println(" Responda com a primeira letra.");
-		char respostaEnigma = scanner.next().charAt(0);
+		String respostaEnigma = scanner.nextLine();
 
-		//Precisa consertar aqui if (respostaEnigma.equalsIgnoreCase("t"))
-		if (respostaEnigma == 'T') {
+
+		if (respostaEnigma.equalsIgnoreCase( "T" )) {
+
 
 			System.out.println(
 					" Correto!  Acredito que você esteja buscando maneiras de ganhar alguns minutos extras.\n");
