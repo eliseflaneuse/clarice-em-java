@@ -279,9 +279,9 @@ public class Game implements GameRepository {
 		System.out.println(" Vou fazer algumas perguntas para você.\n");
 		System.out.println(" O que todo mundo sempre está correndo para pegar, mas nunca consegue segurar?\n");
 		System.out.println(" Responda com a primeira letra.");
-		char respostaEnigma = scanner.next().charAt(0);
+		string respostaEnigma = scanner.nextLine();
 
-		if (respostaEnigma == 'T') {
+		if (respostaEnigma.equalsIgnoreCase( "T" )) {
 
 			System.out.println(
 					" Correto!  Acredito que você esteja buscando maneiras de ganhar alguns minutos extras.\n");
