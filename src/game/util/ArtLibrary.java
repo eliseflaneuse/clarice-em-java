@@ -318,6 +318,7 @@ public class ArtLibrary {
 
 	
 		public static void printChapeleiroLouco() {
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
 			System.out.println(" ,------------.                ,.--\"\"-._\r\n"
 					+ " |   Bebidas e `.           __/         `.\r\n"
 					+ " | fofocas! Tudo |     _,**\"   \"*-.       `.\r\n"
@@ -341,10 +342,11 @@ public class ArtLibrary {
 					+ "                       |   |.  `.  :\r\n"
 					+ "                       ;   |.    `. \\SSt\r\n"
 					+ "\r\n"
-					+ "------------------------------------------------\r\n");
+					+ "------------------------------------------------\r\n"+ Colors.TEXT_RESET);
 		}
 		
 		public static void printTaca() {
+			System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT);
 			System.out.println(""
 					+ "⠀ ____________\n"
 					+ "<____________>\n"
@@ -359,7 +361,7 @@ public class ArtLibrary {
 					+ "      ||\n"
 					+ "   ___||___\n"
 					+ "  /   ||   \\\n"
-					+ "  \\________/");
+					+ "  \\________/"+ Colors.TEXT_RESET);
 		}
 	
 	

@@ -122,6 +122,18 @@ public class Player extends Character {
 	        defesaAtiva = true;
 	    }
 	    
+	    public void printCharacterSheet() {
+			System.out.println("\n\n\t--- Ficha do Personagem ---");
+			System.out.println("\tNome:\t\t\t\t" + getName());
+			System.out.println("\t--- Distribuição de pontos nos atributos ---");
+			System.out.println("\tResponsabilidade Pessoal:\t" + getResponsabilidadePessoal());
+			System.out.println("\tMentalidade de Crescimento:\t" + getMentalidadeDeCrescimento());
+			System.out.println("\tProatividade:\t\t\t" + getProatividade());
+			System.out.println("\tOrientação ao Detalhe:\t\t" + getOrientacaoAoDetalhe());
+			System.out.println("\tTrabalho em Equipe:\t\t" + getTrabalhoEmEquipe());
+			System.out.println("\n\n");
+		}
+	    
 	/*	
 	@Override
 	public void read() {

@@ -17,7 +17,7 @@ public class PlayerController implements PlayerRepository {
 	@Override
 	public void readPlayer() {
 		for (var player : playerList) {
-			player.read();
+			//player.read();
 		}
 	}
 
