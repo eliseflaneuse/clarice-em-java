@@ -402,11 +402,6 @@ public class Game implements GameRepository {
 	        } else {
 	            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
 	        }
-
-	        scanner.close();
-			
-		 }
-	
 	}
 
 	private void cenaCriquetRainhaCopas() {
