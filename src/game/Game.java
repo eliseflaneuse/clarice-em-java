@@ -388,11 +388,11 @@ public class Game implements GameRepository {
 	                if (resposta.equalsIgnoreCase("01001010")) {
 	                    acertou = true;
 	                    break;
-	                }
+	                } 
 	            }
 
 	            if (acertou) {
-	                System.out.println("\n Olha só quem é que conseguiu! Meus parábens, já consegue viver bem aqui nesse mundo!");
+	                System.out.println("\n Olha só quem é que conseguiu! Meus parabéns, já consegue viver bem aqui nesse mundo!");
 	            } else {
 	                System.out.println("\n Xiii... O que me parece é que não foi dessa vez...");
 	            }
