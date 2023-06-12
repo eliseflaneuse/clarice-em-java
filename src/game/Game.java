@@ -323,7 +323,8 @@ public class Game implements GameRepository {
 		int errado = 1;
 
 		do {
-
+			try {
+				
 			System.out.println("\t Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
 			caminhoEscolhido = scanner.next();
 
@@ -342,11 +343,14 @@ public class Game implements GameRepository {
 
 			} else {
 				errado = 0;
-				System.out.println("\t Opção inválida\n");
-
+				throw new InputMismatchException("\t Eiiii! Você só pode escolher entre A ou B \n");
 			}
+			} catch (InputMismatchException e) {
+				errado=0;
+				System.out.println("\t"+ e.getMessage() + "\n");
+			}	
 		} while (errado == 0);
-
+	     }
 	}
 	
 	private void cenaCoelhoCintoMinutos() {
