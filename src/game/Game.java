@@ -327,9 +327,86 @@ public class Game implements GameRepository {
 		} while (errado == 0);
 
 	}
+	
+	private void cenaCoelhoCintoMinutos() {
+			System.out.println("\nVocê encontrou o Coelho que lhe deu mais 5 minutos!");
+			System.out.println(Colors.TEXT_BLUE + "\n Você então fica bem pensative sobre tudo o que está acontecendo e se lembra também que é " 
+					+ "preciso encontrar o coelho! Depois de muito procurar, quando menos espera encontrou ele e então foram dadas as nóticias..." + Colors.TEXT_RESET);
+			
+			ArtLibrary.printCoelho();
+			
+			System.out.println(Colors.TEXT_BLUE + "\n - Oh, estava te procurando! Eu tenho algo para te contar, mas não sei se "
+				+ "esse é o momento mais adequado, como te contar e como vai lidar com essa notícia..."
+				+ "É algo de extrema importância, peço que não se apavore... O rélogio não está comigo!" + Colors.TEXT_RESET);
+			
+			System.out.println(Colors.TEXT_RED + "\n Logo você é dominade pela fúria, já que precisava tanto daquele relógio para conseguir voltar!"
+					+ "Pensa consigo mesma: Por que isso está acontecendo comigo? Logo hoje! Eu já não estou entendendo nada e acontece isso!"
+					+ "Não quero mais perder tempo aqui, quero os 5 minutos logo... O coelho nota toda sua fúria e percebe que precisa fazer algo..." + Colors.TEXT_RESET);
+			
+			System.out.println(Colors.TEXT_BLUE + "\n - Opa opa, peço que não fique tão brave! Temos uma solução! Mas tome uma maçã, mastigar acalma um pouco..." + Colors.TEXT_RESET);
 
-	private void cenaCoelhoCincoMinutos() {
-		System.out.println("\nVocê encontrou o Coelho que lhe deu mais 5 minutos!");
+			ArtLibrary.printMaca();
+			
+			System.out.println(Colors.TEXT_BLUE + "\n - Oras, me diga logo qual é essa solução! E obrigada pela maçã, vou guardar para quando conseguir"
+					+ "ter o relógio! Disse ainda furiose... " + Colors.TEXT_RESET);
+			
+			System.out.println(Colors.TEXT_BLUE + "\n O coelho te observa por um instante e então prossegue dizendo: "
+					+ "- Veja ali, aquele relógio flutuante, a rainha pegou o meu e transformou nisso... "
+					+ "É preciso derrotar ela para que possa conseguir recuperar, agora existe uma conexão entre eles"
+					+ "e tanto eu quanto você precisamos dele, meu relógio favorito que perdi na floresta e a "
+					+ "rainha transformou naquilo, aí aí... Ah, sim, os seus 5 minutos também, você precisa tanto "
+					+ "aqueles minutos que tanto deseja! Por favor, recupere ele!" + Colors.TEXT_RESET);
+			
+			ArtLibrary.printRelogioFlutuante();
+			
+			System.out.println(Colors.TEXT_BLUE + "\n - Já não reconheço o relógio. As configurações básicas de conexão podem estar dentro dessa coisa voadora. "
+					+ "O tempo está voando literalmente. Quando pega-lo, quebre as asas com cuidado. Diga a chave em binário corretamente. "
+					+ "Evite um erro catastrófico que faria você voltar no tempo. E estabeleceremos uma conexão entre você e o relógio. "
+					+ "Por favor, devolva-o para que eu não fique atrasado depois. Assim adicionaremos seus 5 minutos e vamos ter tempo para "
+					+ "realizar nossos sonhos, não é por nada, mas seu mundo é estranho. Precisamos muito de sua ajuda!" + Colors.TEXT_RESET);
+			
+			ArtLibrary.printOutroRelogio();
+			
+			System.out.println(Colors.TEXT_CYAN + "\n ... A grande decisão!" + Colors.TEXT_RESET);
+			System.out.println(Colors.TEXT_CYAN + "\n Isso é algo diário, "
+					+ "digamos que primário, "
+					+ "ao se digitar, use o seu imaginário, "
+					+ "mas lembre-se que é binário, "
+					+ "pois começa de modo involuntário" + Colors.TEXT_RESET);
+	        System.out.println(Colors.TEXT_CYAN + "\n É de seu desejo continuar?");
+
+	        System.out.print("\n Escolha sabiamente: (Bora/Não): ");
+	        String opcao = scanner.nextLine();
+
+	        if (opcao.equalsIgnoreCase("bora")) {
+	            boolean acertou = false;
+	            for (int i = 0; i < 2; i++) {
+	            	ArtLibrary.printBinario();
+	                System.out.print("\n Digite a resposta da charada: ");
+	                String resposta = scanner.nextLine();
+
+	                if (resposta.equalsIgnoreCase("01001010")) {
+	                    acertou = true;
+	                    break;
+	                }
+	            }
+
+	            if (acertou) {
+	                System.out.println("\n Olha só quem é que conseguiu! Meus parábens, já consegue viver bem aqui nesse mundo!");
+	            } else {
+	                System.out.println("\n Xiii... O que me parece é que não foi dessa vez...");
+	            }
+	        } else if (opcao.equalsIgnoreCase("não")) {
+	            System.out.println("\n Hummm, nessa situação o coelho vai ter que se virar de uma outra maneira e você achar "
+	            		+ "outro jeito de ter seus 5 minutos...");
+	        } else {
+	            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
+	        }
+
+	        scanner.close();
+			
+		 }
+	
 	}
 
 	private void cenaCriquetRainhaCopas() {
