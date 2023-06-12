@@ -207,110 +207,114 @@ public class ArtLibrary {
 		}
 
 		public static void printRelogioFlutuante() {
-		System.out.println("      (\\                     /)");
-		System.out.println("      (v\\                   /v)");
-		System.out.println("     (vvv\\                 /vvv)");
-		System.out.println("    (vvvvv\\               /vvvvv)");
-		System.out.println("   (vvvvvvv\\             /vvvvvvv)");
-		System.out.println("  (vvvvvvvvv\\   _---_   /vvvvvvvvv)");
-		System.out.println(" (vvvvvvvvvvv\\/  XII  \\/vvvvvvvvvvv)");
-		System.out.println("(vvvvvvvvvvvv/      /  \\vvvvvvvvvvvv)");
-		System.out.println("(vvvvvvvvvvv/      /    \\vvvvvvvvvvv)");
-		System.out.println("(vvvvvvvvvv|IX   @@   III|vvvvvvvvvv)");
-		System.out.println(" (vvvvvvvvvv\\      \\    /vvvvvvvvvv)");
-		System.out.println("  (vvvvvvvvvv\\         /vvvvvvvvvv)");
-		System.out.println("    (vvvvvvvvv\\  VI   /vvvvvvvvv)");
-		System.out.println("       (vvvvvvvv-___-vvvvvvvv)");
-		System.out.println("         (vvvvvv/   \\vvvvvv)");
-		System.out.println("         (vvvvv/     \\vvvvv)");
-		System.out.println("          (vvv/       \\vvv)");
-		System.out.println("           (v/         \\v)");
-		System.out.println("           (/           \\)");
+			System.out.println(Colors.TEXT_PURPLE + "      (\\                     /)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "      (v\\                   /v)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "     (vvv\\                 /vvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "    (vvvvv\\               /vvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "   (vvvvvvv\\             /vvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "  (vvvvvvvvv\\   _---_   /vvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + " (vvvvvvvvvvv\\/  XII  \\/vvvvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "(vvvvvvvvvvvv/      /  \\vvvvvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "(vvvvvvvvvvv/      /    \\vvvvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "(vvvvvvvvvv|IX   @@   III|vvvvvvvvvv)" + Colors.TEXT_RESET);
+			System.out.println(Colors.TEXT_PURPLE + " (vvvvvvvvvv\\      \\    /vvvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "  (vvvvvvvvvv\\         /vvvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "    (vvvvvvvvv\\  VI   /vvvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "       (vvvvvvvv-___-vvvvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "         (vvvvvv/   \\vvvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "         (vvvvv/     \\vvvvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "          (vvv/       \\vvv)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "           (v/         \\v)" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_PURPLE + "           (/           \\)" + Colors.TEXT_RESET);
 		}
+
 
 		public static void printOutroRelogio() {
-		System.out.println("     __|--|     |--|__");
-		System.out.println("    /  |  |-----|  |  \\ ");
-		System.out.println("   /   \\__|-----|__/   \\");
-		System.out.println("  /   ______---______   \\/\\");
-		System.out.println(" /   /               \\   \\/");
-		System.out.println("{   /    _     _   _  \\   }");
-		System.out.println("|  {    | | . | | | |  }  |-,");
-		System.out.println("|  |    |_| . |_| |_|  |  | |");
-		System.out.println("|  {                   }  |-'");
-		System.out.println("{   \\                 /   }");
-		System.out.println(" \\   `------___------'   /\\");
-		System.out.println("  \\     __|-----|__     /\\/");
-		System.out.println("   \\   /  |-----|  \\   /");
-		System.out.println("    \\  |--|     |--|  /");
-		System.out.println("     --|  |-----|  |--");
-		System.out.println("       |--|     |--|");
+			System.out.println(Colors.TEXT_CYAN + "     __|--|     |--|__" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "    /  |  |-----|  |  \\ " + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "   /   \\__|-----|__/   \\" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "  /   ______---______   \\/\\" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + " /   /               \\   \\/" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "{   /    _     _   _  \\   }" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "|  {    | | . | | | |  }  |-, " + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "|  |    |_| . |_| |_|  |  | |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "|  {                   }  |-' " + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "{   \\                 /   }" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + " \\   `------___------'   /\\" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "  \\     __|-----|__     /\\/" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "   \\   /  |-----|  \\   /" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "    \\  |--|     |--|  /" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "     --|  |-----|  |--" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_CYAN + "       |--|     |--|");
 		}
 
+
 		public static void printBinario() {
-			System.out.println("+-----------------------------------------------------------------------+");
-			System.out.println("| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |");
-			System.out.println("|{>/----------------------------------------------------------------\\<}|");
-			System.out.println("|: |                                                                 | :|");
-			System.out.println("| :|                                                                 |: |");
-			System.out.println("| :|                           | Letra  | Binário |                  |: |");
-			System.out.println("|: |                           +-------+----------+                  | :|");
-			System.out.println("| :|                           |   A   | 01000001 |                  |: |");
-			System.out.println("|: |                           |   B   | 01000010 |                  | :|");
-			System.out.println("| :|                           |   C   | 01000011 |                  |: |");
-			System.out.println("|: |                           |   D   | 01000100 |                  | :|");
-			System.out.println("| :|                           |   E   | 01000101 |                  |: |");
-			System.out.println("|: |                           |   F   | 01000110 |                  | :|");
-			System.out.println("| :|                           |   G   | 01000111 |                  |: |");
-			System.out.println("|: |                           |   H   | 01001000 |                  | :|");
-			System.out.println("| :|                           |   I   | 01001001 |                  |: |");
-			System.out.println("|: |                           |   J   | 01001010 |                  | :|");
-			System.out.println("| :|                           |   K   | 01001011 |                  |: |");
-			System.out.println("|: |                           |   L   | 01001100 |                  | :|");
-			System.out.println("| :|                           |   M   | 01001101 |                  |: |");
-			System.out.println("|: |                           |   N   | 01001110 |                  | :|");
-			System.out.println("| :|                           |   O   | 01001111 |                  |: |");
-			System.out.println("|: |                           |   P   | 01010000 |                  | :|");
-			System.out.println("| :|                           |   Q   | 01010001 |                  |: |");
-			System.out.println("|: |                           |   R   | 01010010 |                  | :|");
-			System.out.println("| :|                           |   S   | 01010011 |                  |: |");
-			System.out.println("|: |                           |   T   | 01010100 |                  | :|");
-			System.out.println("| :|                           |   U   | 01010101 |                  |: |");
-			System.out.println("|: |                           |   V   | 01010110 |                  | :|");
-			System.out.println("| :|                           |   W   | 01010111 |                  |: |");
-			System.out.println("|: |                           |   X   | 01011000 |                  | :|");
-			System.out.println("| :|                           |   Y   | 01011001 |                  |: |");
-			System.out.println("|: |                           |   Z   | 01011010 |                  | :|");
-			System.out.println("| :|                                                                 |: |");
-			System.out.println("|{>\\----------------------------------------------------------------/<}|");
-			System.out.println("| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |");
-			System.out.println("+------------------------------------------------------------------------+");
-			}
+			System.out.println(Colors.TEXT_GREEN + "+-----------------------------------------------------------------------+" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|{>/----------------------------------------------------------------\\<}|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                                                                 | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                                                                 |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           | Letra  | Binário |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           +-------+----------+                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   A   | 01000001 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   B   | 01000010 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   C   | 01000011 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   D   | 01000100 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   E   | 01000101 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   F   | 01000110 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   G   | 01000111 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   H   | 01001000 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   I   | 01001001 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   J   | 01001010 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   K   | 01001011 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   L   | 01001100 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   M   | 01001101 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   N   | 01001110 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   O   | 01001111 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   P   | 01010000 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   Q   | 01010001 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   R   | 01010010 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   S   | 01010011 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   T   | 01010100 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   U   | 01010101 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   V   | 01010110 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   W   | 01010111 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   X   | 01011000 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                           |   Y   | 01011001 |                  |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|: |                           |   Z   | 01011010 |                  | :|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| :|                                                                 |: |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "|{>\\----------------------------------------------------------------/<}|" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_GREEN + "+------------------------------------------------------------------------+" + Colors.TEXT_RESET);
+		}
+
 
 		public static void printMaca() {
-			System.out.println("                        ___");
-			System.out.println("                          _/`.-'.");
-			System.out.println("                _      _/` .  _.");
-			System.out.println("       ..:::::.(_)   /` _.'_./");
-			System.out.println("     .oooooooooo\\ \\o/.-'__.'o.");
-			System.out.println("    .ooooooooo`._\\_|_.'`oooooob.");
-			System.out.println("  .ooooooooooooooooooooo&&oooooob.");
-			System.out.println(" .oooooooooooooooooooo&@@@@@@oooob.");
-			System.out.println(".ooooooooooooooooooooooo&&@@@@@ooob.");
-			System.out.println("doooooooooooooooooooooooooo&@@@@ooob");
-			System.out.println("doooooooooooooooooooooooooo&@@@oooob");
-			System.out.println("dooooooooooooooooooooooooo&@@@ooooob");
-			System.out.println("dooooooooooooooooooooooooo&@@oooooob");
-			System.out.println("`dooooooooooooooooooooooooo&@ooooob'");
-			System.out.println(" `doooooooooooooooooooooooooooooob'");
-			System.out.println("  `doooooooooooooooooooooooooooob'");
-			System.out.println("   `doooooooooooooooooooooooooob'");
-			System.out.println("    `doooooooooooooooooooooooob'");
-			System.out.println("     `doooooooooooooooooooooob'");
-			System.out.println("      `dooooooooobodoooooooob'");
-			System.out.println("       `doooooooob dooooooob'");
-			System.out.println("         `\"\"\"\"\"\"\"' `\"\"\"\"\"\"\"'");
-			}
+			System.out.println(Colors.TEXT_RED + "                        ___" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "                          _/`.-'." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "                _      _/` .  _." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "       ..:::::.(_)   /` _.'_./" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "     .oooooooooo\\ \\o/.-'__.'o." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "    .ooooooooo`._\\_|_.'`oooooob." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "  .ooooooooooooooooooooo&&oooooob." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + " .oooooooooooooooooooo&@@@@@@oooob." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + ".ooooooooooooooooooooooo&&@@@@@ooob." + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "doooooooooooooooooooooooooo&@@@@ooob" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "doooooooooooooooooooooooooo&@@@oooob" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "dooooooooooooooooooooooooo&@@@ooooob" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "dooooooooooooooooooooooooo&@@oooooob" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "`dooooooooooooooooooooooooo&@ooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + " `doooooooooooooooooooooooooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "  `doooooooooooooooooooooooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "   `doooooooooooooooooooooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "    `doooooooooooooooooooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "     `doooooooooooooooooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "      `dooooooooobodoooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "       `doooooooob dooooooob'" + Colors.TEXT_RESET);
+    			System.out.println(Colors.TEXT_RED + "         `\"\"\"\"\"\"\"' `\"\"\"\"\"\"\"'" + Colors.TEXT_RESET);
+		}
+
 	
 		public static void printChapeleiroLouco() {
 			System.out.println(" ,------------.                ,.--\"\"-._\r\n"
