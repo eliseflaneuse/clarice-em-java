@@ -62,6 +62,7 @@ public class Story {
 	}
 	
 	public static void tchau() {
+
 		System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
 		System.out.println("\n\t\tMuito bem, deu pra ver que você pelo menos se esforça, acho que vai se");
 		System.out.println("\tdar bem por aqui, o faro daquela lebre continua apurado hehehe. Aliás, falando na lebre,");
@@ -70,6 +71,7 @@ public class Story {
 		System.out.println("\tacho que pode te ajudar em algum momento!"+ Colors.TEXT_RESET);
 		System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT);
 		System.out.println("\n\tVocê recebeu uma taça!"+ Colors.TEXT_RESET);
+
 	}
 
 }

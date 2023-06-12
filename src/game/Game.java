@@ -150,6 +150,7 @@ public class Game implements GameRepository {
 			System.out.println("\t(´･_･`) 'Sério mesmo? Esperava mais de você, talvez");
 			System.out.println("\to instinto daquela lebre esteja mesmo começando a falhar...");
 			System.out.println("\t\tVamos para a próxima pergunta:" + Colors.TEXT_RESET);
+
 		}
 
 //		pergunta 2
@@ -194,8 +195,7 @@ public class Game implements GameRepository {
 
 		default:
 			if (errado1 == 1 ) {
-				System.out
-						.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
 				System.out.println("\tNão ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar..."+ Colors.TEXT_RESET);
 			}
 		}
@@ -250,8 +250,7 @@ public class Game implements GameRepository {
 
 		default:
 			if (errado2 == 1) {
-				System.out
-						.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
 				System.out.println("\tNão ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar..."+ Colors.TEXT_RESET);
 			}
 		}
@@ -259,6 +258,7 @@ public class Game implements GameRepository {
 			}catch(InputMismatchException e) {
 				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
 				System.out.println("\tEpa epa epa, sem gracinhas forasteire, apenas me responda com números!"+ Colors.TEXT_RESET);
+
 				scanner.nextLine();
 			};
 		}while(errado2 == 1);
@@ -272,71 +272,77 @@ public class Game implements GameRepository {
 	} 
 
 	
-
+// item passar pro jogador 
+// Criar o oponente
 
 	private void cenaGatoChester() {
 			
-		System.out.println(" Você está perdide no país das maravilhas e encontra-se em um cruzamento de caminhos.");
-		System.out.println(" Está confuse e não sabe qual direção tomar. ");
-		System.out.println(" De repente, o gato sorridente aparece flutuando no ar, ");
-		System.out.println(" com seu corpo desaparecendo aos poucos, deixando apenas seu sorriso largo visível.\n");
+		System.out.println("\t Você está perdide no país das maravilhas e encontra-se em um cruzamento de caminhos.");
+		System.out.println("\t Está confuse e não sabe qual direção tomar. ");
+		System.out.println("\t De repente, o gato sorridente aparece flutuando no ar, ");
+		System.out.println("\t com seu corpo desaparecendo aos poucos, deixando apenas seu sorriso largo visível.\n");
 
-		System.out.println(" Ei, você aí? 'Decifra-me ou te devoro!'\n");
+		System.out.println("\t Ei, você aí? 'Decifra-me ou te devoro!'\n");
 
 		ArtLibrary.printCheshireCat();
 		
+
 		System.out.println(" Vou fazer algumas perguntas para você.\n");
 		System.out.println(" O que todo mundo sempre está correndo para pegar, mas nunca consegue segurar?\n");
-		System.out.println(" Responda com a primeira letra.");
-		String respostaEnigma = scanner.nextLine();
+		System.out.println(" Responda com a primeira letra: ");
 
+		String respostaEnigma = scanner.nextLine();
+		
+		// try catch - igual do Lê
 
 		if (respostaEnigma.equalsIgnoreCase( "T" )) {
 
 
 			System.out.println(
-					" Correto!  Acredito que você esteja buscando maneiras de ganhar alguns minutos extras.\n");
+					"\t Correto!  Acredito que você esteja buscando maneiras de ganhar alguns minutos extras.\n");
 			
 		} else {
-			System.out.println(" Incorreto! Dessa maneira, você corre o risco de perder o tempo que lhe resta.\n ");
+			System.out.println("\t Incorreto! Dessa maneira, você corre o risco de perder o tempo que lhe resta.\n ");
 		
 		}
 
-		System.out.println(" Você continua sua jornada em busca de mais 5 mininutos.\n");
-		System.out.println(" Se deparou com um lindo jardim cheio de flores coloridas!");
-		System.out.println(" Um caminho é cercado por flores amarelas e o outro por flores azuis.\n");
+		System.out.println("\t Você continua sua jornada em busca de mais 5 mininutos.\n");
+		System.out.println("\t Se deparou com um lindo jardim cheio de flores coloridas!");
+		System.out.println("\t Um caminho é cercado por flores amarelas e o outro por flores azuis.\n");
 
-		System.out.println("Ah, vejo que está em busca de orientação. Em um lugar como este, a direção a seguir pode ser um enigma." 
-		       +" Fique atento ao que vou dizer.\n");
+		System.out.println("\t Ah, vejo que está em busca de orientação. Em um lugar como este, a direção a seguir pode ser um enigma." 
+		       +"\t Fique atento ao que vou dizer.\n");
 		
-        System.out.println("Teu desafio é decifrar o enigma e desvendar os segredos ocultos neste mundo mágico.\n");
+        System.out.println("\t Teu desafio é decifrar o enigma e desvendar os segredos ocultos neste mundo mágico.\n");
         
-		System.out.println(" Sou a cor do ouro, do tesouro valioso,\r\n" + " Símbolo de riqueza e sucesso sem fim.\r\n"
-				+ " Nas abelhas listradas, sou o distintivo honroso,\r\n"
-				+ " E nas estrelas mais brilhantes, sou seu matiz enfim\n.  ");
+		System.out.println("\t Sou a cor do ouro, do tesouro valioso,\r\n" + "\t Símbolo de riqueza e sucesso sem fim.\r\n"
+				+ "\t Nas abelhas listradas, sou o distintivo honroso,\r\n"
+				+ "\t E nas estrelas mais brilhantes, sou seu matiz enfim\n.  ");
 
-		char caminhoEscolhido = 'C';
+		String caminhoEscolhido = "C";
 		int errado = 1;
 
 		do {
-			System.out.println("Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
-			caminhoEscolhido = scanner.next().charAt(0);
 
-			if (caminhoEscolhido == ('A')) {
-				System.out.println(" Escolheu o caminho das flores amarelas.\n");
-				System.out.println("Parabéns, destemide viajante! Ao escolher o caminho das flores amarelas, você desbloqueou um poderoso presente: um espelho mágico,\n" 
-				+ "imbuido de antigas energias que irão iluminar seu caminho nesta jornada desafiadora.");
+			System.out.println("\t Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
+			caminhoEscolhido = scanner.next();
+
+			if (caminhoEscolhido.equalsIgnoreCase("A")) {
+				System.out.println("\t Escolheu o caminho das flores amarelas.\n");
+				System.out.println("\t Parabéns, destemide viajante! Ao escolher o caminho das flores amarelas, você desbloqueou um poderoso presente: um espelho mágico,\n" 
+				+ "\t imbuido de antigas energias que irão iluminar seu caminho nesta jornada desafiadora.");
 				errado = 1;
 
-			} else if (caminhoEscolhido == ('B')) {
-				System.out.println(" Escolheu o caminho das flores azuis.\n");
-				System.out.println("  Você ganhou um espelho mágico, no entanto, não será uma caminhada fácil.\n"
-				+" Grandes desafios se erguerão à sua frente, testando sua coragem, inteligência e determinação."); 
+			} else if (caminhoEscolhido.equalsIgnoreCase("B")) {
+				System.out.println("\t Escolheu o caminho das flores azuis.\n");
+				System.out.println("\t  Você ganhou um espelho mágico, no entanto, não será uma caminhada fácil.\n"
+				+"\t Grandes desafios se erguerão à sua frente, testando sua coragem, inteligência e determinação."); 
+
 				errado = 1;
 
 			} else {
 				errado = 0;
-				System.out.println("Opção inválida\n");
+				System.out.println("\t Opção inválida\n");
 
 			}
 		} while (errado == 0);
@@ -631,9 +637,9 @@ public class Game implements GameRepository {
 	private void cenaDecifrarCodigoPortaMagica() {
 	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê separa as últimas folhas das árvores em seu caminho"
 	    		+ " e se depara com umas das maiores porta que já viu.");
-	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas, "
-	    		+ "como se a porta fosse feita inteira de Opala.");
-	    System.out.println("\tVocê da um passo em direção à ela.\n\n\n\n" + Colors.TEXT_RESET);
+	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas, ");
+	    System.out.println("\tcomo se a porta fosse feita inteira de Opala.");
+	    System.out.println("\tVocê dá um passo em direção à ela.\n\n\n\n" + Colors.TEXT_RESET);
 	    		
 	    
 	    ArtLibrary.printMagicDoor();
@@ -709,17 +715,19 @@ public class Game implements GameRepository {
 
 	    if (vitoria) {
 	    	System.out.println("\n\n\n");
-	        System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\tDepois de uma árdua batalha contra as cartas furiosas da Rainha de Copas, "
-	        		+ "você finalmente está diante da imponente porta e uma mensagem misteriosa é revelada em sua superfície:\n");
+	        System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\tDepois de uma árdua batalha contra as cartas furiosas da Rainha de Copas, " );
+	        System.out.println("\tvocê finalmente está diante da imponente porta e uma mensagem misteriosa é revelada em sua superfície:\n");
 	        System.out.println("\tPara essa porta passar,");
 	        System.out.println("\tEssa cifra terá que decifrar,");
 	        System.out.println("\tDuas casas pular,");
 	        System.out.println("\tPara 'César' transformar em 'eguct'.\n\n");
 	        
 	        System.out.println("\tEmbasbacade com a mensagem, você se desespera. "
-	        		+ "Depois de todas essas provações, será que você não vai conseguir voltar pra casa?");
+	        		+ "Depois de todas essas provações, ");
+	        System.out.println("\tserá que você não vai conseguir voltar pra casa?");
 	        System.out.println("\tVocê pensa em todos que te ajudaram a chegar aqui e pensa que não pode decepcioná-los.");
-	        System.out.println("\tVocê sente algo mudando dentro de você e decide colocar todos os presentes que ganhou no caminho a frente da grande porta de Opala:\n");
+	        System.out.println("\tVocê sente algo mudando dentro de você e decide colocar todos os presentes ");
+	        System.out.println("\tque ganhou no caminho a frente da grande porta de Opala:\n");
 	        System.out.println("\tUma Taça do Chapeleiro Louco\n");
 	        System.out.println("\tUm Espelho daquele Gato Roxo\n");
 	        System.out.println("\tUma Maçã para não ficar com fome\n");
