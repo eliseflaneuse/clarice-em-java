@@ -72,11 +72,11 @@ public class Game implements GameRepository {
 		while (continuarJogando && player.getLifePoints() > 0) {
 			System.out.println("\n\t------ Menu de Cenas ------");
 			System.out.println("\tEscolha uma cena para jogar:");
-			System.out.println("\t1. Cena do Chapeleiro Louco");
-			System.out.println("\t2. Cena do Gato Chester/Esfinge");
-			System.out.println("\t3. Cena do Coelho que dá mais 5 minutos");
-			System.out.println("\t4. Cena do Criquet com a Rainha de Copas");
-			System.out.println("\t5. Cena para decifrar o código da porta mágica");
+			System.out.println("\t1. Chapeleiro Louco");
+			System.out.println("\t2. Gato de Cheshire");
+			System.out.println("\t3. Coelho Branco");
+			System.out.println("\t4. Rainha de Copas");
+			System.out.println("\t5. Porta mágica");
 			System.out.println("\t0. Voltar ao Menu Inicial");
 
 			int opcao = scanner.nextInt();
@@ -164,8 +164,8 @@ public class Game implements GameRepository {
 
 
 	    // Criando as cartas da Rainha de Copas
-	    Opponent carta1 = new Opponent("3 de copas", 2, 2, 1 , "copo");
-	    Opponent carta2 = new Opponent("2 de paus", 2, 2, 1 , "copo");
+	    Opponent carta1 = new Opponent("3 de copas", 2, 2, 1 , "lança");
+	    Opponent carta2 = new Opponent("2 de paus", 2, 2, 1 , "lança");
 
 	    boolean vitoria = false;
 	    int currentPlayerAttack = 1;
@@ -217,16 +217,16 @@ public class Game implements GameRepository {
 	        System.out.println("\t\tDuas casas pular,");
 	        System.out.println("\t\tPara 'amigo' transformar em 'COQKI'.\"");
 	        
-	        System.out.println("Embasbacade com a mensagem, você se desespera. "
+	        System.out.println("\tEmbasbacade com a mensagem, você se desespera. "
 	        		+ "Depois de todas essas provações, será que você não vai conseguir voltar pra casa?");
-	        System.out.println("Você pensa em todos que te ajudaram a chegar aqui e pensa que não pode decepcioná-los.");
-	        System.out.println("Você sente algo mudando dentro de você e decide colocar todos os presentes que ganhou no caminho a frente da grande porta de Opala:\n");
-	        System.out.println("Uma Taça do Chapeleiro Louco\n");
-	        System.out.println("Um Espelho daquele Gato Roxo\n");
-	        System.out.println("Uma Maçã para não ficar com fome\n");
-	        System.out.println("Um pingente para não esquecer seu nome. \n");
+	        System.out.println("\tVocê pensa em todos que te ajudaram a chegar aqui e pensa que não pode decepcioná-los.");
+	        System.out.println("\tVocê sente algo mudando dentro de você e decide colocar todos os presentes que ganhou no caminho a frente da grande porta de Opala:\n");
+	        System.out.println("\tUma Taça do Chapeleiro Louco\n");
+	        System.out.println("\tUm Espelho daquele Gato Roxo\n");
+	        System.out.println("\tUma Maçã para não ficar com fome\n");
+	        System.out.println("\tUm pingente para não esquecer seu nome. \n");
 	        
-	        System.out.println("Você sabe o que precisa fazer. Se levanta e escreve a senha na porta: \n");
+	        System.out.println("\tVocê sabe o que precisa fazer. Se levanta e escreve a senha na porta: \n");
 
 	        String senhaDigitada = scanner.nextLine();
 	        senhaDigitada = removerAcentos(senhaDigitada.toLowerCase());
@@ -273,6 +273,26 @@ public class Game implements GameRepository {
 		System.out.println("\n\n");
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * package game;

@@ -103,6 +103,7 @@ public class Player extends Character {
 	        System.out.println(getName() + " se defendeu, reduzindo o dano recebido em " + defense + ".");
 	        defesaAtiva = true;
 	    }
+	    
 	/*	
 	@Override
 	public void read() {
