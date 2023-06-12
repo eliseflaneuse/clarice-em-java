@@ -167,7 +167,7 @@ public class ArtLibrary {
 		
 	}
 	
-	public static void more51() {
+	public static void printCoelho() {
 		System.out.println("                                ,;;;;;;;,");
 		System.out.println("             .;;;,            ,;;;;;;;;;;;,");
 		System.out.println("            .;;%%;;;,        ,;;;;;;;;;;;;;,");
@@ -206,7 +206,7 @@ public class ArtLibrary {
 		System.out.println("                        `@@'       @@'");
 		}
 
-		public static void more52() {
+		public static void printRelogioFlutuante() {
 		System.out.println("      (\\                     /)");
 		System.out.println("      (v\\                   /v)");
 		System.out.println("     (vvv\\                 /vvv)");
@@ -228,7 +228,7 @@ public class ArtLibrary {
 		System.out.println("           (/           \\)");
 		}
 
-		public static void more53() {
+		public static void printOutroRelogio() {
 		System.out.println("     __|--|     |--|__");
 		System.out.println("    /  |  |-----|  |  \\ ");
 		System.out.println("   /   \\__|-----|__/   \\");
@@ -247,7 +247,7 @@ public class ArtLibrary {
 		System.out.println("       |--|     |--|");
 		}
 
-		public static void more54() {
+		public static void printBinario() {
 			System.out.println("+-----------------------------------------------------------------------+");
 			System.out.println("| = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = : = |");
 			System.out.println("|{>/----------------------------------------------------------------\\<}|");
@@ -287,7 +287,7 @@ public class ArtLibrary {
 			System.out.println("+------------------------------------------------------------------------+");
 			}
 
-		public static void more55() {
+		public static void printMaca() {
 			System.out.println("                        ___");
 			System.out.println("                          _/`.-'.");
 			System.out.println("                _      _/` .  _.");
