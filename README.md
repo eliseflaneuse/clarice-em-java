@@ -25,7 +25,7 @@ A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos 
 O jogo começa com os atributos BSM's zerados: 
 
 <div align="center">
-![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/1b4ac2ed-b13c-4642-a6f5-6509ac1e7d88)
+<img src=https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/1b4ac2ed-b13c-4642-a6f5-6509ac1e7d88 alt="Image" />
 </div>
 
 ## Implementação: 
