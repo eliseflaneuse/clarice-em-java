@@ -119,7 +119,6 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaChapeleiroLouco() {
-		/*
 		Story.Introduction();
 
 		ArtLibrary.printChapeleiroLouco();
@@ -262,7 +261,7 @@ public class Game implements GameRepository {
 		ArtLibrary.printTaca();
 		
 		System.out.println("\nContinuando sua jornada...");
-	} */
+	} 
 	}
 
 	private void cenaGatoChester() {
