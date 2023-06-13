@@ -350,8 +350,8 @@ public class Game implements GameRepository {
 				System.out.println("\t"+ e.getMessage() + "\n");
 			}	
 		} while (errado == 0);
+		player.printCharacterSheet();
 	     }
-	}
 	
 	private void cenaCoelhoCintoMinutos() {
 		System.out.println("\n Você encontrou o Coelho que lhe deu mais 5 minutos!");
@@ -398,7 +398,7 @@ public class Game implements GameRepository {
 		
 		System.out.println(Colors.TEXT_CYAN + "\n\n ...Chegou a hora de uma grande decisão..."
 				+ "\n\n ...Preste bem atenção..." + Colors.TEXT_RESET);
-        System.out.println(Colors.TEXT_CYAN + "\n É de seu desejo continuar?");
+        System.out.println(Colors.TEXT_CYAN + "\n É de seu desejo continuar?" + Colors.TEXT_RESET);
 
         System.out.print("\n Escolha sabiamente: (Bora/Não): ");
         String opcao = scanner.nextLine();
@@ -432,7 +432,7 @@ public class Game implements GameRepository {
 	        } else {
 	            System.out.println("\n Opa opa, onde pensa que está indo? Essa opção, não tem não...");
 	        }
-			
+        player.printCharacterSheet();	
         System.out.println("\n Então vamos continuando em sua jornada...");
 }
 
@@ -639,9 +639,10 @@ public class Game implements GameRepository {
 	}
 
 	private void cenaDecifrarCodigoPortaMagica() {
+		
 	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê separa as últimas folhas das árvores em seu caminho"
 	    		+ " e se depara com umas das maiores porta que já viu.");
-	    System.out.println("\tEla parece ter muitas palvras e letras brilhando um verde ofuscantes em ondas, ");
+	    System.out.println("\tEla parece ter muitas palavras e letras brilhando um verde ofuscantes em ondas, ");
 	    System.out.println("\tcomo se a porta fosse feita inteira de Opala.");
 	    System.out.println("\tVocê dá um passo em direção à ela.\n\n\n\n" + Colors.TEXT_RESET);
 	    		
@@ -659,7 +660,7 @@ public class Game implements GameRepository {
 	    System.out.println("\t2 de paus: Isso mesmo! Prepare-se para enfrentar a nossa fúria!\n" );
 
 	    System.out.println("\tVocê se aproxima das cartas, pronte para o confronto.\n");
-	    System.out.println("\t" + player.getName() + ": Eu enfrentei desafios incríveis para chegar até aqui e reunir os 4 itens do segredo.");
+	    System.out.println("\t" + player.getName() + ": Eu enfrentei desafios incríveis para chegar até aqui e ganhar meus 5 minutos.");
 	    System.out.println("\tAgora, desejo voltar ao meu mundo, e essa porta é o caminho. Por favor, deixem-me passar!\n" );
 
 	    System.out.println("\t3 de copas: Hahaha! Achou que seria fácil, humana insolente?");
@@ -701,10 +702,11 @@ public class Game implements GameRepository {
 
 	            if (currentCard.getLifePoints() <= 0) {
 	                System.out.println("\tVocê derrotou a carta " + currentCard.getName() + " da Rainha de Copas!");
-
+	                player.adicionarPontoProatividade();
 	                Opponent remainingCard = (opcao == 1) ? carta2 : carta1;
 	                if (player.attack(remainingCard)) {
 	                    System.out.println("\tVocê derrotou a carta " + remainingCard.getName() + " da Rainha de Copas!");
+	                    player.adicionarPontoMentalidadeDeCrescimento();
 	                    vitoria = true;
 	                } else {
 	                    System.out.println("\tVocê precisa derrotar a carta " + remainingCard.getName() + " para abrir a porta.");
@@ -716,7 +718,9 @@ public class Game implements GameRepository {
 	            System.out.println("\tOpção inválida! Tente novamente.");
 	        }
 	    }
-
+	    
+	    player.printCharacterSheet();
+	    
 	    if (vitoria) {
 	    	System.out.println("\n\n\n");
 	        System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\t\tDepois de uma árdua batalha contra as cartas furiosas da Rainha de Copas, " );
@@ -740,10 +744,10 @@ public class Game implements GameRepository {
 	        System.out.println("\tVocê sabe o que precisa fazer. Se levanta e escreve a senha na porta: \n");
 
 	        String senhaDigitada = scanner.nextLine();
-	        senhaDigitada = removerAcentos(senhaDigitada.toLowerCase());
+	        senhaDigitada = removerAcentos(senhaDigitada);
 	        
-	    
-	        if (senhaDigitada.equals("vgorq")) {
+	    // Criar um loop while para o jogador poder tentar mais de uma vez.
+	        if (senhaDigitada.equalsIgnoreCase("vgorq")) {
 	        	    player.adicionarPontoTrabalhoEmEquipe();
 	        	    System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\t\tA porta de Opala começa a tremer e, aos poucos, se abre diante de você.");
 	                System.out.println("\t\tA luz brilhante do mundo além da porta invade o seu campo de visão.");
