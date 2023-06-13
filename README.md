@@ -121,7 +121,7 @@ public interface GameRepository {
 
 ```
 
-### 3. Implementar a lógica dos métodos de sobrescrita da interface
+### 3. Implementar a lógica dos métodos implemnetados pela interface - polimorfismo 
 
 Agora que temos as classes básicas criadas, podemos partir para a lógica de funcionamento do jogo. Primeiramente vamos criar o menu principal.
 
@@ -238,3 +238,5 @@ private void cenaCoelhoCintoMinutos() {}
 private void cenaRainhaCopas() {}
 private void cenaDecifrarCodigoPortaMagica() {}
 ```
+
+### 4. Implementar a lógica das Cenas do Jogo 
