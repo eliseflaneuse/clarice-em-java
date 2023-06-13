@@ -405,18 +405,18 @@ public class Game implements GameRepository {
 	    if (opcao.equalsIgnoreCase("bora")) {
 	        boolean acertou = false;
 	        for (int i = 0; i < 2; i++) {
-	            System.out.println(Colors.TEXT_CYAN + "\n\t\t Note: é então o seu começo, "
-	                    + "\n\t\t uma palavra de grande importância, "
+			System.out.println(Colors.TEXT_CYAN + "\n\t\t Note: é uma palavra de grande importância, "
 	                    + "\n\t\t dentro do contexto da Gen, "
 	                    + "\n\t\t muitas possibilidades com o seu uso, "
-	                    + "\n\t\t qual é a letra que me faz ser quem sou? "
+	                    + "\n\t\t qual é a linguagem que me faz ser quem sou? "
 	                    + "\n\t\t a resposta certa você irá notar? "
-	                    + "\n\t\t pois já anda utilizando... \n" + Colors.TEXT_RESET);
+	                    + "\n\t\t pois já anda a utilizar..."
+	                    + "\n\t\t e em binário deve estar!\n" + Colors.TEXT_RESET);
 	            ArtLibrary.printBinario();
 	            System.out.print("\n\t Digite a resposta da charada: ");
 	            String resposta = scanner.nextLine();
 
-	            if (resposta.equalsIgnoreCase("01001010")) {
+	            if (resposta.equalsIgnoreCase("01001010 01100001 01110110 01100001")) {
 	                acertou = true;
 	                break;
 	            }
