@@ -84,7 +84,7 @@ Character: Classe base para representar o personagem do jogador e personagens in
 Player: Subclasse de Character que representa o personagem do jogador.
 Opponent: Subclasse de Character que representa os personagens inimigos.
 
-```
+```java
 public class Game {
     public static void main(String[] args) {
         // Implementação do loop principal do jogo
