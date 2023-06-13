@@ -46,7 +46,7 @@ git clone link do repositório
 
 
 ### Como esta organizado o projeto?
-```Java
+```java
 game
 ├── controller
 │   ├── OpponentController.java
