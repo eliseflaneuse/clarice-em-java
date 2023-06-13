@@ -29,6 +29,8 @@ Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de u
 ### Passos para rodar a aplicação
 
 1. Dê um fork nesse repositório e se você puder nos dê uma estrelinha!
+
+
 ![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/0fa3a816-5396-4060-853b-741e434c7ef2)
 
 2. Clone o repositório 
