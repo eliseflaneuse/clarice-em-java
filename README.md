@@ -124,7 +124,7 @@ public class Opponent extends Character {
 
 Agora, vamos implementar a interface do jogo Ela vai permitir a utilização de três métodos importantes para a lógica do jogo: iniciarJogo, exibirMenu e jogar.
 
-```
+```java
 public interface GameRepository {
     void iniciarJogo();
     void exibirMenu();
@@ -138,7 +138,7 @@ public interface GameRepository {
 
 Agora que temos as classes básicas criadas, podemos partir para a lógica de funcionamento do jogo. Primeiramente vamos criar o menu principal.
 
-```
+```java
 public void exibirMenu() {
 		boolean sair = false;
 		while (!sair) {
@@ -172,7 +172,7 @@ public void exibirMenu() {
 Sobrescrever o método "iniciarJogo()" que é responsável por iniciar o jogo. O jogador é solicitado a inserir seu nome através da entrada de dados. Em seguida, um novo objeto da classe "Player" é criado, atribuindo o nome do jogador e definindo valores iniciais para os atributos do personagem, como pontos de vida, defesa e dano.
 
 
-```
+```java
 public void iniciarJogo() {
 
 		System.out.printf("\n\tInforme o nome do jogador:");
@@ -186,7 +186,7 @@ public void iniciarJogo() {
 Sobrescrevemos o método "jogar()" que é responsável por conduzir o jogo em si. Ao iniciar o jogo, o jogador é apresentado a um menu de cenas disponíveis para jogar. Cada cena representa um desafio ou enigma a ser enfrentado. O jogador seleciona uma opção digitando o número correspondente e, em seguida, a função correspondente à cena escolhida é executada. O jogador pode voltar ao menu inicial digitando 0. O jogo continua enquanto o jogador escolher continuar jogando e tiver pontos de vida restantes. Ao finalizar todas as cenas com vida restante, o jogador vence o jogo. Caso contrário, se o jogador perder todas as vidas, ele perde o jogo. Em ambos os casos, uma mensagem final é exibida.
 
 
-```
+```java
 public void jogar() {
 		System.out.println("\n\tIniciando o jogo...");
 
@@ -244,7 +244,7 @@ public void jogar() {
 
 Decidimos criar a história tendo como base Alice no País das Maravilhas, então cada cena apresenta uma das personagens icônicas dessa história. Cada cena foi desenvolvida por uma pessoa do nosso Dev Team. 
 
-```
+```java
 private void cenaChapeleiroLouco() {}
 private void cenaGatoChester() {}
 private void cenaCoelhoCintoMinutos() {}
