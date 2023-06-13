@@ -251,5 +251,3 @@ private void cenaCoelhoCintoMinutos() {}
 private void cenaRainhaCopas() {}
 private void cenaDecifrarCodigoPortaMagica() {}
 ```
-
-### 4. Implementar a lógica das Cenas do Jogo 
