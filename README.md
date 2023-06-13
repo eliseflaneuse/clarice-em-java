@@ -24,11 +24,22 @@ Usando:
 A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos personagens de Alice no País das Maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
 
 *PITCH*
-Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de um alune da Generation em busca de mais 5 minutos. A história é repleta de desafios intrigantes e enigmas a serem desvendados. Ao longo da jornada, o jogador encontrará obstáculos, enfrentará batalhas e interagirá com personagens não jogáveis. A exploração de diferentes cenários e a coleta de itens especiais serão fundamentais para o progresso na história, revelando segredos e desbloqueando novas áreas. À medida que o jogo avança, o protagonista poderá aprimorar suas habilidades e atributos BSM's (Batalha, Sobrevivência e Magia). A busca pelo retorno ao mundo do personagem será repleta de emoção, reviravoltas e decisões impactantes, moldando assim o desfecho da história. Prepare-se para uma jornada emocionante em busca dos preciosos 5 minutos perdidos!
+Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de um alune da Generation em busca de mais 5 minutos. A história é repleta de desafios intrigantes e enigmas a serem desvendados. Ao longo da jornada, o jogador encontrará obstáculos, enfrentará batalhas e interagirá com personagens não jogáveis. A exploração de diferentes cenários e a coleta de itens especiais serão fundamentais para o progresso na história, revelando segredos e desbloqueando novas áreas. À medida que o jogo avança, o protagonista poderá aprimorar suas habilidades e atributos BSM's (Batalha, Sobrevivência e Magia. Brincadeira!). A busca pelo retorno ao mundo do personagem será repleta de emoção, reviravoltas e decisões impactantes, moldando assim o desfecho da história. Prepare-se para uma jornada emocionante em busca dos preciosos 5 minutos perdidos!
 
+### Passos para rodar a aplicação
+
+1. Dê um fork nesse repositório e se você puder nos dê uma estrelinha!
 ![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/0fa3a816-5396-4060-853b-741e434c7ef2)
 
-Se você puder nos dê uma estrelinha! Para jogar é só dar um fork nesse repositório, clonar para sua máquina e abrir em alguma IDE como Spring Tools.
+2. Clone o repositório 
+
+```
+
+git clone link do repositório 
+
+```
+
+
 
 
 
