@@ -3,8 +3,9 @@
 </h1>
 
 <div align="center">
-  <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/52f19d43-f6fe-4594-b4d6-7b573ad75f7d" alt="Image" />
+  <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/18f5bdcb-bc97-4222-9449-9dd055457795" alt="Image" />
 </div>
+
 
 
 ### Ideia geral: *Um jogo rpg em java.*
