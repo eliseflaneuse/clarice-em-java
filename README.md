@@ -22,6 +22,16 @@ Usando:
 
 A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos personagens de Alice no País das Maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
 
+*PITCH*
+Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de um alune da Generation em busca de mais 5 minutos. A história é repleta de desafios intrigantes e enigmas a serem desvendados. Ao longo da jornada, o jogador encontrará obstáculos, enfrentará batalhas e interagirá com personagens não jogáveis. A exploração de diferentes cenários e a coleta de itens especiais serão fundamentais para o progresso na história, revelando segredos e desbloqueando novas áreas. À medida que o jogo avança, o protagonista poderá aprimorar suas habilidades e atributos BSM's (Batalha, Sobrevivência e Magia). A busca pelo retorno ao mundo do personagem será repleta de emoção, reviravoltas e decisões impactantes, moldando assim o desfecho da história. Prepare-se para uma jornada emocionante em busca dos preciosos 5 minutos perdidos!
+
+![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/cde5d4f8-c355-4526-ac6a-6f4eb6309f3e)
+
+
+Se você puder nos dê uma estrelinha! Para jogar é só dar um fork nesse repositório, clonar para sua máquina e abrir em alguma IDE como Spring Tools.
+
+
+
 Como esta organizado o projeto?
 ```
 game
@@ -146,21 +156,22 @@ public void exibirMenu() {
 
 ```
 
+Sobrescrever o método "iniciarJogo()" que é responsável por iniciar o jogo. O jogador é solicitado a inserir seu nome através da entrada de dados. Em seguida, um novo objeto da classe "Player" é criado, atribuindo o nome do jogador e definindo valores iniciais para os atributos do personagem, como pontos de vida, defesa e dano.
+
+
 ```
 public void iniciarJogo() {
-
-		ArtLibrary.printWelcomeMessage();
-		ArtLibrary.printMonteJavaArt();
 
 		System.out.printf("\n\tInforme o nome do jogador:");
 		String nomeJogador = scanner.nextLine();
 
 		player = new Player(nomeJogador, 5, 5, 3, 0, 0, 0, 0, 0);
 
-		player.printCharacterSheet();
-
 	}
 ```
+
+Sobrescrevemos o método "jogar()" que é responsável por conduzir o jogo em si. Ao iniciar o jogo, o jogador é apresentado a um menu de cenas disponíveis para jogar. Cada cena representa um desafio ou enigma a ser enfrentado. O jogador seleciona uma opção digitando o número correspondente e, em seguida, a função correspondente à cena escolhida é executada. O jogador pode voltar ao menu inicial digitando 0. O jogo continua enquanto o jogador escolher continuar jogando e tiver pontos de vida restantes. Ao finalizar todas as cenas com vida restante, o jogador vence o jogo. Caso contrário, se o jogador perder todas as vidas, ele perde o jogo. Em ambos os casos, uma mensagem final é exibida.
+
 
 ```
 public void jogar() {
@@ -217,6 +228,8 @@ public void jogar() {
 ```
 
 ### 4. Implementar a lógica das Cenas do Jogo 
+
+Decidimos criar a história tendo como base Alice no País das Maravilhas, então cada cena apresenta uma das personagens icônicas dessa história. Cada cena foi desenvolvida por uma pessoa do nosso Dev Team. 
 
 ```
 private void cenaChapeleiroLouco() {}
