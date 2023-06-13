@@ -1,9 +1,11 @@
 package game;
 
 import java.text.Normalizer;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 
 import game.controller.OpponentController;
 import game.model.*;
@@ -13,6 +15,7 @@ import game.util.*;
 public class Game implements GameRepository {
 
 	Scanner scanner = new Scanner(System.in);
+	List<Opponent> opponents = new ArrayList<>();
 
 	public static void main(String[] args) {
 		Game jogo = new Game();
@@ -270,10 +273,6 @@ public class Game implements GameRepository {
 		
 		System.out.println("\n\tContinuando sua jornada...");
 	} 
-
-	
-// item passar pro jogador 
-// Criar o oponente
 
 	private void cenaGatoChester() {
 			
@@ -675,7 +674,10 @@ public class Game implements GameRepository {
 	
 	    Opponent carta1 = new Opponent("3 de copas", 2, 2, 1 , "lança");
 	    Opponent carta2 = new Opponent("2 de paus", 2, 2, 1 , "lança");
-
+	    
+	    // Adicionados a lista.
+	    opponents.add(carta1);
+	    opponents.add(carta2);
 	    
 	    boolean vitoria = false;
 	    int currentPlayerAttack = 1;
@@ -706,6 +708,11 @@ public class Game implements GameRepository {
 	                Opponent remainingCard = (opcao == 1) ? carta2 : carta1;
 	                if (player.attack(remainingCard)) {
 	                    System.out.println("\tVocê derrotou a carta " + remainingCard.getName() + " da Rainha de Copas!");
+	                    
+	                    System.out.println("\tVocê conseguiu derrotar os seguintes oponentes:");
+	                    for (Opponent opponent : opponents) {
+	                        System.out.println("\t" + opponent.getName());
+	                    }
 	                    player.adicionarPontoMentalidadeDeCrescimento();
 	                    vitoria = true;
 	                } else {
