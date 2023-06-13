@@ -3,8 +3,9 @@
 </h1>
 
 <div align="center">
-  <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/52f19d43-f6fe-4594-b4d6-7b573ad75f7d" alt="Image" />
+  <img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/18f5bdcb-bc97-4222-9449-9dd055457795" alt="Image" />
 </div>
+
 
 
 ### Ideia geral: *Um jogo rpg em java.*
@@ -22,10 +23,54 @@ Usando:
 
 A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos personagens de Alice no País das Maravilhas. Todas as perguntas lógicas são sobre programação java e vão aumentando o nível de dificuldade.
 
+*PITCH*
+Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de um alune da Generation em busca de mais 5 minutos. A história é repleta de desafios intrigantes e enigmas a serem desvendados. Ao longo da jornada, o jogador encontrará obstáculos, enfrentará batalhas e interagirá com personagens não jogáveis. A exploração de diferentes cenários e a coleta de itens especiais serão fundamentais para o progresso na história, revelando segredos e desbloqueando novas áreas. À medida que o jogo avança, o protagonista poderá aprimorar suas habilidades e atributos BSM's (Batalha, Sobrevivência e Magia. Brincadeira!). A busca pelo retorno ao mundo do personagem será repleta de emoção, reviravoltas e decisões impactantes, moldando assim o desfecho da história. Prepare-se para uma jornada emocionante em busca dos preciosos 5 minutos perdidos!
+
+### Passos para rodar a aplicação
+
+1. Dê um fork nesse repositório e se você puder nos dê uma estrelinha!
+
+
+![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/0fa3a816-5396-4060-853b-741e434c7ef2)
+
+2. Clone o repositório 
+
+```
+
+git clone link do repositório 
+
+```
+
+
+
+
+
+### Como esta organizado o projeto?
+```
+game
+├── controller
+│   ├── OpponentController.java
+│   └── PlayerController.java
+├── model
+│   ├── Character.java
+│   ├── Opponent.java
+│   └── Player.java
+├── repository
+│   ├── GameRepository.java
+│   ├── OpponentRepository.java
+│   └── PlayerRepository.java
+└── util
+│   ├── ArtLibrary.java
+│   ├── Colors.java
+│   ├── ColorsTest.java
+│   ├── Story.java
+└── Game.java
+```
+
 O jogo começa com os atributos BSM's zerados: 
 
 <div align="center">
-<img src=https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/1b4ac2ed-b13c-4642-a6f5-6509ac1e7d88 alt="Image" />
+<img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/9d6d197b-ed00-467b-9e88-b89150097def" alt="Image" />
 </div>
 
 ## Implementação: 
@@ -75,134 +120,134 @@ public class Opponent extends Character {
     // Construtor, getters e setters
 }
 ```
-### 2. Implementar a lógica do jogo
+### 2. Implementar a interface GameRepository
 
-Agora, vamos implementar a lógica do jogo. Isso inclui a criação do personagem do jogador, a distribuição dos pontos de atributos, a exibição de perguntas lógicas e engraçadas, e a interação com o jogador para receber suas respostas e atualizar o estado do jogo.
+Agora, vamos implementar a interface do jogo Ela vai permitir a utilização de três métodos importantes para a lógica do jogo: iniciarJogo, exibirMenu e jogar.
 
 ```
-import java.util.Scanner;
+public interface GameRepository {
+    void iniciarJogo();
+    void exibirMenu();
+    void jogar();
 
-public class Game {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Criação do personagem do jogador
-        System.out.print("Digite o nome do personagem: ");
-        String playerName = scanner.nextLine();
-        Player player = createPlayer(playerName);
-
-        // Distribuição dos pontos de atributos
-        distributeAttributePoints(player, scanner);
-
-        // Iniciar o jogo
-        boolean gameOver = false;
-        while (!gameOver) {
-            // Lógica do jogo (exibir perguntas, interagir com o jogador, atualizar estado, etc.)
-        }
-
-        scanner.close();
-    }
-
-    private static Player createPlayer(String name) {
-        // Implementação para criar o personagem do jogador com nome e atributos iniciais
-    }
-
-    private static void distributeAttributePoints(Player player, Scanner scanner) {
-        // Implementação para distribuir os pontos de atributos para o jogador
-    }
 }
 
 ```
 
-### 3. Implementar perguntas lógicas e engraçadas
+### 3. Implementar a lógica dos métodos implementados pela interface - polimorfismo 
 
-Agora, precisamos criar perguntas lógicas e engraçadas para o jogo. Podemos criar uma classe separada para armazenar as perguntas e suas respostas corretas, e uma lógica para selecionar aleatoriamente as perguntas para exibir aos jogadores.
-Ideia para perguntas engraçadas (cena da ponte do filme Mount Python) [http://montypython.50webs.com/scripts/Holy_Grail/Scene22.htm]
-
-```
-public class Question {
-    private String question;
-    private String correctAnswer;
-
-    // Construtor, getters e setters
-}
-
-public class QuestionManager {
-    private List<Question> logicQuestions;
-    private List<Question> funnyQuestions;
-
-    // Métodos para adicionar perguntas, selecionar perguntas aleatoriamente, etc.
-}
+Agora que temos as classes básicas criadas, podemos partir para a lógica de funcionamento do jogo. Primeiramente vamos criar o menu principal.
 
 ```
+public void exibirMenu() {
+		boolean sair = false;
+		while (!sair) {
+			System.out.println(Colors.TEXT_WHITE_BOLD_BRIGHT + " ");
+			System.out.println("\t\t\t\t     ------ Menu ------");
+			System.out.println("\t\t\t\t     Escolha uma opção:");
+			System.out.println("\t\t\t\t     1. Iniciar Jogo");
+			System.out.println("\t\t\t\t     0. Sair do jogo" + Colors.TEXT_RESET);
 
-Ideias:
-* Python - cobrinha
-* Java - vida (café) ganhar ou perder ponto - abaixo de 0 o programa sai.
-* JavaScript - ação (efeitos especiais)
-* CSS - roupa (estilização)
-* Ruby - dinheiro (Ruby on Rails - dinheiro no trem - interceptar o trem?)
-* `String proatividade = 4;`
-* Categoria - front, back, full-stack
-* Cada categoria ganha mais pontos como herança;
-* Habilidades
-* Uma missão principal - 3 desafios (métodos)
-* Podemos dar pontos no início.
-* 10 pontos
-* `int inteligencia = 3;`
-* `int destreza = 2;`
+			int opcao = scanner.nextInt();
+			scanner.nextLine();
 
-## BSM - Atributos
-### Mentalidades 
-- RESPONSABILIDADE PESSOAL
-- MENTALIDADE DE CRESCIMENTO
-- ORIENTAÇÃO PARA O FUTURO
-- PERSISTÊNCIA
+			switch (opcao) {
+			case 1:
+				iniciarJogo();
+				jogar();
+				break;
+			case 0:
+				sair = true;
+				System.out.println("Obrigado por jogar! Até a próxima!");
+				break;
+			default:
+				System.out.println("Opção inválida! Tente novamente.");
+				break;
+			}
+		}
+	}
 
-### Habilidades Comportamentais
-- COMUNICAÇÃO
-- TRABALHO EM EQUIPE
-- PROATIVIDADE
-- ORIENTAÇÃO AO DETALHE
+```
+
+Sobrescrever o método "iniciarJogo()" que é responsável por iniciar o jogo. O jogador é solicitado a inserir seu nome através da entrada de dados. Em seguida, um novo objeto da classe "Player" é criado, atribuindo o nome do jogador e definindo valores iniciais para os atributos do personagem, como pontos de vida, defesa e dano.
 
 
-## História, desafios lógicos no console - jogo de perguntas
-Atributos: `int num = 10;` If (`num < 10`) - condição 1, se `num > 10` - condição 2
+```
+public void iniciarJogo() {
 
-### DESAFIOS LÓGICOS (AUMENTANDO EM DIFICULDADE) E PERGUNTAS ENGRAÇADAS.
-* Pergunta lógica
-* Cenário - perder ou ganhar vida
-* Pergunta lógica
+		System.out.printf("\n\tInforme o nome do jogador:");
+		String nomeJogador = scanner.nextLine();
 
-Esfinge - pergunta x ou y? Passa, ponto de dano - DADO!!! 6, 12, 20. Variável = ganho 2 pontos.
+		player = new Player(nomeJogador, 5, 5, 3, 0, 0, 0, 0, 0);
 
-Pergunta de programação - normalizer* - pergunta para passar da porta (meio do Senhor dos Anéis) com resposta escrita - palavra chave.
+	}
+```
 
-Esquerda ou direita? (Gato da Alice) - inimigo ou não dá pra avançar.
+Sobrescrevemos o método "jogar()" que é responsável por conduzir o jogo em si. Ao iniciar o jogo, o jogador é apresentado a um menu de cenas disponíveis para jogar. Cada cena representa um desafio ou enigma a ser enfrentado. O jogador seleciona uma opção digitando o número correspondente e, em seguida, a função correspondente à cena escolhida é executada. O jogador pode voltar ao menu inicial digitando 0. O jogo continua enquanto o jogador escolher continuar jogando e tiver pontos de vida restantes. Ao finalizar todas as cenas com vida restante, o jogador vence o jogo. Caso contrário, se o jogador perder todas as vidas, ele perde o jogo. Em ambos os casos, uma mensagem final é exibida.
 
-Loop infinito - game over.
 
-Ideia da ray - viagem no tempo linear (do passado ao futuro) medieval - Mount Pyton piratas sci-fi apocalíptico - mudar as falas no console de acordo com a época. perguntas cada vez mais difíceis.
+```
+public void jogar() {
+		System.out.println("\n\tIniciando o jogo...");
 
-Começar em um cenário.
-Personagens se repetem.
+		boolean continuarJogando = true;
 
-## Narrativa - Storytelling
-+5 de proatividade = ajudar pessoa +vida (EVENTO)
-Em outro momento - ponto pra distribuir nos atributos (perguntas técnicas)
+		while (continuarJogando && player.getLifePoints() > 0) {
+			System.out.println("\n\t------ Menu de Cenas ------");
+			System.out.println("\tEscolha uma cena para jogar:");
+			System.out.println("\t1. Chapeleiro Louco");
+			System.out.println("\t2. Gato de Cheshire");
+			System.out.println("\t3. Coelho Branco");
+			System.out.println("\t4. Rainha de Copas");
+			System.out.println("\t5. Porta mágica");
+			System.out.println("\t0. Voltar ao Menu Inicial");
 
-O grande if - Nível fácil, moderado ou difícil. (se modo hard - atributos trocados)
+			int opcao = scanner.nextInt();
+			scanner.nextLine();
 
-## Personagens
-* Característica única que define o personagem que permanece, como cor ou vestimenta;
-* Coelho
-* Esfinge - Lagarta - oferece um trago
-* Bobo da Corte - Chapeleiro e a Lebre de Março
-* Gato Azul Sorridente - oferece bebida (você fica bêbado e a pergunta fica mais difícil)
+			switch (opcao) {
+			case 1:
+				cenaChapeleiroLouco();
+				break;
+			case 2:
+				cenaGatoChester();
+				break;
+			case 3:
+				cenaCoelhoCintoMinutos();
+				break;
+			case 4:
+				cenaRainhaCopas();
+				break;
+			case 5:
+				cenaDecifrarCodigoPortaMagica();
+				break;
+			case 0:
+				exibirMenu();
+				break;
+			default:
+				System.out.println("Opção inválida! Tente novamente.");
+				break;
+			}
+		}
 
-Vilão Rainha de Copas (carta com 5 - pra representar os minutos)
+		if (player.getLifePoints() > 0) {
+			System.out.println("\nParabéns! Você completou todas as cenas e venceu o jogo!");
+		} else {
+			System.out.println("\nQue pena! Você perdeu todas as suas vidas e não conseguiu completar o jogo.");
+		}
 
-Visual - Alice dentro da Xícara (Clarice em Java)
+		System.out.println("Fim do jogo. Obrigado por jogar!");
+	}
+```
 
-BOSS - Yuri o dono do tempo (+5 minutos) - Cortem as cabeças;
+### 4. Implementar a lógica das Cenas do Jogo 
 
+Decidimos criar a história tendo como base Alice no País das Maravilhas, então cada cena apresenta uma das personagens icônicas dessa história. Cada cena foi desenvolvida por uma pessoa do nosso Dev Team. 
+
+```
+private void cenaChapeleiroLouco() {}
+private void cenaGatoChester() {}
+private void cenaCoelhoCintoMinutos() {}
+private void cenaRainhaCopas() {}
+private void cenaDecifrarCodigoPortaMagica() {}
+```
