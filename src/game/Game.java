@@ -61,7 +61,7 @@ public class Game implements GameRepository {
 
 		player = new Player(nomeJogador, 5, 5, 3, 0, 0, 0, 0, 0);
 
-		printCharacterSheet();
+		player.printCharacterSheet();
 
 	}
 
@@ -95,7 +95,7 @@ public class Game implements GameRepository {
 				cenaCoelhoCintoMinutos();
 				break;
 			case 4:
-				cenaCriquetRainhaCopas();
+				cenaRainhaCopas();
 				break;
 			case 5:
 				cenaDecifrarCodigoPortaMagica();
@@ -136,18 +136,21 @@ public class Game implements GameRepository {
 
 		if (resposta1.equalsIgnoreCase("tempo")) {
 			player.adicionarPontoOrientacaoAoDetalhe();
-			System.out.println("Sua orientação ao detalhe aumentou em um ponto!");
-			System.out.println("\nO taverneiro lhe responde, visivelmente alegre:");
-			System.out.println("ヽ(´▽`)/ 'HAHAHAHAHA eu sabia que você era especial, ");
-			System.out.println("muito bem, vamos continuar. Próxima pergunta:");
+			System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tSua orientação ao detalhe aumentou em um ponto!" + Colors.TEXT_RESET);
+			System.out.println("\n\t\tO taverneiro lhe responde, visivelmente alegre:");
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+			System.out.println("\tヽ(´▽`)/ 'HAHAHAHAHA eu sabia que você era especial, ");
+			System.out.println("\tmuito bem, vamos continuar. Próxima pergunta:"+ Colors.TEXT_RESET);
 		}
 		else{
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
-			System.out.println("\n\tO taverneiro lhe responde, visivelmente desapontado:");
-			System.out.println("(´･_･`) 'Sério mesmo? Esperava mais de você, talvez");
-			System.out.println("o instinto daquela lebre esteja mesmo começando a falhar...");
-			System.out.println("Vamos para a próxima pergunta:");
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints() + Colors.TEXT_RESET);
+			System.out.println("\n\t\tO taverneiro lhe responde, visivelmente desapontado:");
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+			System.out.println("\t(´･_･`) 'Sério mesmo? Esperava mais de você, talvez");
+			System.out.println("\to instinto daquela lebre esteja mesmo começando a falhar...");
+			System.out.println("\t\tVamos para a próxima pergunta:" + Colors.TEXT_RESET);
+
 		}
 
 //		pergunta 2
@@ -161,44 +164,45 @@ public class Game implements GameRepository {
 		switch (resposta2) {
 		case 1:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
-			System.out.println("\nVamos lá, você nem está tentando, essa organização não faz sentido aqui!!");
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tVamos lá, você nem está tentando, essa organização não faz sentido aqui!!"+ Colors.TEXT_RESET);
 			errado1 = 0;
 			break;
 
 		case 2:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
 			System.out.println(
-					"\nNananinanão, nessa organização os últimos serão os primeiros, você está me decepcionando...");
+					Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tNananinanão, nessa organização os últimos serão os primeiros, você está me decepcionando..."+ Colors.TEXT_RESET);
 			errado1 = 0;
 			break;
 
 		case 3:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
 			System.out
-					.println("\nEu nem sequer sei o que é um Hashmap, imagino que muito menos você, pare de chutar!!");
+					.println(Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tEu nem sequer sei o que é um Hashmap, imagino que muito menos você, pare de chutar!!"+ Colors.TEXT_RESET);
 			errado1 = 0;
 			break;
 
 		case 4:
 			player.adicionarPontoProatividade();
-			System.out.println("\nVocê ajudou alguém que estava precisando e sua proatividade aumentou em um ponto!");
+			System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê ajudou alguém que estava precisando e sua proatividade aumentou em um ponto!"+ Colors.TEXT_RESET);
 			System.out.println(
-					"\n Hmmm... muito bem, aquele coelho realmente sabe de algo hein? Estou impressionado com você!");
+					Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tHmmm... muito bem, aquele coelho realmente sabe de algo hein? Estou impressionado com você!"+ Colors.TEXT_RESET);
 			errado1 = 0;
 			break;
 
 		default:
 			if (errado1 == 1 ) {
-				System.out
-						.println("Não ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar...");
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println("\tNão ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar..."+ Colors.TEXT_RESET);
 			}
 		}
 		;
 			} catch (InputMismatchException e) {
-				System.out.println("Epa epa epa, sem gracinhas forasteire, apenas me responda com números!");
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println("\tEpa epa epa, sem gracinhas forasteire, apenas me responda com números!"+ Colors.TEXT_RESET);
 				scanner.nextLine();
 			}
 		} while (errado1 == 1);
@@ -216,43 +220,45 @@ public class Game implements GameRepository {
 		switch (resposta3) {
 		case 1:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
-			System.out.println("\nUm bom chute, mas ainda assim um chute, e você é ruim de mira HAHAHAH ಠ‿ಠ");
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tUm bom chute, mas ainda assim um chute, e você é ruim de mira HAHAHAH ಠ‿ಠ"+ Colors.TEXT_RESET);
 			errado2 = 0;
 			break;
 
 		case 2:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
-			System.out.println("\nSério mesmo? Você realmente achou que seria tão óbvio assim? ಠ_ಠ");
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
+			System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tSério mesmo? Você realmente achou que seria tão óbvio assim? ಠ_ಠ"+ Colors.TEXT_RESET);
 			errado2 = 0;
 			break;
 
 		case 3:
 			player.adicionarPontoResponsabilidadePessoal();
-			System.out.println("\nVocê lembrou do que estudou e sua responsabilidade pessoal aumentou em um ponto!");
+			System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\tVocê lembrou do que estudou e sua responsabilidade pessoal aumentou em um ponto!"+ Colors.TEXT_RESET);
 			System.out.println(
-					"\nMandou bem forasteire, to gostando de ver. Hmmm, bateu uma vontade de comer um wrap. (⊙_◎)");
+					Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tMandou bem forasteire, to gostando de ver. Hmmm, bateu uma vontade de comer um wrap. (⊙_◎)"+ Colors.TEXT_RESET);
 			errado2 = 0;
 			break;
 
 		case 4:
 			player.decreaseLifePoints();
-			System.out.println("\nVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints());
+			System.out.println(Colors.TEXT_RED_BOLD_BRIGHT + "\n\tVocê perdeu um ponto de vida, lhe restam: " + player.getLifePoints()+ Colors.TEXT_RESET);
 			System.out.println(
-					"\nOk, essa é engraçadinha mas não esperava que você fosse escolhê-la, e depois eu que sou o louco...");
+					Colors.TEXT_CYAN_BOLD_BRIGHT + "\n\tOk, essa é engraçadinha mas não esperava que você fosse escolhê-la, e depois eu que sou o louco..."+ Colors.TEXT_RESET);
 			errado2 = 0;
 			break;
 
 		default:
 			if (errado2 == 1) {
-				System.out
-						.println("Não ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar...");
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println("\tNão ouviu as opções?? Apenas de 1 a 4 forasteire, vamos lá, não tente me enrolar..."+ Colors.TEXT_RESET);
 			}
 		}
 		;
 			}catch(InputMismatchException e) {
-				System.out.println("Epa epa epa, sem gracinhas forasteire, apenas me responda com números!");
+				System.out.println(Colors.TEXT_CYAN_BOLD_BRIGHT);
+				System.out.println("\tEpa epa epa, sem gracinhas forasteire, apenas me responda com números!"+ Colors.TEXT_RESET);
+
 				scanner.nextLine();
 			};
 		}while(errado2 == 1);
@@ -260,7 +266,9 @@ public class Game implements GameRepository {
 		Story.tchau();
 		ArtLibrary.printTaca();
 		
-		System.out.println("\nContinuando sua jornada...");
+		player.printCharacterSheet();
+		
+		System.out.println("\n\tContinuando sua jornada...");
 	} 
 
 	
@@ -315,7 +323,8 @@ public class Game implements GameRepository {
 		int errado = 1;
 
 		do {
-
+			try {
+				
 			System.out.println("\t Qual caminho você vai escolher: A - Flores amarelas ou B - Flores azuis?\n");
 			caminhoEscolhido = scanner.next();
 
@@ -334,11 +343,14 @@ public class Game implements GameRepository {
 
 			} else {
 				errado = 0;
-				System.out.println("\t Opção inválida\n");
-
+				throw new InputMismatchException("\t Eiiii! Você só pode escolher entre A ou B \n");
 			}
+			} catch (InputMismatchException e) {
+				errado=0;
+				System.out.println("\t"+ e.getMessage() + "\n");
+			}	
 		} while (errado == 0);
-
+	     }
 	}
 	
 	private void cenaCoelhoCintoMinutos() {
@@ -424,7 +436,7 @@ public class Game implements GameRepository {
         System.out.println("\n Então vamos continuando em sua jornada...");
 }
 
-	private void cenaCriquetRainhaCopas() {
+	private void cenaRainhaCopas() {
 		
 		int opcao, opcao2, desafio, pontos = 0;
 		int respostas[] = { 3, 2, 1 };
@@ -435,7 +447,7 @@ public class Game implements GameRepository {
 				+ "				\né de responsabilidade de duas dessas criaturas."
 				+ "				\n\nEscolha a alternativa que melhor representa esse aspecto:"
 				+ "				\n1 - Método Construtor"
-				+ "				\n2 - Private, Protected e Public"
+				+ "				\n2 - Private e Public"
 				+ "				\n3 - Getters e Setters",
 
 				"\n\nPergunta 2: O objeto roubado da Rainha estava em seu quarto, em uma caixa de jóias, e agora a caixa está vazia."
@@ -465,27 +477,27 @@ public class Game implements GameRepository {
 			try {
 				opcao = scanner.nextInt();
 			} catch (InputMismatchException e) {
-				System.out.println("Exceção: " + e);
+				System.out.println("Por favor, digite uma opção válida! " + Colors.TEXT_RED_BOLD + "Exceção: " + e + Colors.TEXT_RESET);
 				scanner.nextLine();
 				opcao = 0;
 			}
 
 			switch (opcao) {
 			case 1 -> {
-				System.out.println("\nCORTEM-LHE AS CABEÇAAAAAS!!!");
-				System.out.println("Uma das cartas lhe diz que a Rainha está furiosa porque um objeto valioso com o");
+				System.out.println("\nCORTEM AS CABEÇAAAAAS!!!");
+				System.out.println("\nUma das cartas lhe diz que a Rainha está furiosa porque um objeto valioso com o");
 				System.out.println(
 						"emblema da coroa sumiu. Aparentemente foi roubado e ninguém sabe quem é o responsável.");
 				System.out.println(
-						"Você precisa descobrir esse mistério e enfrentar o temperamento perigoso da Rainha de Copas para avançar ao "
-								+ "próximo nível.");
-				System.out.println("O que deseja fazer?\n" + "\n1 - Perguntar qual objeto foi roubado"
-						+ "\n2 - Ignorar a carta" + "\n3 - Sair");
+						"Você precisa descobrir esse mistério e enfrentar o temperamento perigoso da Rainha de");
+				System.out.println("Copas para avançar ao próximo nível.");
+				System.out.println("\nO que deseja fazer?\n" + "\n1 - Perguntar qual objeto foi roubado"
+						+ "\n2 - Ignorar a carta" + "\n3 - Sair do jogo");
 
 				try {
 					opcao2 = scanner.nextInt();
 				} catch (InputMismatchException e) {
-					System.out.println("Exceção: " + e);
+					System.out.println("Por favor, digite uma opção válida! " + Colors.TEXT_RED_BOLD + "Exceção: " + e + Colors.TEXT_RESET);
 					scanner.nextLine();
 					opcao2 = 0;
 				}
@@ -501,7 +513,14 @@ public class Game implements GameRepository {
 						System.out.println("\"Se é realmente inocente, prove-me em um duelo Java!!!\"");
 						System.out.println("\nAceita o desafio? \n1 - Sim | 2 - Não");
 
-						desafio = scanner.nextInt();
+						try {
+							desafio = scanner.nextInt();
+						} catch (InputMismatchException e) {
+							System.out.println("Por favor, digite uma opção válida! " + Colors.TEXT_RED_BOLD + "Exceção: " + e + Colors.TEXT_RESET);
+							scanner.nextLine();
+							desafio = 0;
+						}
+						
 
 					} while (desafio != 1 && desafio != 2);
 
@@ -529,10 +548,12 @@ public class Game implements GameRepository {
 						if (pontos == 3) {
 							System.out.println("\nParabéns, você conseguiu derrotar a Rainha de Copas!");
 							System.out.println(
-									"Como reconhecimento ao seu empenho, ganhou um item e mais 2 pontos de vida!");
+									"Como reconhecimento ao seu empenho, ganhou 1 item e 1 ponto de orientação ao detalhe!");
 							System.out.println("\nItem: Um PINGENTE com a inicial do seu nome");
 
-							// Inserir método de adicionar item e ganhar vida
+							player.adicionarPontoOrientacaoAoDetalhe();
+							player.printCharacterSheet();
+							
 							jogar();
 
 						}
@@ -554,6 +575,7 @@ public class Game implements GameRepository {
 					if (desafio == 2) {
 						System.out.println("Infelizmente você não é páreo para os perigos da Rainha.");
 						System.out.println("Sua jornada encerra aqui.");
+						jogar();
 					}
 
 					if (desafio != 1 && desafio != 2) {
@@ -564,23 +586,24 @@ public class Game implements GameRepository {
 					System.out.println("Você ignorou o Valete de Espadas e retornou ao início.");
 				}
 				case 3 -> {
-					System.exit(0);
+					exibirMenu();
 				}
 				}
 
 			}
 
 			case 2 -> {
-				System.out.println("Talvez você ainda não esteja tão preparado para a nossa aventura.");
+				System.out.println("\nTalvez você ainda não esteja tão preparado para a nossa aventura.");
 				System.out.println("Pode voltar outra hora, quando se sentir pronto.");
-				System.out.println("1 - Sair do jogo | 2 - Retornar");
+				System.out.println("\nO que deseja fazer?");
+				System.out.println("1 - Voltar ao menu inicial | 2 - Continuar jogando");
 
 				opcao = scanner.nextInt();
 
 				if (opcao == 1) {
-					System.exit(0);
+					exibirMenu();
 				} else {
-					System.out.println("\nVocê escolheu retornar. Como eu dizia...");
+					System.out.println("\nVocê escolheu continuar. Como eu dizia...");
 				}
 			}
 
@@ -588,18 +611,23 @@ public class Game implements GameRepository {
 				System.out.println(
 						"\nÉ um jardim esplêndido, de tirar o fôlego! Exceto pela multidão que se aproxima.\n");
 				System.out.println(
-						"Está um alvoroço aqui! Você acaba de ser atingido acidentalmente por alguém e perdeu 2 pontos de vida.");
+						"Está um alvoroço aqui! Você acaba de ser atingido acidentalmente por alguém e perdeu 1 ponto de vida.");
 
-				// Inserir método de perder vida e ficha personagem
+				player.decreaseLifePoints();
+				System.out.println("Ainda lhe restam " + player.getLifePoints() + " pontos.");
 
-				System.out.println("O que deseja fazer?");
-				System.out.println("1 - Sair do jogo | 2 - Retornar");
+				System.out.println("\nO que deseja fazer?");
+				System.out.println("1 - Voltar ao menu inicial | 2 - Voltar ao menu de cenas | 3 - Retornar à cena da Rainha");
 
 				opcao = scanner.nextInt();
 
 				if (opcao == 1) {
-					System.exit(0);
-				} else {
+					exibirMenu();
+				} 
+				if (opcao == 2) {
+					jogar();
+				}
+				if (opcao == 3) {
 					System.out.println("\nVocê escolheu retornar. Como eu dizia...");
 				}
 			}
@@ -722,7 +750,7 @@ public class Game implements GameRepository {
 	                System.out.println("\t\tVocê sente um alívio e uma gratidão imensa por ter conseguido desvendar o enigma.");
 	                System.out.println("\t\tCom um último olhar para o mundo mágico que deixou para trás, você dá um passo adiante e atravessa a porta de opala.");
 	                
-	                printCharacterSheet();
+	                player.printCharacterSheet();
 	                System.out.println(Colors.TEXT_GREEN_BOLD_BRIGHT + "\n\n\t\t\tFim do jogo! Você voltou para o seu mundo com mais 5 minutos!\n\n" + Colors.TEXT_RESET);
 	            } else {
 	                System.out.println("\n\t\tA porta de Opala treme, mas permanece fechada.");
@@ -745,17 +773,6 @@ public class Game implements GameRepository {
                 .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
 	
-	public void printCharacterSheet() {
-		System.out.println("\n\n\t--- Ficha do Personagem ---");
-		System.out.println("\tNome:\t\t\t\t" + player.getName());
-		System.out.println("\t--- Distribuição de pontos nos atributos ---");
-		System.out.println("\tResponsabilidade Pessoal:\t" + player.getResponsabilidadePessoal());
-		System.out.println("\tMentalidade de Crescimento:\t" + player.getMentalidadeDeCrescimento());
-		System.out.println("\tProatividade:\t\t\t" + player.getProatividade());
-		System.out.println("\tOrientação ao Detalhe:\t\t" + player.getOrientacaoAoDetalhe());
-		System.out.println("\tTrabalho em Equipe:\t\t" + player.getTrabalhoEmEquipe());
-		System.out.println("\n\n");
-	}
 }
 
 
