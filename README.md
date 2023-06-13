@@ -27,7 +27,7 @@ A ideia é de um jogo no console. Os personagens e inimigos são inspirados nos 
 Nós criamos um jogo de aventura empolgante em que o jogador assume o papel de um alune da Generation em busca de mais 5 minutos. A história é repleta de desafios intrigantes e enigmas a serem desvendados. Ao longo da jornada, o jogador encontrará obstáculos, enfrentará batalhas e interagirá com personagens não jogáveis. A exploração de diferentes cenários e a coleta de itens especiais serão fundamentais para o progresso na história, revelando segredos e desbloqueando novas áreas. À medida que o jogo avança, o protagonista poderá aprimorar suas habilidades e atributos BSM's (Batalha, Sobrevivência e Magia). A busca pelo retorno ao mundo do personagem será repleta de emoção, reviravoltas e decisões impactantes, moldando assim o desfecho da história. Prepare-se para uma jornada emocionante em busca dos preciosos 5 minutos perdidos!
 
 
-![image](https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/9d6d197b-ed00-467b-9e88-b89150097def)
+![image]()
 
 Se você puder nos dê uma estrelinha! Para jogar é só dar um fork nesse repositório, clonar para sua máquina e abrir em alguma IDE como Spring Tools.
 
@@ -58,7 +58,7 @@ game
 O jogo começa com os atributos BSM's zerados: 
 
 <div align="center">
-<img src=https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/1b4ac2ed-b13c-4642-a6f5-6509ac1e7d88 alt="Image" />
+<img src="https://github.com/eliseflaneuse/clarice-em-java/assets/113945437/9d6d197b-ed00-467b-9e88-b89150097def" alt="Image" />
 </div>
 
 ## Implementação: 
