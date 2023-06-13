@@ -134,7 +134,7 @@ public interface GameRepository {
 
 ```
 
-### 3. Implementar a lógica dos métodos implemnetados pela interface - polimorfismo 
+### 3. Implementar a lógica dos métodos implementados pela interface - polimorfismo 
 
 Agora que temos as classes básicas criadas, podemos partir para a lógica de funcionamento do jogo. Primeiramente vamos criar o menu principal.
 
