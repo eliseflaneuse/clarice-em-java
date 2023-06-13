@@ -45,7 +45,7 @@ git clone link do repositório
 
 
 
-Como esta organizado o projeto?
+### Como esta organizado o projeto?
 ```
 game
 ├── controller
